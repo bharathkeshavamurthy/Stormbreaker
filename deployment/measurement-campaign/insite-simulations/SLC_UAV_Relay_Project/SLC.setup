@@ -1,0 +1,1402 @@
+Format type:keyword version: 1.1.0
+begin_<project> SLC-POWDER
+project_id 28681
+begin_<globals> 
+longitude 0
+latitude 0
+end_<globals>
+FirstAvailableFeatureNumber 3
+FirstAvailableUnknownLayoutNumber 0
+FirstAvailableStudyAreaNumber 1
+begin_<caches> 
+begin_<cache> 
+type X3DGeometry
+filename ./SLC.X3DGeometry.cache
+valid true
+end_<cache>
+end_<caches>
+begin_<studyarea> odin-uav-mobility
+StudyAreaNumber 0
+active
+begin_<partitioning> 
+partitioning_type disabled
+queuing_type disabled
+max_threads 0
+num_partitions 2
+end_<partitioning>
+begin_<apg_acceleration> 
+enabled no
+workflow_mode full
+binary_output_mode per_path_utm
+binary_rate 0 active
+database_mode write
+path_depth 25
+adjacency_distance 10
+end_<apg_acceleration>
+begin_<diffuse_scattering> 
+enabled no
+diffuse_reflections 2
+diffuse_diffractions 1
+diffuse_transmissions 0
+final_interaction_only yes
+end_<diffuse_scattering>
+autoboundary 1
+begin_<model> 
+x3d
+num_threads 8
+temperature 28
+humidity 20
+initial_ray_mode uniform_sweep
+foliage_model 2
+foliage_attenuation 1
+mobility_platform_time_interval 1
+ray_spacing 2
+plane_wave_phase_reference automatic
+5.74353 -18.037 379.636
+max_reflections 1
+max_wedge_diffractions 0
+begin_<OutputRequests> 
+CEF no
+ComplexImpulseResponse no
+DelaySpread yes
+DirectionOfArrival no
+DirectionOfDeparture no
+ElectroMagneticFields no
+FSPathloss yes
+FSPower no
+MeanDirectionOfArrival no
+MeanDirectionOfDeparture no
+MeanTimeOfArrival no
+Pathloss yes
+Paths yes
+Power yes
+TimeOfArrival no
+XPathloss no
+end_<OutputRequests>
+end_<model>
+begin_<boundary> 
+begin_<reference> 
+cartesian
+longitude 0
+latitude 0
+visible no
+terrain
+end_<reference>
+zmin -0.25
+zmax 759.521667480469
+nVertices 4
+-2712.06689453125 -2028.47302246094 0
+2723.55395507812 -2028.47302246094 0
+2723.55395507812 1992.39904785156 0
+-2712.06689453125 1992.39904785156 0
+end_<boundary>
+begin_<MonteCarlo> 
+monte_carlo_updated no
+monte_carlo_active no
+monte_carlo_mean yes
+monte_carlo_min no
+monte_carlo_max no
+monte_carlo_median no
+monte_carlo_sdev no
+monte_carlo_iterations 10
+monte_carlo_seed 1
+end_<MonteCarlo>
+begin_<MPE> 
+mpe_is_active inactive
+mpestandard controlled
+mpe_averaging_time 300
+mpe_averaging_time_short 0.1
+mpe_user_efield_peak 100000
+mpe_user_efield_rms 61.4
+mpe_user_hfield_rms 0.163
+mpe_user_power_short 10
+mpe_user_power 2
+end_<MPE>
+end_<studyarea>
+begin_<feature> 
+feature 1
+terrain
+active
+filename ./SLC_Terrain.ter
+end_<feature>
+begin_<feature> 
+feature 2
+city
+active
+filename ./SLC_Buildings.city
+end_<feature>
+begin_<txrx_sets> 
+filename ./SLC.txrx
+FirstAvailableTxRxNumber 4
+end_<txrx_sets>
+FirstAvailableCommSystemNumber 2
+begin_<CommSystem> GU Decode Link
+CommSystemNumber 0
+active
+BaseStations 1 
+Receivers 3 
+AnalysisOption Throughput
+NoisePowerDensity -174
+UniformInterference -250
+BestTxCriterion 0
+BerBandwidth 1
+ModulationScheme DPSK
+AlphabetSize 2
+SpreadSpectrumProcessingGain 1
+AnalysisType AWGN
+BitRate 1e+06
+OutageBerThreshold 0.001
+WirelessAccessMethod LTE
+ThroughputBandwidth 5
+NumberOfDataStreams 1
+UserDefinedFile internal
+MimoMethod Beamforming / Diversity
+TxBeamformingOption No Beamforming/Precoding
+RxDiversity Selection Combining
+PrecodingFilename ./
+DoBaseStationsInterfere 0
+SigParSignalBandwidth 1
+end_<CommSystem>
+begin_<CommSystem> UB Forward Link
+CommSystemNumber 1
+active
+BaseStations 3 
+Receivers 2 
+AnalysisOption Throughput
+NoisePowerDensity -174
+UniformInterference -250
+BestTxCriterion 0
+BerBandwidth 1
+ModulationScheme DPSK
+AlphabetSize 2
+SpreadSpectrumProcessingGain 1
+AnalysisType AWGN
+BitRate 1e+06
+OutageBerThreshold 0.001
+WirelessAccessMethod LTE
+ThroughputBandwidth 5
+NumberOfDataStreams 1
+UserDefinedFile internal
+MimoMethod Beamforming / Diversity
+TxBeamformingOption No Beamforming/Precoding
+RxDiversity Selection Combining
+PrecodingFilename ./
+DoBaseStationsInterfere 0
+SigParSignalBandwidth 1
+end_<CommSystem>
+begin_<antenna> Half-wave dipole
+antenna 0
+type HalfWaveDipole
+waveform 0
+polarization vertical
+power_threshold -250
+cable_loss 0
+VSWR 1
+component TotalGain
+gain_range 40
+show_arrow no
+is_sphere no
+end_<antenna>
+begin_<Waveform> Sinusoid
+Sinusoid
+waveform 0
+frequencyDistribution Uniform 500.000 1500.000 inactive nosampling 10
+CarrierFrequency 5000000000.000
+phase 0.000
+bandwidth 5000000.000
+end_<Waveform>
+FirstAvailableFilterNumber 0
+begin_<graph> 
+Title UAV-I : Throughput
+Xlabel Distance
+Ylabel Throughput
+type rectangular
+LegendPos 4
+xgrid 2
+ygrid 2
+rgrid 2
+tgrid 2
+autoxmin 1
+autoxmax 1
+autoymin 1
+autoymax 1
+autormin 1
+autormax 1
+autofmin 1
+autofmax 1
+xmin 0.000000e+00 
+xmax 1.135000e+03 
+actualxmin 0.000000000000
+actualxmax 1135.000000000000
+ymin 0.000000e+00 
+ymax 1.833600e+01 
+rmin 0.000000e+00 
+rmax 1.833600e+01 
+actualymin 0.000000000000
+actualymax 18.336000442505
+actualrmin 0.000000000000
+actualrmax 18.336000442505
+fmin 0.0  
+fmax 1.0  
+bgcolor 255 255 255
+gridcolor 128 128 128
+labelcolor 0 0 0
+begin_<plot> 
+filename ./odin-uav-mobility/GU Decode Link/SLC.tp2.r003.p2m
+value Throughput
+axis Distance
+legend UAV-I : Throughput
+linetype lines
+color 255 0 0
+begin_<xAxisUnits> 
+base meters
+option base
+log false
+end_<xAxisUnits>
+begin_<yAxisUnits> 
+base meters
+option base
+log false
+special quantity
+name MBit/sec
+end_<yAxisUnits>
+end_<plot>
+begin_<plot> 
+filename ./odin-uav-mobility/UB Forward Link/SLC.tp2.t228_03.r002.p2m
+value Throughput
+axis Distance
+legend UAV-I (#228) --> Base Station : Throughput
+linetype points
+color 0 0 255
+begin_<xAxisUnits> 
+base meters
+option base
+log false
+end_<xAxisUnits>
+begin_<yAxisUnits> 
+base meters
+option base
+log false
+special quantity
+name MBit/sec
+end_<yAxisUnits>
+end_<plot>
+end_<graph>
+begin_<graph> 
+Title UAV-I (#1) --> Base Station : Throughput
+Xlabel Distance
+Ylabel Throughput
+type rectangular
+LegendPos 4
+xgrid 2
+ygrid 2
+rgrid 2
+tgrid 2
+autoxmin 1
+autoxmax 1
+autoymin 1
+autoymax 1
+autormin 1
+autormax 1
+autofmin 1
+autofmax 1
+xmin 1.912580e+02 
+xmax 1.912580e+02 
+actualxmin 191.257995605469
+actualxmax 191.257995605469
+ymin 0.000000e+00 
+ymax 0.000000e+00 
+rmin 0.000000e+00 
+rmax 0.000000e+00 
+actualymin 0.000000000000
+actualymax 0.000000000000
+actualrmin 0.000000000000
+actualrmax 0.000000000000
+fmin 0.0  
+fmax 1.0  
+bgcolor 255 255 255
+gridcolor 128 128 128
+labelcolor 0 0 0
+begin_<plot> 
+filename ./odin-uav-mobility/UB Forward Link/SLC.tp2.t001_03.r002.p2m
+value Throughput
+axis Distance
+legend UAV-I (#1) --> Base Station : Throughput
+linetype points
+color 255 0 0
+begin_<xAxisUnits> 
+base meters
+option base
+log false
+end_<xAxisUnits>
+begin_<yAxisUnits> 
+base meters
+option base
+log false
+special quantity
+name MBit/sec
+end_<yAxisUnits>
+end_<plot>
+end_<graph>
+begin_<graph> 
+Title UAV-I : Throughput
+Xlabel Distance
+Ylabel Throughput
+type rectangular
+LegendPos 4
+xgrid 2
+ygrid 2
+rgrid 2
+tgrid 2
+autoxmin 1
+autoxmax 1
+autoymin 1
+autoymax 1
+autormin 1
+autormax 1
+autofmin 1
+autofmax 1
+xmin 0.000000e+00 
+xmax 1.135000e+03 
+actualxmin 0.000000000000
+actualxmax 1135.000000000000
+ymin 0.000000e+00 
+ymax 1.833600e+01 
+rmin 0.000000e+00 
+rmax 1.833600e+01 
+actualymin 0.000000000000
+actualymax 18.336000442505
+actualrmin 0.000000000000
+actualrmax 18.336000442505
+fmin 0.0  
+fmax 1.0  
+bgcolor 255 255 255
+gridcolor 128 128 128
+labelcolor 0 0 0
+begin_<plot> 
+filename ./odin-uav-mobility/GU Decode Link/SLC.tp2.r003.p2m
+value Throughput
+axis Distance
+legend UAV-I : Throughput
+linetype lines
+color 255 0 0
+begin_<xAxisUnits> 
+base meters
+option base
+log false
+end_<xAxisUnits>
+begin_<yAxisUnits> 
+base meters
+option base
+log false
+special quantity
+name MBit/sec
+end_<yAxisUnits>
+end_<plot>
+end_<graph>
+begin_<graph> 
+Title Ground Nodes (#1) --> UAV-I : Delay spread
+Xlabel Distance
+Ylabel Delay spread
+type rectangular
+LegendPos 4
+xgrid 2
+ygrid 2
+rgrid 2
+tgrid 2
+autoxmin 1
+autoxmax 1
+autoymin 1
+autoymax 1
+autormin 1
+autormax 1
+autofmin 1
+autofmax 1
+xmin 0.000000e+00 
+xmax 1.135000e+03 
+actualxmin 0.000000000000
+actualxmax 1135.000000000000
+ymin 0.000000e+00 
+ymax 1.033770e-07 
+rmin 0.000000e+00 
+rmax 1.033770e-07 
+actualymin 0.000000000000
+actualymax 0.000000103377
+actualrmin 0.000000000000
+actualrmax 0.000000103377
+fmin 0.0  
+fmax 1.0  
+bgcolor 255 255 255
+gridcolor 128 128 128
+labelcolor 0 0 0
+begin_<plot> 
+filename ./odin-uav-mobility/SLC.spread.t001_01.r003.p2m
+value Delay spread
+axis Distance
+legend Ground Nodes (#1) --> UAV-I : Delay spread
+linetype lines
+color 255 0 0
+begin_<xAxisUnits> 
+base meters
+option base
+log false
+end_<xAxisUnits>
+begin_<yAxisUnits> 
+base seconds
+option base
+log false
+end_<yAxisUnits>
+end_<plot>
+end_<graph>
+begin_<graph> 
+Title Ground Nodes (#1) --> Base Station : Delay spread
+Xlabel Distance
+Ylabel Delay spread
+type rectangular
+LegendPos 4
+xgrid 2
+ygrid 2
+rgrid 2
+tgrid 2
+autoxmin 1
+autoxmax 1
+autoymin 1
+autoymax 1
+autormin 1
+autormax 1
+autofmin 1
+autofmax 1
+xmin 2.043210e+02 
+xmax 2.043210e+02 
+actualxmin 204.320999145508
+actualxmax 204.320999145508
+ymin 0.000000e+00 
+ymax 0.000000e+00 
+rmin 0.000000e+00 
+rmax 0.000000e+00 
+actualymin 0.000000000000
+actualymax 0.000000000000
+actualrmin 0.000000000000
+actualrmax 0.000000000000
+fmin 0.0  
+fmax 1.0  
+bgcolor 255 255 255
+gridcolor 128 128 128
+labelcolor 0 0 0
+begin_<plot> 
+filename ./odin-uav-mobility/SLC.spread.t001_01.r002.p2m
+value Delay spread
+axis Distance
+legend Ground Nodes (#1) --> Base Station : Delay spread
+linetype points
+color 255 0 0
+begin_<xAxisUnits> 
+base meters
+option base
+log false
+end_<xAxisUnits>
+begin_<yAxisUnits> 
+base seconds
+option base
+log false
+end_<yAxisUnits>
+end_<plot>
+end_<graph>
+begin_<graph> 
+Title Ground Nodes (#30) --> Base Station : Delay spread
+Xlabel Distance
+Ylabel Delay spread
+type rectangular
+LegendPos 4
+xgrid 2
+ygrid 2
+rgrid 2
+tgrid 2
+autoxmin 1
+autoxmax 1
+autoymin 1
+autoymax 1
+autormin 1
+autormax 1
+autofmin 1
+autofmax 1
+xmin 5.507700e+02 
+xmax 5.507700e+02 
+actualxmin 550.770019531250
+actualxmax 550.770019531250
+ymin 0.000000e+00 
+ymax 0.000000e+00 
+rmin 0.000000e+00 
+rmax 0.000000e+00 
+actualymin 0.000000000000
+actualymax 0.000000000000
+actualrmin 0.000000000000
+actualrmax 0.000000000000
+fmin 0.0  
+fmax 1.0  
+bgcolor 255 255 255
+gridcolor 128 128 128
+labelcolor 0 0 0
+begin_<plot> 
+filename ./odin-uav-mobility/SLC.spread.t030_01.r002.p2m
+value Delay spread
+axis Distance
+legend Ground Nodes (#30) --> Base Station : Delay spread
+linetype points
+color 255 0 0
+begin_<xAxisUnits> 
+base meters
+option base
+log false
+end_<xAxisUnits>
+begin_<yAxisUnits> 
+base seconds
+option base
+log false
+end_<yAxisUnits>
+end_<plot>
+end_<graph>
+begin_<graph> 
+Title Ground Nodes (#30) --> UAV-I : Delay spread
+Xlabel Distance
+Ylabel Delay spread
+type rectangular
+LegendPos 4
+xgrid 2
+ygrid 2
+rgrid 2
+tgrid 2
+autoxmin 1
+autoxmax 1
+autoymin 1
+autoymax 1
+autormin 1
+autormax 1
+autofmin 1
+autofmax 1
+xmin 0.000000e+00 
+xmax 1.135000e+03 
+actualxmin 0.000000000000
+actualxmax 1135.000000000000
+ymin 0.000000e+00 
+ymax 0.000000e+00 
+rmin 0.000000e+00 
+rmax 0.000000e+00 
+actualymin 0.000000000000
+actualymax 0.000000000000
+actualrmin 0.000000000000
+actualrmax 0.000000000000
+fmin 0.0  
+fmax 1.0  
+bgcolor 255 255 255
+gridcolor 128 128 128
+labelcolor 0 0 0
+begin_<plot> 
+filename ./odin-uav-mobility/SLC.spread.t030_01.r003.p2m
+value Delay spread
+axis Distance
+legend Ground Nodes (#30) --> UAV-I : Delay spread
+linetype lines
+color 255 0 0
+begin_<xAxisUnits> 
+base meters
+option base
+log false
+end_<xAxisUnits>
+begin_<yAxisUnits> 
+base seconds
+option base
+log false
+end_<yAxisUnits>
+end_<plot>
+end_<graph>
+begin_<graph> 
+Title UAV-I : Strongest Power
+Xlabel Distance
+Ylabel Strongest Power
+type rectangular
+LegendPos 4
+xgrid 2
+ygrid 2
+rgrid 2
+tgrid 2
+autoxmin 1
+autoxmax 1
+autoymin 1
+autoymax 1
+autormin 1
+autormax 1
+autofmin 1
+autofmax 1
+xmin 0.000000e+00 
+xmax 1.135000e+03 
+actualxmin 0.000000000000
+actualxmax 1135.000000000000
+ymin -2.500000e+02 
+ymax -4.601900e+01 
+rmin -2.500000e+02 
+rmax -4.601900e+01 
+actualymin -250.000000000000
+actualymax -46.019001007080
+actualrmin -250.000000000000
+actualrmax -46.019001007080
+fmin 0.0  
+fmax 1.0  
+bgcolor 255 255 255
+gridcolor 128 128 128
+labelcolor 0 0 0
+begin_<plot> 
+filename ./odin-uav-mobility/GU Decode Link/SLC.rsumlte.r003.p2m
+value Strongest Power
+axis Distance
+legend UAV-I : Strongest Power
+linetype lines
+color 255 0 0
+begin_<xAxisUnits> 
+base meters
+option base
+log false
+end_<xAxisUnits>
+begin_<yAxisUnits> 
+base watts
+option milli
+log true
+begin_<applicationUnits> 
+base watts
+option milli
+log true
+end_<applicationUnits>
+end_<yAxisUnits>
+end_<plot>
+end_<graph>
+begin_<graph> 
+Title Ground Nodes (#1) --> UAV-I : Throughput
+Xlabel Distance
+Ylabel Throughput
+type rectangular
+LegendPos 4
+xgrid 2
+ygrid 2
+rgrid 2
+tgrid 2
+autoxmin 1
+autoxmax 1
+autoymin 1
+autoymax 1
+autormin 1
+autormax 1
+autofmin 1
+autofmax 1
+xmin 0.000000e+00 
+xmax 1.135000e+03 
+actualxmin 0.000000000000
+actualxmax 1135.000000000000
+ymin 0.000000e+00 
+ymax 1.833600e+01 
+rmin 0.000000e+00 
+rmax 1.833600e+01 
+actualymin 0.000000000000
+actualymax 18.336000442505
+actualrmin 0.000000000000
+actualrmax 18.336000442505
+fmin 0.0  
+fmax 1.0  
+bgcolor 255 255 255
+gridcolor 128 128 128
+labelcolor 0 0 0
+begin_<plot> 
+filename ./odin-uav-mobility/GU Decode Link/SLC.tp2.t001_01.r003.p2m
+value Throughput
+axis Distance
+legend Ground Nodes (#1) --> UAV-I : Throughput
+linetype lines
+color 255 0 0
+begin_<xAxisUnits> 
+base meters
+option base
+log false
+end_<xAxisUnits>
+begin_<yAxisUnits> 
+base meters
+option base
+log false
+special quantity
+name MBit/sec
+end_<yAxisUnits>
+end_<plot>
+end_<graph>
+begin_<graph> 
+Title Ground Nodes (#1) --> UAV-I : Throughput
+Xlabel Receiver
+Ylabel Throughput
+type rectangular
+LegendPos 4
+xgrid 2
+ygrid 2
+rgrid 2
+tgrid 2
+autoxmin 1
+autoxmax 1
+autoymin 1
+autoymax 1
+autormin 1
+autormax 1
+autofmin 1
+autofmax 1
+xmin 1.000000e+00 
+xmax 2.280000e+02 
+actualxmin 1.000000000000
+actualxmax 228.000000000000
+ymin 0.000000e+00 
+ymax 1.833600e+01 
+rmin 0.000000e+00 
+rmax 1.833600e+01 
+actualymin 0.000000000000
+actualymax 18.336000442505
+actualrmin 0.000000000000
+actualrmax 18.336000442505
+fmin 0.0  
+fmax 1.0  
+bgcolor 255 255 255
+gridcolor 128 128 128
+labelcolor 0 0 0
+begin_<plot> 
+filename ./odin-uav-mobility/GU Decode Link/SLC.tp2.t001_01.r003.p2m
+value Throughput
+axis Receiver number
+legend Ground Nodes (#1) --> UAV-I : Throughput
+linetype lines
+color 255 0 0
+begin_<xAxisUnits> 
+base meters
+option base
+log false
+special quantity
+end_<xAxisUnits>
+begin_<yAxisUnits> 
+base meters
+option base
+log false
+special quantity
+name MBit/sec
+end_<yAxisUnits>
+end_<plot>
+end_<graph>
+begin_<graph> 
+Title Ground Nodes (#8) --> UAV-I : Throughput
+Xlabel Receiver
+Ylabel Throughput
+type rectangular
+LegendPos 4
+xgrid 2
+ygrid 2
+rgrid 2
+tgrid 2
+autoxmin 1
+autoxmax 1
+autoymin 1
+autoymax 1
+autormin 1
+autormax 1
+autofmin 1
+autofmax 1
+xmin 1.000000e+00 
+xmax 2.280000e+02 
+actualxmin 1.000000000000
+actualxmax 228.000000000000
+ymin 0.000000e+00 
+ymax 1.833600e+01 
+rmin 0.000000e+00 
+rmax 1.833600e+01 
+actualymin 0.000000000000
+actualymax 18.336000442505
+actualrmin 0.000000000000
+actualrmax 18.336000442505
+fmin 0.0  
+fmax 1.0  
+bgcolor 255 255 255
+gridcolor 128 128 128
+labelcolor 0 0 0
+begin_<plot> 
+filename ./odin-uav-mobility/GU Decode Link/SLC.tp2.t008_01.r003.p2m
+value Throughput
+axis Receiver number
+legend Ground Nodes (#8) --> UAV-I : Throughput
+linetype lines
+color 255 0 0
+begin_<xAxisUnits> 
+base meters
+option base
+log false
+special quantity
+end_<xAxisUnits>
+begin_<yAxisUnits> 
+base meters
+option base
+log false
+special quantity
+name MBit/sec
+end_<yAxisUnits>
+end_<plot>
+end_<graph>
+begin_<graph> 
+Title Ground Nodes (#1) --> UAV-I : Throughput
+Xlabel Receiver
+Ylabel Throughput
+type rectangular
+LegendPos 4
+xgrid 2
+ygrid 2
+rgrid 2
+tgrid 2
+autoxmin 1
+autoxmax 1
+autoymin 1
+autoymax 1
+autormin 1
+autormax 1
+autofmin 1
+autofmax 1
+xmin 1.000000e+00 
+xmax 2.280000e+02 
+actualxmin 1.000000000000
+actualxmax 228.000000000000
+ymin 0.000000e+00 
+ymax 1.833600e+01 
+rmin 0.000000e+00 
+rmax 1.833600e+01 
+actualymin 0.000000000000
+actualymax 18.336000442505
+actualrmin 0.000000000000
+actualrmax 18.336000442505
+fmin 0.0  
+fmax 1.0  
+bgcolor 255 255 255
+gridcolor 128 128 128
+labelcolor 0 0 0
+begin_<plot> 
+filename ./odin-uav-mobility/GU Decode Link/SLC.tp2.t001_01.r003.p2m
+value Throughput
+axis Receiver number
+legend Ground Nodes (#1) --> UAV-I : Throughput
+linetype lines
+color 255 0 0
+begin_<xAxisUnits> 
+base meters
+option base
+log false
+special quantity
+end_<xAxisUnits>
+begin_<yAxisUnits> 
+base meters
+option base
+log false
+special quantity
+name MBit/sec
+end_<yAxisUnits>
+end_<plot>
+end_<graph>
+begin_<graph> 
+Title Ground Nodes (#1) --> UAV-I : Throughput
+Xlabel Distance
+Ylabel Throughput
+type rectangular
+LegendPos 4
+xgrid 2
+ygrid 2
+rgrid 2
+tgrid 2
+autoxmin 1
+autoxmax 1
+autoymin 1
+autoymax 1
+autormin 1
+autormax 1
+autofmin 1
+autofmax 1
+xmin 0.000000e+00 
+xmax 1.500000e+03 
+actualxmin 0.000000000000
+actualxmax 1500.000000000000
+ymin 0.000000e+00 
+ymax 2.000000e+01 
+rmin 0.000000e+00 
+rmax 2.000000e+01 
+actualymin 0.000000000000
+actualymax 20.000000000000
+actualrmin 0.000000000000
+actualrmax 18.336000442505
+fmin 0.0 
+fmax 1.0 
+bgcolor 255 255 255
+gridcolor 128 128 128
+labelcolor 0 0 0
+begin_<plot> 
+filename ./odin-uav-mobility/GU Decode Link/SLC.tp2.t001_01.r003.p2m
+value Throughput
+axis Distance
+legend Ground Nodes (#1) --> UAV-I : Throughput
+linetype lines
+color 255 0 0
+begin_<xAxisUnits> 
+base meters
+option base
+log false
+end_<xAxisUnits>
+begin_<yAxisUnits> 
+base meters
+option base
+log false
+special quantity
+name MBit/sec
+end_<yAxisUnits>
+end_<plot>
+end_<graph>
+begin_<graph> 
+Title Ground Nodes (#1) --> UAV-I : Throughput
+Xlabel Receiver
+Ylabel Throughput
+type rectangular
+LegendPos 4
+xgrid 2
+ygrid 2
+rgrid 2
+tgrid 2
+autoxmin 1
+autoxmax 1
+autoymin 1
+autoymax 1
+autormin 1
+autormax 1
+autofmin 1
+autofmax 1
+xmin 0.000000e+00 
+xmax 3.000000e+02 
+actualxmin 0.000000000000
+actualxmax 300.000000000000
+ymin 0.000000e+00 
+ymax 2.000000e+01 
+rmin 0.000000e+00 
+rmax 2.000000e+01 
+actualymin 0.000000000000
+actualymax 20.000000000000
+actualrmin 0.000000000000
+actualrmax 18.336000442505
+fmin 0.0 
+fmax 1.0 
+bgcolor 255 255 255
+gridcolor 128 128 128
+labelcolor 0 0 0
+begin_<plot> 
+filename ./odin-uav-mobility/GU Decode Link/SLC.tp2.t001_01.r003.p2m
+value Throughput
+axis Receiver number
+legend Ground Nodes (#1) --> UAV-I : Throughput
+linetype lines
+color 255 0 0
+begin_<xAxisUnits> 
+base meters
+option base
+log false
+special quantity
+end_<xAxisUnits>
+begin_<yAxisUnits> 
+base meters
+option base
+log false
+special quantity
+name MBit/sec
+end_<yAxisUnits>
+end_<plot>
+end_<graph>
+begin_<graph> 
+Title Ground Nodes (#1) --> UAV-I : Throughput
+Xlabel Distance
+Ylabel Throughput
+type rectangular
+LegendPos 4
+xgrid 2
+ygrid 2
+rgrid 2
+tgrid 2
+autoxmin 1
+autoxmax 1
+autoymin 1
+autoymax 1
+autormin 1
+autormax 1
+autofmin 1
+autofmax 1
+xmin 0.000000e+00 
+xmax 1.500000e+03 
+actualxmin 0.000000000000
+actualxmax 1500.000000000000
+ymin 0.000000e+00 
+ymax 2.000000e+01 
+rmin 0.000000e+00 
+rmax 2.000000e+01 
+actualymin 0.000000000000
+actualymax 20.000000000000
+actualrmin 0.000000000000
+actualrmax 18.336000442505
+fmin 0.0 
+fmax 1.0 
+bgcolor 255 255 255
+gridcolor 128 128 128
+labelcolor 0 0 0
+begin_<plot> 
+filename ./odin-uav-mobility/GU Decode Link/SLC.tp2.t001_01.r003.p2m
+value Throughput
+axis Distance
+legend Ground Nodes (#1) --> UAV-I : Throughput
+linetype lines
+color 255 0 0
+begin_<xAxisUnits> 
+base meters
+option base
+log false
+end_<xAxisUnits>
+begin_<yAxisUnits> 
+base meters
+option base
+log false
+special quantity
+name MBit/sec
+end_<yAxisUnits>
+end_<plot>
+end_<graph>
+begin_<graph> 
+Title Ground Nodes (#1) --> UAV-I : Throughput
+Xlabel Receiver
+Ylabel Throughput
+type rectangular
+LegendPos 4
+xgrid 2
+ygrid 2
+rgrid 2
+tgrid 2
+autoxmin 1
+autoxmax 1
+autoymin 1
+autoymax 1
+autormin 1
+autormax 1
+autofmin 1
+autofmax 1
+xmin 0.000000e+00 
+xmax 3.000000e+02 
+actualxmin 0.000000000000
+actualxmax 300.000000000000
+ymin 0.000000e+00 
+ymax 2.000000e+01 
+rmin 0.000000e+00 
+rmax 2.000000e+01 
+actualymin 0.000000000000
+actualymax 20.000000000000
+actualrmin 0.000000000000
+actualrmax 18.336000442505
+fmin 0.0 
+fmax 1.0 
+bgcolor 255 255 255
+gridcolor 128 128 128
+labelcolor 0 0 0
+begin_<plot> 
+filename ./odin-uav-mobility/GU Decode Link/SLC.tp2.t001_01.r003.p2m
+value Throughput
+axis Receiver number
+legend Ground Nodes (#1) --> UAV-I : Throughput
+linetype lines
+color 255 0 0
+begin_<xAxisUnits> 
+base meters
+option base
+log false
+special quantity
+end_<xAxisUnits>
+begin_<yAxisUnits> 
+base meters
+option base
+log false
+special quantity
+name MBit/sec
+end_<yAxisUnits>
+end_<plot>
+end_<graph>
+begin_<graph> 
+Title UAV-I (#12) --> Base Station : Throughput
+Xlabel Distance
+Ylabel Throughput
+type rectangular
+LegendPos 4
+xgrid 2
+ygrid 2
+rgrid 2
+tgrid 2
+autoxmin 1
+autoxmax 1
+autoymin 1
+autoymax 1
+autormin 1
+autormax 1
+autofmin 1
+autofmax 1
+xmin -1.500000e+02 
+xmax 5.000000e+02 
+actualxmin -150.000000000000
+actualxmax 500.000000000000
+ymin -2.000000e+00 
+ymax 2.000000e+00 
+rmin -2.000000e+00 
+rmax 2.000000e+00 
+actualymin -2.000000000000
+actualymax 2.000000000000
+actualrmin 0.000000000000
+actualrmax 0.000000000000
+fmin 0.0 
+fmax 1.0 
+bgcolor 255 255 255
+gridcolor 128 128 128
+labelcolor 0 0 0
+begin_<plot> 
+filename ./odin-uav-mobility/UB Forward Link/SLC.tp2.t012_03.r002.p2m
+value Throughput
+axis Distance
+legend UAV-I (#12) --> Base Station : Throughput
+linetype points
+color 255 0 0
+begin_<xAxisUnits> 
+base meters
+option base
+log false
+end_<xAxisUnits>
+begin_<yAxisUnits> 
+base meters
+option base
+log false
+special quantity
+name MBit/sec
+end_<yAxisUnits>
+end_<plot>
+end_<graph>
+begin_<graph> 
+Title UAV-I (#1) --> Base Station : Throughput
+Xlabel Distance
+Ylabel Throughput
+type rectangular
+LegendPos 4
+xgrid 2
+ygrid 2
+rgrid 2
+tgrid 2
+autoxmin 1
+autoxmax 1
+autoymin 1
+autoymax 1
+autormin 1
+autormax 1
+autofmin 1
+autofmax 1
+xmin -2.000000e+02 
+xmax 6.000000e+02 
+actualxmin -200.000000000000
+actualxmax 600.000000000000
+ymin -2.000000e+00 
+ymax 2.000000e+00 
+rmin -2.000000e+00 
+rmax 2.000000e+00 
+actualymin -2.000000000000
+actualymax 2.000000000000
+actualrmin 0.000000000000
+actualrmax 0.000000000000
+fmin 0.0 
+fmax 1.0 
+bgcolor 255 255 255
+gridcolor 128 128 128
+labelcolor 0 0 0
+begin_<plot> 
+filename ./odin-uav-mobility/UB Forward Link/SLC.tp2.t001_03.r002.p2m
+value Throughput
+axis Distance
+legend UAV-I (#1) --> Base Station : Throughput
+linetype points
+color 255 0 0
+begin_<xAxisUnits> 
+base meters
+option base
+log false
+end_<xAxisUnits>
+begin_<yAxisUnits> 
+base meters
+option base
+log false
+special quantity
+name MBit/sec
+end_<yAxisUnits>
+end_<plot>
+end_<graph>
+begin_<graph> 
+Title Ground Nodes (#9) --> UAV-I : Path loss
+Xlabel Distance
+Ylabel Path Loss
+type rectangular
+LegendPos 4
+xgrid 2
+ygrid 2
+rgrid 2
+tgrid 2
+autoxmin 1
+autoxmax 1
+autoymin 1
+autoymax 1
+autormin 1
+autormax 1
+autofmin 1
+autofmax 1
+xmin 0.000000e+00 
+xmax 1.500000e+03 
+actualxmin 0.000000000000
+actualxmax 1500.000000000000
+ymin 0.000000e+00 
+ymax 3.000000e+02 
+rmin 0.000000e+00 
+rmax 3.000000e+02 
+actualymin 0.000000000000
+actualymax 300.000000000000
+actualrmin 72.302398681641
+actualrmax 250.000000000000
+fmin 0.0 
+fmax 1.0 
+bgcolor 255 255 255
+gridcolor 128 128 128
+labelcolor 0 0 0
+begin_<plot> 
+filename ./odin-uav-mobility/SLC.pl.t009_01.r003.p2m
+value Path Loss
+axis Distance
+legend Ground Nodes (#9) --> UAV-I : Path loss
+linetype lines
+color 255 0 0
+begin_<xAxisUnits> 
+base meters
+option base
+log false
+end_<xAxisUnits>
+begin_<yAxisUnits> 
+base meters
+option base
+log true
+special ratio
+end_<yAxisUnits>
+end_<plot>
+end_<graph>
+begin_<graph> 
+Title Ground Nodes (#3) --> UAV-I : Delay spread
+Xlabel Receiver
+Ylabel Delay spread
+type rectangular
+LegendPos 4
+xgrid 2
+ygrid 2
+rgrid 2
+tgrid 2
+autoxmin 1
+autoxmax 1
+autoymin 1
+autoymax 1
+autormin 1
+autormax 1
+autofmin 1
+autofmax 1
+xmin 0.000000e+00 
+xmax 3.000000e+02 
+actualxmin 0.000000000000
+actualxmax 300.000000000000
+ymin 0.000000e+00 
+ymax 1.000000e-06 
+rmin 0.000000e+00 
+rmax 1.000000e-06 
+actualymin 0.000000000000
+actualymax 0.000001000000
+actualrmin 0.000000000000
+actualrmax 0.000000133661
+fmin 0.0 
+fmax 1.0 
+bgcolor 255 255 255
+gridcolor 128 128 128
+labelcolor 0 0 0
+begin_<plot> 
+filename ./odin-uav-mobility/SLC.spread.t003_01.r003.p2m
+value Delay spread
+axis Receiver number
+legend Ground Nodes (#3) --> UAV-I : Delay spread
+linetype lines
+color 255 0 0
+begin_<xAxisUnits> 
+base meters
+option base
+log false
+special quantity
+end_<xAxisUnits>
+begin_<yAxisUnits> 
+base seconds
+option base
+log false
+end_<yAxisUnits>
+end_<plot>
+end_<graph>
+begin_<requests> 
+cartesian
+sealevel
+local
+CalculationMode New
+MaxRenderedPaths 25
+FieldAnimationIncrement 10
+FieldAnimationTimeAveraged yes
+CEF no
+ComplexImpulseResponse no
+DelaySpread yes
+FieldAnimation no
+DirectionOfArrival no
+DirectionOfDeparture no
+ElectricFieldVsFrequency no
+ElectricFieldVsTime no
+EMFields no
+FSPathloss yes
+FSPower no
+InputData no
+MeanDirectionOfArrival no
+MeanDirectionOfDeparture no
+MeanTimeOfArrival no
+Pathloss yes
+Paths yes
+Power yes
+PowerDelayProfile yes
+TimeOfArrival no
+XPathloss no
+TerrainProfile no
+end_<requests>
+begin_<Scales> 
+begin_<MpeThreshhold> 
+AutoScaling 0
+DrawValues 0
+AutoUpdating 0
+Discrete 1
+UseGlobalOpacity 1
+ManualValuesSet 1
+ClampedHigh 1
+ClampedLow 1
+Alpha 1.000e+00
+ManualMin 0.000e+00
+ManualMax 2.000e+02
+TextColor 1.000 1.000 1.000
+Colors 4
+0.300 0.000 0.500
+0.000 1.000 0.000
+1.000 1.000 0.000
+1.000 0.000 0.000
+PartitionValues 
+3
+0.001 50.000 100.000 
+end_<MpeThreshhold>
+end_<Scales>
+end_<project>

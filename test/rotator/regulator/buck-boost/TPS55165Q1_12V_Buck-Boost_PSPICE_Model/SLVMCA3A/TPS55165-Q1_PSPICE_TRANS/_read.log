@@ -1,0 +1,7 @@
+=============================
+Problems encountered while reading "" Read: Fri Apr 16 15:28:16 2021
+-----------------------------
+
+Error: The constraint manager dictionary cannot be found. Make sure it is present in the Cadence SPB hierarchy (c:\cadence\pspiceti), share/pcb/consmgr/techedt.mcf
+             Section read operation aborted
+

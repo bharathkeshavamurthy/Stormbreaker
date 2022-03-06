@@ -1,0 +1,34 @@
+# <Transmitter Set: Tx: 3 UAV-I - Point 54> 
+# <Receiver Set: Rx: 2 Base Station > 
+# <number of receiver points>
+# <receiver point number> <number of paths for this point>
+#	rx pt summary:
+#	<received power (dBm)>
+#	<mean time of arrival (sec)>
+#	<delay spread (sec)>
+#		path summary:
+#		<path number>
+#		<total interactions for path> (not including Tx and Rx)
+#		<received power(dBm)>
+#		<phase(deg)>
+#		<time of arrival(sec)>
+#		<arrival theta(deg)>
+#		<arrival phi(deg)>
+#		<departure theta(deg)>
+#		<departure phi(deg)>
+#			interactions summary:
+#			<interaction description> (Tx:transmitter, Rx:receiver, T:transmission, R:reflection, D:diffraction)
+#			<cartesian locations of interactions> (including Tx and Rx)
+1
+1 2
+-61.9013 3.39051e-07 4.08001e-08
+1 1 -64.5185 0.103026 3.57899e-07 82.7686 -19.2342 97.2314 -92.2987
+Tx-R-Rx 
+-811.541 -51.5995 130.107
+-814.559 -126.779 120.56
+-843.989 -116.511 116.605
+2 1 -71.2266 -48.2862 2.5073e-07 75.4991 63.6942 71.6996 -118.371
+Tx-R-Rx 
+-811.541 -51.5995 130.107
+-815.788 -59.4649 133.063
+-843.989 -116.511 116.605

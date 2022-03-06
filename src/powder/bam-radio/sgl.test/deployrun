@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+[ $# -ge 4 ] || { echo "usage: $(basename $0) SGLPREF start-node-# stop-node-# build" 1>&2; exit 1; }
+
+SGLPREF=$1
+START=$2
+STOP=$3
+BUILD=$4
+
+cd ${SGLPREF}build$BUILD || exit 1
+make bamradio -j16 || exit 1
+
+for ((i=$START;i<=$STOP;i++)); do
+  echo "Running on radio$i"
+  DSTID=$((i+1))
+  if [ $DSTID -gt $STOP ]; then DSTID=$((DSTID+START-STOP-1)); fi
+  DSTID2=$((DSTID+1))
+  if [ $DSTID2 -gt $STOP ]; then DSTID2=$((DSTID2+START-STOP-1)); fi
+  ssh -f radio$i ${SGLPREF}bam-radio/sgl.test/run $SGLPREF $i $DSTID $DSTID2 $BUILD || exit 1
+done

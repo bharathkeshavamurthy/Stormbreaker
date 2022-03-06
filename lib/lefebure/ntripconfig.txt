@@ -1,0 +1,5 @@
+﻿NTRIP Caster=rtgpsout.unavco.org
+NTRIP Caster Port=2101
+NTRIP Username=bkeshavamurthy
+NTRIP Password=FTJRNULd
+NTRIP MountPoint=P088_RTCM3

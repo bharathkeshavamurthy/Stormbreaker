@@ -1,0 +1,55 @@
+root@bam-radio:~# export PATH=/usr/local/cuda-11.4/bin${PATH:+:${PATH}}
+root@bam-radio:~# export LD_LIBRARY_PATH=/usr/local/cuda-11.4/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+root@bam-radio:~# source ~/.bashrc
+root@bam-radio:~# export PATH=/usr/local/cuda-11.4/bin${PATH:+:${PATH}}
+root@bam-radio:~# export LD_LIBRARY_PATH=/usr/local/cuda-11.4/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+root@bam-radio:~# sudo ldconfig
+root@bam-radio:~# cd ~/workspaces/bam-radio/controller/build/
+root@bam-radio:~/workspaces/bam-radio/controller/build# ls
+root@bam-radio:~/workspaces/bam-radio/controller/build# cmake ../ -DLZ4_INCLUDE_DIR=/snap/lz4/3/usr/local/include/ -DLZ4_LIBRARY=/snap/bin/lz4
+-- The CXX compiler identification is GNU 9.3.0
+-- The CUDA compiler identification is NVIDIA 11.4.120
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Check for working CUDA compiler: /usr/local/cuda-11.4/bin/nvcc
+-- Check for working CUDA compiler: /usr/local/cuda-11.4/bin/nvcc -- works
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake (found suitable version "1.71.0", minimum required is "1.58") found components: system program_options thread unit_test_framework filesystem serialization
+-- Found LOG4CPP: /usr/local/lib/liblog4cpp.so
+-- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.1")
+-- Checking for module 'gmp'
+--   Found gmp, version 6.2.0
+-- Found GMP: /usr/lib/x86_64-linux-gnu/libgmpxx.so
+-- Using GMP.
+-- Found MPLIB: /usr/lib/x86_64-linux-gnu/libgmpxx.so
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake (found suitable version "1.71.0", minimum required is "1.71.0") found components: date_time program_options filesystem system regex thread unit_test_framework
+-- Found Volk: Volk::volk
+-- User set python executable /usr/bin/python3
+-- Found PythonInterp: /usr/bin/python3 (found version "3.8.10")
+-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.8.so (found suitable exact version "3.8.10")
+-- Checking for module 'thrift'
+--   Found thrift, version 0.13.0
+-- Python checking for Thrift - found
+-- Found THRIFT: /usr/lib/x86_64-linux-gnu/libthrift.so
+-- Found UHD: /usr/local/lib/libuhd.so
+-- Checking for module 'fftw3f >= 3.0'
+--   Found fftw3f , version 3.3.8
+-- Found FFTW3f: /usr/lib/x86_64-linux-gnu/libfftw3f.so
+-- Found Protobuf: /usr/local/lib/libprotobuf.so;-lpthread (found version "3.8.0")
+-- Checking for module 'libzmq'
+--   Found libzmq, version 4.3.2
+-- Found ZeroMQ: /usr/lib/x86_64-linux-gnu/libzmq.so (Required is at least version "4.0")
+-- Checking for one of the modules 'libgps'
+-- GPSD_LIBRARIES: gps
+-- Found ECL: /usr/local/lib/libecl.so
+-- Found Threads: TRUE
+-- Found CUDA: /usr/local/cuda-11.4 (found version "11.4")
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /root/workspaces/bam-radio/controller/build
+root@bam-radio:~/workspaces/bam-radio/controller/build#

@@ -1,0 +1,117 @@
+Realms module
+*************
+
+This script details the operations at the Centralized Python
+Controller that handles:
+
+   a. The registration and de-registration of XXRealm Python
+   Controllers–along with their operational access rights
+   authentication and subscription filtration tasks;
+
+   b. The control operations related to the global frameworks employed
+   in Project Odin, i.e., Zookeeper startup, Kafka server startup,
+   Kafka topics creation, Zookeeper status check, Kafka server status
+   check, etc.
+
+DESIGN NOTE: For optimal deployment, this Centralized Realms Python
+Controller is restricted to run only on Linux.
+
+Author: Bharath Keshavamurthy <bkeshava@purdue.edu>
+
+Organization: School of Electrical & Computer Engineering, Purdue
+University, West Lafayette, IN.
+
+Copyright (c) 2021. All Rights Reserved.
+
+class Realms.Realms
+
+   Bases: "object"
+
+   A Singleton class encapsulating the centralized control operations
+   for Project Odin
+
+   async exposed_controllers_count() -> int
+
+      Get the number of registered XXRealm Python Controllers in this
+      deployment of Project Odin
+
+      Returns: the number of registered XXRealm Python Controllers in
+      this deployment of Project Odin
+
+   async exposed_get_allowed_publishers(controller_uid: str) -> List[str]
+
+      Get the allowed publishers for an XXRealm Python Controller
+      referenced by its UID
+
+      Parameters:
+         **controller_uid** – The unique identifier of the XXRealm
+         Python Controller
+
+      Returns: The allowed publishers for an XXRealm Python Controller
+      referenced by its UID
+
+   async exposed_get_association(data_type: Raven.DataTypes) -> Any
+
+      Get the Kafka API routine association for the specified
+      data_type
+
+      Parameters:
+         **data_type** – The DataType enumeration member corresponding
+         to which a Kafka API routine in Project Odin is to be
+         returned
+
+      Returns: The Kafka API routine in Project Odin corresponding to
+      the provided DataType enumeration member
+
+   async static exposed_get_topic(controller: Forge.Controller, data_type: Raven.DataTypes) -> Raven.KafkaTopics
+
+      Get the Kafka topic for the XXRealm Python Controller associated
+      with the provided registration_key
+
+      Parameters:
+         * **controller** – The registered controller implementation
+           requesting a Kafka topic for its publishes
+
+         * **data_type** – The type of data being published by this
+           registered referenced XXRealm Python Controller
+
+      Returns: The Kafka topic for the registered referenced XXRealm
+      Python Controller’s publishes of the specified
+         data_type
+
+      Raises:
+         **XXRealmPythonControllerNotRegisteredError** – This
+         exception is raised when accesses are made to core methods
+         in an unregistered XXRealm Python Controller.
+
+   async exposed_register(controller: Forge.Controller, data_type_associations: dict, callback: Optional[Any] = None) -> None
+
+      Register a controller implementation instance with this
+      Centralized Realms Python Controller
+
+      DESIGN NOTE: The scalability of this code is unlimited
+      horizontally within each realm, while there is no need
+         for vertical scalability because the number of realms will be
+         a very small number (max 5).
+
+      Parameters:
+         * **controller** – The controller implementation instance to
+           be registered
+
+         * **data_type_associations** – The data type associations in
+           Project Odin (these are global and cannot be overwritten
+           during registration)
+
+         * **callback** – The callback routine in the XXRealm Python
+           Controller which will be triggered post-registration
+
+      Raises:
+         **InvalidControllerConfiguration** – This exception is raised
+         when invalid configurations are received for the     XXRealm
+         Python Controller that is to be registered.
+
+   static get_realms()
+
+      Instance access method for this Singleton
+
+      Returns: The ONE and ONLY instance of this Realms Controller

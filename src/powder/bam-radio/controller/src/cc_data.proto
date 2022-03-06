@@ -1,0 +1,103 @@
+syntax = "proto3";
+
+package CCDataPb;
+
+//
+// Channel Info -- DEPRECATED, keep for logging
+//
+message ChannelInfo {
+  float center_offset_hz = 1;
+  uint32 waveform_id = 2;
+  float attenuation_db = 3;
+  bool silent = 4; // silent mode
+
+  // add this to retro-fit GUI logs
+  uint32 channel_id = 5;
+}
+
+//
+// Transmit assignments -- keep synced with discrete_channels.h
+//
+message TransmitAssignmentMsg {
+  uint32 bw_idx = 1;
+  uint32 chan_idx = 2;
+  int32 chan_ofst = 3;
+  float atten = 4;
+  bool silent = 5;
+}
+
+message CCDataMsg {
+  //
+  // housekeeping
+  //
+  uint32 src_srnid = 1;
+  uint64 seq_num = 2;
+
+  // SRNIDs
+  repeated uint32 srnids = 3;
+
+  //
+  // Channel Info
+  //
+  map<uint32, TransmitAssignmentMsg> transmit_assignment = 4;
+  fixed32 channel_last_update = 5;
+  uint64 t_channel_effective = 6;
+
+  // Channel Overlap Info
+  map<uint32, bool> channel_overlapped = 8;
+  fixed32 overlapped_last_update = 9;
+
+  //
+  // Node Info
+  //
+  message NodeInfo {
+    // Gateway
+    bool gateway = 1;
+
+    // Rx list
+    repeated uint32 rx_srnids = 2;
+    fixed32 rx_srnids_last_update = 3;
+
+    // Link state
+    message LinkState {
+      float fer = 2;        /// Frame error eate
+      uint32 mcs_req = 3;   /// ofdm::MCS::Name
+      uint32 seqid_req = 4; /// ofdm::SeqID::ID
+      float offered_traffic_rate = 5;
+    }
+    map<uint32, LinkState> link_state = 4; /// Tx SRNID and LSI
+
+    float tx_duty_cycle = 5;    /// Current transmit duty cycle
+    uint64 tx_duty_cycle_t = 6; /// duty cycle measurement time
+
+    // Location
+    float latitude = 7;  /// latitude in decimal degrees
+    float longitude = 8; /// longitude in decimal degrees
+    float elevation = 9; /// meters above sea level
+
+    // Flows
+    message OfferedFlowInfo {
+      uint32 src_srnid = 1;
+      uint32 dst_srnid = 2;
+    }
+    message TxFlowInfo { uint32 bits_per_segment = 1; }
+    message DeliveredFlowInfo {
+      float scalar_performance = 1;
+      uint32 point_value = 2;
+      uint32 mps = 3;
+    }
+    map<uint32, TxFlowInfo> tx_flows = 10;
+    map<uint32, OfferedFlowInfo> offered_flows = 11;
+    map<uint32, DeliveredFlowInfo> delivered_flows = 12;
+
+    // Timestamp
+    fixed32 last_update = 13;
+  }
+  map<uint32, NodeInfo> node_list = 7;
+}
+
+// log ofdm params update events
+message ChannelParamsUpdateInfo {
+  repeated ChannelInfo channel_info = 1;
+  fixed32 channel_last_update = 2;
+}

@@ -1,0 +1,227 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>RxRealm module &mdash; Odin v21.01 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Odin
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">RxRealm module</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Odin</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>RxRealm module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/RxRealm.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-RxRealm">
+<span id="rxrealm-module"></span><h1>RxRealm module<a class="headerlink" href="#module-RxRealm" title="Permalink to this headline">¶</a></h1>
+<p>This script describes the operations performed by the controller at Rx side of the Odin channel statistics
+measurement campaign. The operations performed by this controller include:</p>
+<blockquote>
+<div><p>a. Receive the custom NMEA-formatted location messages from the microcontroller over the USB/BT serial COM port
+(SerialUSB/SerialBT): (The Rx uC-based (RxController.ino) operations are detailed below)</p>
+<blockquote>
+<div><p>1. Use the uC-GPS parser library to parse the standard NMEA GPS messages and obtain the time, latitude,
+longitude, altitude, heading, velocity, and other metadata metrics from the getter-setter methods within
+this library; and</p>
+<p>2. Using these extracted data values construct a custom NMEA-formatted message (start with $ and the ordered
+data values are comma-separated) and publish it to the USB/BT serial COM port within the Rx uC-based code
+(SerialUSB/SerialBT)</p>
+</div></blockquote>
+<p>b. Parse the received custom NMEA-formatted location messages to populate a JSON data object which would next be
+encapsulated in an ODIN_GPS_EVENT; and</p>
+<ol class="loweralpha simple" start="3">
+<li><p>Publish the created ODIN_GPS_EVENT to the Kafka topic ODIN_GPS_EVENTS.</p></li>
+</ol>
+</div></blockquote>
+<p>DESIGN NOTE: The RTCM correction stream is sent to the GPS module from an NTRIP client (Lefebure Windows Client) over
+another Bluetooth link with the same BT module.</p>
+<p>Author: Bharath Keshavamurthy &lt;<a class="reference external" href="mailto:bkeshava&#37;&#52;&#48;purdue&#46;edu">bkeshava<span>&#64;</span>purdue<span>&#46;</span>edu</a>&gt;</p>
+<p>Organization: School of Electrical &amp; Computer Engineering, Purdue University, West Lafayette, IN.</p>
+<p>Copyright (c) 2021. All Rights Reserved.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Bharath Keshavamurthy.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

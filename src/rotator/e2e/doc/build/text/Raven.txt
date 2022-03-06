@@ -1,0 +1,397 @@
+Raven module
+************
+
+This script defines the following dataclasses used for inter-system OR
+inter-module communication in Project Odin:
+
+   1. ODIN_GPS_EVENT (GPSEvent contract between the TxRealm and the
+      RxRealm Python Controllers);
+
+   2. BIFROST (SerialCommConfig for data transfer between the uC and
+      the TxRealm/RxRealm Python Controllers); and
+
+   3. HEIMDALL (KafkaConfig for publish/subscribe between the TxRealm
+      and RxRealm Python Controllers).
+
+Author: Bharath Keshavamurthy <bkeshava@purdue.edu>
+
+Organization: School of Electrical & Computer Engineering, Purdue
+University, West Lafayette, IN.
+
+Copyright (c) 2021. All Rights Reserved.
+
+class Raven.CarrierSolutionType(value)
+
+   Bases: "enum.Enum"
+
+   An enumeration listing all possible carrier solution-types
+   supported by the GPS receiver
+
+   FIXED_SOLUTION = 2
+
+   FLOAT_SOLUTION = 1
+
+   NO_SOLUTION = 0
+
+class Raven.CommEvent
+
+   Bases: "object"
+
+   Primary information tier in CommEvent
+
+   The CommEvent class: ODIN_COMM_EVENT communicated over the
+   ODIN_COMM_EVENTS Kafka topic encapsulates this data object
+
+class Raven.ControlEvent
+
+   Bases: "object"
+
+   Primary information tier in ControlEvent
+
+   The ControlEvent class: ODIN_CONTROL_EVENT communicated over the
+   ODIN_CONTROL_EVENTS Kafka topic encapsulates this data object
+
+class Raven.ControllerMandate(data_type: Raven.DataTypes, production_topic: Raven.KafkaTopics, consumption_topic: Raven.KafkaTopics, production_routine: Any, consumption_routine: Any, allowed_producers: list)
+
+   Bases: "object"
+
+   A Message Oriented Middleware (Kafka MOM) framework mandate for an
+   XXRealm Python Controller in Project Odin
+
+   allowed_producers: list
+
+   consumption_routine: Any
+
+   consumption_topic: Raven.KafkaTopics
+
+   data_type: Raven.DataTypes
+
+   production_routine: Any
+
+   production_topic: Raven.KafkaTopics
+
+class Raven.DataTypes(value)
+
+   Bases: "enum.Enum"
+
+   An enumeration listing the various types of data exchanged among
+   realms in Project Odin
+
+   COMM = 'COMM'
+
+   CTRL = 'CONTROL'
+
+   GPS = 'GPS'
+
+class Raven.FixType(value)
+
+   Bases: "enum.Enum"
+
+   An enumeration listing all possible fix-types supported by the GPS
+   receiver
+
+   DEAD_RECKONING = 1
+
+   GNSS = 4
+
+   NO_FIX = 0
+
+   THREE_DIMENSIONAL = 3
+
+   TIME_FIX = 5
+
+   TWO_DIMENSIONAL = 2
+
+class Raven.GPSEvent(seq_number: int = 0, timestamp: datetime.datetime = datetime.datetime(2021, 3, 5, 19, 22, 47, 948539), is_gnss_fix_ok: bool = False, siv: int = 0, fix_type: Raven.FixType = <FixType.NO_FIX: 0>, carrier_solution_type: Raven.CarrierSolutionType = <CarrierSolutionType.NO_SOLUTION: 0>, latitude: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>), longitude: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>), altitude_ellipsoid: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>), altitude_msl: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>), speed: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>), heading: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>), horizontal_acc: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>), vertical_acc: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>), speed_acc: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>), heading_acc: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>), ned_north_vel: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>), ned_east_vel: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>), ned_down_vel: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>), pdop: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>), mag_acc: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>), mag_dec: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>), geometric_dop: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>), position_dop: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>), time_dop: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>), horizontal_dop: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>), vertical_dop: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>), northing_dop: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>), easting_dop: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>), horizontal_accuracy: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>), vertical_accuracy: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>))
+
+   Bases: "object"
+
+   Primary information tier in GPSEvent
+
+   The GPSEvent class: ODIN_GPS_EVENT communicated over the
+   ODIN_GPS_EVENTS Kafka topic encapsulates this data object
+
+   altitude_ellipsoid: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>)
+
+   altitude_msl: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>)
+
+   carrier_solution_type: Raven.CarrierSolutionType = 0
+
+   easting_dop: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>)
+
+   fix_type: Raven.FixType = 0
+
+   geometric_dop: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>)
+
+   heading: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>)
+
+   heading_acc: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>)
+
+   horizontal_acc: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>)
+
+   horizontal_accuracy: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>)
+
+   horizontal_dop: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>)
+
+   is_gnss_fix_ok: bool = False
+
+   latitude: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>)
+
+   longitude: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>)
+
+   mag_acc: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>)
+
+   mag_dec: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>)
+
+   ned_down_vel: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>)
+
+   ned_east_vel: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>)
+
+   ned_north_vel: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>)
+
+   northing_dop: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>)
+
+   pdop: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>)
+
+   position_dop: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>)
+
+   seq_number: int = 0
+
+   siv: int = 0
+
+   speed: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>)
+
+   speed_acc: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>)
+
+   time_dop: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>)
+
+   timestamp: datetime.datetime = datetime.datetime(2021, 3, 5, 19, 22, 47, 948539)
+
+   vertical_acc: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>)
+
+   vertical_accuracy: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>)
+
+   vertical_dop: Raven.Member = Member(is_high_precision=False, component=0.0, main_component=0.0, high_precision_component=0.0, precision=0.0, units=<Units.DIMENSIONLESS: 9>)
+
+class Raven.KafkaAPIImplPair(producer: Optional[kafka.producer.kafka.KafkaProducer] = None, consumer: Optional[kafka.consumer.group.KafkaConsumer] = None)
+
+   Bases: "object"
+
+   A dataclass encapsulating a standard Kafka API impl pair used in
+   Project Odin
+
+   consumer: kafka.consumer.group.KafkaConsumer = None
+
+   producer: kafka.producer.kafka.KafkaProducer = None
+
+class Raven.KafkaAPIs(value)
+
+   Bases: "enum.Enum"
+
+   An enumeration outlining the APIs provided by the Kafka Message
+   Oriented Middleware (MOM) framework
+
+   CONNECTOR = 3
+
+   CONSUMER = 1
+
+   PRODUCER = 0
+
+   STREAM = 2
+
+class Raven.KafkaConfig(client_id: str = 'xxx', group_id: str = 'yyy', broker_id: int = 0, acks: bool = True, bootstrap_server_config: str = 'localhost:9093', zookeeper_config: str = 'localhost:2181', retry_backoff: float = 3.0, poll_interval: float = 3.0, commit_each_poll: bool = True, auto_commit_interval: float = 0.1, use_synch_mode: bool = True, api_version: Tuple = (0, 10), auto_offset_reset: str = 'earliest', consumer_timeout: float = 0.1)
+
+   Bases: "object"
+
+   A dataclass defining the args associated with the Apache Kafka
+   publish/subscribe framework between the TxRealm and RxRealm Python
+   Controllers
+
+   acks: bool = True
+
+   api_version: Tuple = (0, 10)
+
+   auto_commit_interval: float = 0.1
+
+   auto_offset_reset: str = 'earliest'
+
+   bootstrap_server_config: str = 'localhost:9093'
+
+   broker_id: int = 0
+
+   client_id: str = 'xxx'
+
+   commit_each_poll: bool = True
+
+   consumer_timeout: float = 0.1
+
+   group_id: str = 'yyy'
+
+   poll_interval: float = 3.0
+
+   retry_backoff: float = 3.0
+
+   use_synch_mode: bool = True
+
+   zookeeper_config: str = 'localhost:2181'
+
+class Raven.KafkaTopicConfig(name: str = 'ODIN_XX_XXXX_EVENTS', partitions: int = 1, replication_factor: int = 1)
+
+   Bases: "object"
+
+   A dataclass encapsulating all the configs needed to create a Kafka
+   topic at the Centralized Realms Python Controller
+
+   name: str = 'ODIN_XX_XXXX_EVENTS'
+
+   partitions: int = 1
+
+   replication_factor: int = 1
+
+class Raven.KafkaTopics(value)
+
+   Bases: "enum.Enum"
+
+   An enumeration listing the various topics employed in Project Odin
+   within the Kafka publish/subscribe framework
+
+   DESIGN NOTES:
+      1. Publishes to Kafka topics happen based on the Realm of the
+         publisher and the type of data being communicated;
+
+      b. Subscriptions also happen based on the realm of the
+      subscriber and the type of data being communicated, but the key-
+      based message filtering for actual message consumption from the
+      subscribed topic will be done based on the allowed_publishers
+      filter; and
+
+      3. Generally, the Kafka topic to which a XXRealm Python
+         Controller subscribes to belongs to the opposite Realm.
+
+   ODIN_CONTROL_EVENTS = KafkaTopicConfig(name='ODIN_CONTROL_EVENTS', partitions=3, replication_factor=3)
+
+   ODIN_RX_COMM_EVENTS = KafkaTopicConfig(name='ODIN_RX_COMM_SAMPLES', partitions=3, replication_factor=3)
+
+   ODIN_RX_GPS_EVENTS = KafkaTopicConfig(name='ODIN_RX_GPS_EVENTS', partitions=3, replication_factor=3)
+
+   ODIN_TX_COMM_EVENTS = KafkaTopicConfig(name='ODIN_TX_COMM_SAMPLES', partitions=3, replication_factor=3)
+
+   ODIN_TX_GPS_EVENTS = KafkaTopicConfig(name='ODIN_TX_GPS_EVENTS', partitions=3, replication_factor=3)
+
+Raven.MOM_PROPERTIES
+
+   alias of "Raven.MOMProperties"
+
+Raven.MOM_ROUTINE_PAIR
+
+   Enumerations and Dataclasses relevant to the Kafka Message Oriented
+   Middleware (MOM) framework’s API calls within XXRealm Python
+   Controllers
+
+   alias of "Raven.MOMRoutinePair"
+
+class Raven.Member(is_high_precision: bool = False, component: float = 0.0, main_component: float = 0.0, high_precision_component: float = 0.0, precision: float = 0.0, units: Raven.Units = <Units.DIMENSIONLESS: 9>)
+
+   Bases: "object"
+
+   Secondary information tier in GPSEvent
+
+   A core member which encapsulates highly specific details about
+   latitude, longitude, altitude, speed, heading, and other components
+   in the primary information tier of GPSEvent
+
+   component: float = 0.0
+
+   high_precision_component: float = 0.0
+
+   is_high_precision: bool = False
+
+   main_component: float = 0.0
+
+   precision: float = 0.0
+
+   units: Raven.Units = 9
+
+class Raven.Mobility(value)
+
+   Bases: "enum.Enum"
+
+   An enumeration listing the mobility configurations of the Tx in
+   Project Odin
+
+   CONTINUOUS_DRONE = 2
+
+   CONTINUOUS_ROVER = 1
+
+   DISCONTINUOUS_DRONE = 4
+
+   DISCONTINUOUS_ROVER = 3
+
+   IMMOBILE = 0
+
+Raven.PIPELINE_INTERNAL_CAPSULE
+
+   alias of "Raven.PipelineInternalCapsule"
+
+class Raven.RealmTypes(value)
+
+   Bases: "enum.Enum"
+
+   An enumeration listing the various supported Realm Types (Node
+   Types) in Project Odin
+
+   AGGREGATOR = 'Agg'
+
+   GATEWAY = 'Gw'
+
+   RECEPTION = 'Rx'
+
+   REPEATER = 'Rp'
+
+   TRANSMISSION = 'Tx'
+
+class Raven.SerialCommConfig(id: str = 'xxx', is_wireless: bool = False, port: str = 'COMx', baud_rate: int = 9600, timeout: float = 0.1, sleep_duration: float = 0.1)
+
+   Bases: "object"
+
+   A dataclass defining the args associated with the serial
+   communication interface between the uC and TxRealm/RxRealm Python
+   Controllers
+
+   baud_rate: int = 9600
+
+   id: str = 'xxx'
+
+   is_wireless: bool = False
+
+   port: str = 'COMx'
+
+   sleep_duration: float = 0.1
+
+   timeout: float = 0.1
+
+class Raven.Units(value)
+
+   Bases: "enum.Enum"
+
+   An enumeration listing all possible units for GPSEvent members
+
+   CENTIMETERS = 1
+
+   DEGREES = 3
+
+   DIMENSIONLESS = 9
+
+   FEET = 7
+
+   INCHES = 6
+
+   METERS = 0
+
+   MILLIMETERS = 2
+
+   MINUTES = 4
+
+   SECONDS = 5
+
+   YARDS = 8

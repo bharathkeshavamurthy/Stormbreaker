@@ -1,0 +1,8 @@
+An aluminum base mount (10" x 10" x 0.5") for our ServoCity PT785-S Pan & Tilt rotating platform--used for collecting channel measurements, propagation data, as well as testing our beam-tracking and beam-alignment algorithms in mmWave networks. 
+The features of the aluminum base mount are:
+1. Four 1/4-20 threaded holes at the four corners of the plate (to screw four heavy-duty magnet mounts which will be used to fasten our setup to the rooftop of a car), 
+2. A 3/8-16 threaded hole at the center of the plate (to place a 3/8-16 screw connecting the plate to the PT785-S platform), 
+3. Four 1/4-20 threaded holes surrounding the 3/8-16 hole at the center in a circular pattern (to place four 1/4-20 screws connecting the plate to the PT785-S platform), and 
+4. Four 6-32 threaded holes surrounding the 3/8-16 hole at the center in a circular pattern (to place four 6-32 screws connecting the plate to the PT785-S platform). 
+
+CAD and CAM models developed in Autodesk Fusion 360.

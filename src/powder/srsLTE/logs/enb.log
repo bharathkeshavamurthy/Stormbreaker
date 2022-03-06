@@ -1,0 +1,152 @@
+
+
+Built in Release mode using commit d045213fb on branch HEAD.
+21:58:43.101552 [MAC ] [W] [ 6053] SCHED: discarding TB 0 pid=5, tti=6053, maximum number of retx exceeded (4)
+21:58:43.301437 [MAC ] [W] [ 6253] SCHED: discarding TB 0 pid=5, tti=6253, maximum number of retx exceeded (4)
+21:58:53.561337 [RLC ] [W] Lost PDU SN: 0
+21:59:14.561351 [MAC ] [W] [ 6793] SCHED: discarding TB 0 pid=1, tti=6793, maximum number of retx exceeded (4)
+21:59:15.641387 [RLC ] [W] Lost PDU SN: 22
+21:59:15.641399 [RLC ] [W] PDU SN=22 lost, stop reassambling SDU (vr_ur_in_rx_sdu=21)
+21:59:17.630219 [MAC ] [W] [ 9862] SCHED: discarding TB 0 pid=0, tti=9858, maximum number of retx exceeded (4)
+21:59:50.741467 [MAC ] [W] [ 2013] SCHED: discarding TB 0 pid=5, tti=2013, maximum number of retx exceeded (4)
+21:59:51.801402 [RLC ] [W] Lost PDU SN: 58
+21:59:51.801414 [RLC ] [W] PDU SN=58 lost, stop reassambling SDU (vr_ur_in_rx_sdu=57)
+21:59:57.781519 [MAC ] [W] [ 9053] SCHED: discarding TB 0 pid=5, tti=9053, maximum number of retx exceeded (4)
+21:59:58.801527 [MAC ] [W] [10073] SCHED: discarding TB 0 pid=1, tti=10073, maximum number of retx exceeded (4)
+21:59:59.841450 [MAC ] [W] [  873] SCHED: discarding TB 0 pid=1, tti=873, maximum number of retx exceeded (4)
+22:00:00.861457 [MAC ] [W] [ 1893] SCHED: discarding TB 0 pid=5, tti=1893, maximum number of retx exceeded (4)
+22:00:01.901391 [MAC ] [W] [ 2933] SCHED: discarding TB 0 pid=5, tti=2933, maximum number of retx exceeded (4)
+22:00:02.921397 [MAC ] [W] [ 3953] SCHED: discarding TB 0 pid=1, tti=3953, maximum number of retx exceeded (4)
+22:00:03.961410 [RLC ] [W] Lost PDU SN: 66
+22:00:03.961419 [RLC ] [W] PDU SN=66 lost, stop reassambling SDU (vr_ur_in_rx_sdu=65)
+22:00:03.994260 [MAC ] [W] [ 5026] SCHED: discarding TB 0 pid=0, tti=5022, maximum number of retx exceeded (4)
+22:00:11.990218 [MAC ] [W] [ 2782] SCHED: discarding TB 0 pid=0, tti=2778, maximum number of retx exceeded (4)
+22:00:48.090277 [MAC ] [W] [ 8162] SCHED: discarding TB 0 pid=0, tti=8158, maximum number of retx exceeded (4)
+22:01:29.190383 [MAC ] [W] [ 8302] SCHED: discarding TB 0 pid=0, tti=8298, maximum number of retx exceeded (4)
+22:01:58.261442 [MAC ] [W] [ 6653] SCHED: discarding TB 0 pid=5, tti=6653, maximum number of retx exceeded (4)
+22:01:59.286450 [MAC ] [W] [ 7678] SCHED: discarding TB 0 pid=6, tti=7678, maximum number of retx exceeded (4)
+22:02:03.261503 [MAC ] [W] [ 1413] SCHED: discarding TB 0 pid=5, tti=1413, maximum number of retx exceeded (4)
+22:02:04.297361 [RLC ] [W] Lost PDU SN: 190
+22:02:04.297373 [RLC ] [W] PDU SN=190 lost, stop reassambling SDU (vr_ur_in_rx_sdu=189)
+22:02:08.290449 [MAC ] [W] [ 6442] SCHED: discarding TB 0 pid=2, tti=6442, maximum number of retx exceeded (4)
+22:02:08.323373 [MAC ] [W] [ 6475] SCHED: discarding TB 0 pid=3, tti=6475, maximum number of retx exceeded (4)
+22:02:09.321392 [MAC ] [W] [ 7473] SCHED: discarding TB 0 pid=1, tti=7473, maximum number of retx exceeded (4)
+22:02:10.377356 [RLC ] [W] Lost PDU SN: 196
+22:02:10.377364 [RLC ] [W] PDU SN=196 lost, stop reassambling SDU (vr_ur_in_rx_sdu=195)
+22:02:13.361400 [MAC ] [W] [ 1273] SCHED: discarding TB 0 pid=1, tti=1273, maximum number of retx exceeded (4)
+22:02:14.401420 [RLC ] [W] Lost PDU SN: 200
+22:02:14.401428 [RLC ] [W] PDU SN=200 lost, stop reassambling SDU (vr_ur_in_rx_sdu=199)
+22:02:17.430351 [MAC ] [W] [ 5342] SCHED: discarding TB 0 pid=0, tti=5338, maximum number of retx exceeded (4)
+22:02:19.490284 [MAC ] [W] [ 7402] SCHED: discarding TB 0 pid=0, tti=7398, maximum number of retx exceeded (4)
+22:02:29.541467 [MAC ] [W] [ 7213] SCHED: discarding TB 0 pid=5, tti=7213, maximum number of retx exceeded (4)
+22:02:30.595373 [MAC ] [W] [ 8267] SCHED: discarding TB 0 pid=3, tti=8267, maximum number of retx exceeded (4)
+22:02:30.597436 [RLC ] [W] Lost PDU SN: 216
+22:02:30.597449 [RLC ] [W] PDU SN=216 lost, stop reassambling SDU (vr_ur_in_rx_sdu=215)
+22:02:42.581499 [MAC ] [W] [10013] SCHED: discarding TB 0 pid=5, tti=10013, maximum number of retx exceeded (4)
+22:02:43.657380 [RLC ] [W] Lost PDU SN: 229
+22:02:43.657391 [RLC ] [W] PDU SN=229 lost, stop reassambling SDU (vr_ur_in_rx_sdu=228)
+22:02:49.666273 [MAC ] [W] [ 6858] SCHED: discarding TB 0 pid=0, tti=6854, maximum number of retx exceeded (4)
+22:02:51.661397 [MAC ] [W] [ 8853] SCHED: discarding TB 0 pid=5, tti=8853, maximum number of retx exceeded (4)
+22:02:52.741428 [RLC ] [W] Lost PDU SN: 238
+22:02:52.741440 [RLC ] [W] PDU SN=238 lost, stop reassambling SDU (vr_ur_in_rx_sdu=237)
+22:02:57.721457 [MAC ] [W] [ 4673] SCHED: discarding TB 0 pid=1, tti=4673, maximum number of retx exceeded (4)
+22:02:58.741384 [RLC ] [W] Lost PDU SN: 244
+22:02:58.741397 [RLC ] [W] PDU SN=244 lost, stop reassambling SDU (vr_ur_in_rx_sdu=243)
+22:03:01.741527 [MAC ] [W] [ 8693] SCHED: discarding TB 0 pid=5, tti=8693, maximum number of retx exceeded (4)
+22:03:02.781384 [RLC ] [W] Lost PDU SN: 248
+22:03:02.781392 [RLC ] [W] PDU SN=248 lost, stop reassambling SDU (vr_ur_in_rx_sdu=247)
+22:03:06.761497 [MAC ] [W] [ 3473] SCHED: discarding TB 0 pid=1, tti=3473, maximum number of retx exceeded (4)
+22:03:07.821526 [MAC ] [W] [ 4533] SCHED: discarding TB 0 pid=5, tti=4533, maximum number of retx exceeded (4)
+22:03:08.841548 [MAC ] [W] [ 5553] SCHED: discarding TB 0 pid=1, tti=5553, maximum number of retx exceeded (4)
+22:03:09.861551 [MAC ] [W] [ 6573] SCHED: discarding TB 0 pid=5, tti=6573, maximum number of retx exceeded (4)
+22:03:10.881542 [MAC ] [W] [ 7593] SCHED: discarding TB 0 pid=1, tti=7593, maximum number of retx exceeded (4)
+22:03:11.941329 [RLC ] [W] Lost PDU SN: 253
+22:03:11.941337 [RLC ] [W] PDU SN=253 lost, stop reassambling SDU (vr_ur_in_rx_sdu=252)
+22:03:15.921442 [MAC ] [W] [ 2393] SCHED: discarding TB 0 pid=1, tti=2393, maximum number of retx exceeded (4)
+22:03:16.981400 [RLC ] [W] Lost PDU SN: 262
+22:03:16.981413 [RLC ] [W] PDU SN=262 lost, stop reassambling SDU (vr_ur_in_rx_sdu=261)
+22:03:18.981457 [MAC ] [W] [ 5453] SCHED: discarding TB 0 pid=5, tti=5453, maximum number of retx exceeded (4)
+22:03:19.001385 [MAC ] [W] [ 5473] SCHED: discarding TB 0 pid=1, tti=5473, maximum number of retx exceeded (4)
+22:03:20.001392 [RLC ] [W] Lost PDU SN: 265
+22:03:20.001404 [RLC ] [W] PDU SN=265 lost, stop reassambling SDU (vr_ur_in_rx_sdu=264)
+22:03:33.001449 [MAC ] [W] [ 9233] SCHED: discarding TB 0 pid=1, tti=9233, maximum number of retx exceeded (4)
+22:03:34.081330 [RLC ] [W] Lost PDU SN: 279
+22:03:34.081342 [RLC ] [W] PDU SN=279 lost, stop reassambling SDU (vr_ur_in_rx_sdu=278)
+22:03:34.114360 [MAC ] [W] [  106] SCHED: discarding TB 0 pid=0, tti=102, maximum number of retx exceeded (4)
+22:03:35.081478 [MAC ] [W] [ 1073] SCHED: discarding TB 0 pid=1, tti=1073, maximum number of retx exceeded (4)
+22:03:36.101482 [MAC ] [W] [ 2093] SCHED: discarding TB 0 pid=5, tti=2093, maximum number of retx exceeded (4)
+22:03:36.141433 [RLC ] [W] Lost PDU SN: 281
+22:03:36.141439 [RLC ] [W] PDU SN=281 lost, stop reassambling SDU (vr_ur_in_rx_sdu=280)
+22:03:38.101473 [MAC ] [W] [ 4093] SCHED: discarding TB 0 pid=5, tti=4093, maximum number of retx exceeded (4)
+22:03:39.141326 [RLC ] [W] Lost PDU SN: 284
+22:03:39.141334 [RLC ] [W] PDU SN=284 lost, stop reassambling SDU (vr_ur_in_rx_sdu=283)
+22:03:49.121406 [MAC ] [W] [ 4873] SCHED: discarding TB 0 pid=1, tti=4873, maximum number of retx exceeded (4)
+22:03:50.217399 [RLC ] [W] Lost PDU SN: 295
+22:03:50.217410 [RLC ] [W] PDU SN=295 lost, stop reassambling SDU (vr_ur_in_rx_sdu=294)
+22:04:06.210377 [MAC ] [W] [ 1482] SCHED: discarding TB 0 pid=2, tti=1482, maximum number of retx exceeded (4)
+22:04:26.295481 [MAC ] [W] [ 1087] SCHED: discarding TB 0 pid=7, tti=1087, maximum number of retx exceeded (4)
+22:04:36.290291 [MAC ] [W] [  842] SCHED: discarding TB 0 pid=0, tti=838, maximum number of retx exceeded (4)
+22:05:02.321452 [MAC ] [W] [ 6393] SCHED: discarding TB 0 pid=1, tti=6393, maximum number of retx exceeded (4)
+22:05:03.361455 [RLC ] [W] Lost PDU SN: 368
+22:05:03.361467 [RLC ] [W] PDU SN=368 lost, stop reassambling SDU (vr_ur_in_rx_sdu=367)
+22:05:11.361486 [MAC ] [W] [ 5193] SCHED: discarding TB 0 pid=1, tti=5193, maximum number of retx exceeded (4)
+22:05:12.381403 [RLC ] [W] Lost PDU SN: 377
+22:05:12.381413 [RLC ] [W] PDU SN=377 lost, stop reassambling SDU (vr_ur_in_rx_sdu=376)
+22:05:23.381484 [MAC ] [W] [ 6973] SCHED: discarding TB 0 pid=5, tti=6973, maximum number of retx exceeded (4)
+22:05:24.421340 [RLC ] [W] Lost PDU SN: 389
+22:05:24.421349 [RLC ] [W] PDU SN=389 lost, stop reassambling SDU (vr_ur_in_rx_sdu=388)
+22:05:26.401486 [MAC ] [W] [ 9993] SCHED: discarding TB 0 pid=1, tti=9993, maximum number of retx exceeded (4)
+22:05:27.421406 [RLC ] [W] Lost PDU SN: 392
+22:05:27.421413 [RLC ] [W] PDU SN=392 lost, stop reassambling SDU (vr_ur_in_rx_sdu=391)
+22:05:29.401530 [MAC ] [W] [ 2753] SCHED: discarding TB 0 pid=1, tti=2753, maximum number of retx exceeded (4)
+22:05:30.441387 [RLC ] [W] Lost PDU SN: 395
+22:05:30.441394 [RLC ] [W] PDU SN=395 lost, stop reassambling SDU (vr_ur_in_rx_sdu=394)
+22:05:37.421403 [MAC ] [W] [  533] SCHED: discarding TB 0 pid=5, tti=533, maximum number of retx exceeded (4)
+22:05:38.481430 [MAC ] [W] [ 1593] SCHED: discarding TB 0 pid=1, tti=1593, maximum number of retx exceeded (4)
+22:05:39.501454 [MAC ] [W] [ 2613] SCHED: discarding TB 0 pid=5, tti=2613, maximum number of retx exceeded (4)
+22:05:40.521437 [MAC ] [W] [ 3633] SCHED: discarding TB 0 pid=1, tti=3633, maximum number of retx exceeded (4)
+22:05:41.561469 [RLC ] [W] Lost PDU SN: 403
+22:05:41.561477 [RLC ] [W] PDU SN=403 lost, stop reassambling SDU (vr_ur_in_rx_sdu=402)
+22:05:44.561432 [MAC ] [W] [ 7673] SCHED: discarding TB 0 pid=1, tti=7673, maximum number of retx exceeded (4)
+22:05:45.617403 [RLC ] [W] Lost PDU SN: 410
+22:05:45.617411 [RLC ] [W] PDU SN=410 lost, stop reassambling SDU (vr_ur_in_rx_sdu=409)
+22:05:59.610309 [MAC ] [W] [ 2242] SCHED: discarding TB 0 pid=0, tti=2238, maximum number of retx exceeded (4)
+22:06:18.641409 [MAC ] [W] [  793] SCHED: discarding TB 0 pid=1, tti=793, maximum number of retx exceeded (4)
+22:06:19.695486 [MAC ] [W] [ 1847] SCHED: discarding TB 0 pid=7, tti=1847, maximum number of retx exceeded (4)
+22:06:24.670418 [MAC ] [W] [ 6822] SCHED: discarding TB 0 pid=6, tti=6822, maximum number of retx exceeded (4)
+22:06:42.681428 [MAC ] [W] [ 4353] SCHED: discarding TB 0 pid=1, tti=4353, maximum number of retx exceeded (4)
+22:06:43.721452 [RLC ] [W] Lost PDU SN: 468
+22:06:43.721460 [RLC ] [W] PDU SN=468 lost, stop reassambling SDU (vr_ur_in_rx_sdu=467)
+22:06:45.701423 [MAC ] [W] [ 7373] SCHED: discarding TB 0 pid=5, tti=7373, maximum number of retx exceeded (4)
+22:06:46.721351 [RLC ] [W] Lost PDU SN: 471
+22:06:46.721358 [RLC ] [W] PDU SN=471 lost, stop reassambling SDU (vr_ur_in_rx_sdu=470)
+22:06:52.701452 [MAC ] [W] [ 4133] SCHED: discarding TB 0 pid=5, tti=4133, maximum number of retx exceeded (4)
+22:06:53.777351 [RLC ] [W] Lost PDU SN: 478
+22:06:53.777360 [RLC ] [W] PDU SN=478 lost, stop reassambling SDU (vr_ur_in_rx_sdu=477)
+22:07:03.910369 [MAC ] [W] [ 5102] SCHED: discarding TB 0 pid=6, tti=5102, maximum number of retx exceeded (4)
+22:07:04.901484 [MAC ] [W] [ 6093] SCHED: discarding TB 0 pid=5, tti=6093, maximum number of retx exceeded (4)
+22:07:05.981368 [RLC ] [W] Lost PDU SN: 490
+22:07:05.981376 [RLC ] [W] PDU SN=490 lost, stop reassambling SDU (vr_ur_in_rx_sdu=489)
+22:07:07.961490 [MAC ] [W] [ 9153] SCHED: discarding TB 0 pid=1, tti=9153, maximum number of retx exceeded (4)
+22:07:08.981502 [MAC ] [W] [10173] SCHED: discarding TB 0 pid=5, tti=10173, maximum number of retx exceeded (4)
+22:07:10.021352 [RLC ] [W] Lost PDU SN: 493
+22:07:10.021361 [RLC ] [W] PDU SN=493 lost, stop reassambling SDU (vr_ur_in_rx_sdu=492)
+22:07:18.021561 [MAC ] [W] [ 8973] SCHED: discarding TB 0 pid=5, tti=8973, maximum number of retx exceeded (4)
+22:07:19.041480 [RLC ] [W] Lost PDU SN: 503
+22:07:19.041487 [RLC ] [W] PDU SN=503 lost, stop reassambling SDU (vr_ur_in_rx_sdu=502)
+22:07:21.021452 [MAC ] [W] [ 1733] SCHED: discarding TB 0 pid=5, tti=1733, maximum number of retx exceeded (4)
+22:07:22.041374 [RLC ] [W] Lost PDU SN: 506
+22:07:22.041381 [RLC ] [W] PDU SN=506 lost, stop reassambling SDU (vr_ur_in_rx_sdu=505)
+22:07:23.041536 [MAC ] [W] [ 3753] SCHED: discarding TB 0 pid=1, tti=3753, maximum number of retx exceeded (4)
+22:07:24.101479 [RLC ] [W] Lost PDU SN: 508
+22:07:24.101486 [RLC ] [W] PDU SN=508 lost, stop reassambling SDU (vr_ur_in_rx_sdu=507)
+22:07:25.115435 [MAC ] [W] [ 5827] SCHED: discarding TB 0 pid=3, tti=5827, maximum number of retx exceeded (4)
+22:07:36.101462 [MAC ] [W] [ 6573] SCHED: discarding TB 0 pid=5, tti=6573, maximum number of retx exceeded (4)
+22:07:37.161420 [RLC ] [W] Lost PDU SN: 521
+22:07:37.161430 [RLC ] [W] PDU SN=521 lost, stop reassambling SDU (vr_ur_in_rx_sdu=520)
+22:07:47.170374 [MAC ] [W] [ 7402] SCHED: discarding TB 0 pid=2, tti=7402, maximum number of retx exceeded (4)
+22:07:57.161530 [MAC ] [W] [ 7153] SCHED: discarding TB 0 pid=1, tti=7153, maximum number of retx exceeded (4)
+22:07:58.237405 [RLC ] [W] Lost PDU SN: 542
+22:07:58.237415 [RLC ] [W] PDU SN=542 lost, stop reassambling SDU (vr_ur_in_rx_sdu=541)
+22:08:13.539453 [MAC ] [W] [ 3051] SCHED: discarding TB 0 pid=3, tti=3051, maximum number of retx exceeded (4)
+Closing log

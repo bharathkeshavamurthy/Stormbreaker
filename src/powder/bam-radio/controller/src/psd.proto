@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package PSDPb;
+
+message PSDMsg {
+  // Node ID
+  uint32 src_srnid = 1;
+
+  // Measurement timestamp
+  uint64 timestamp = 2;
+
+  // PSD vector
+  bytes psd = 3;
+}

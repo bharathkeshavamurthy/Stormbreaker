@@ -1,0 +1,111 @@
+TxRealm module
+**************
+
+This script describes the operations of the controller at the Tx side
+of the Odin channel statistics measurement campaign. The operations
+performed by this controller include:
+
+   1. Subscribe to the ODIN_GPS_EVENTS Kafka topic to receive the
+      JSON-based ODIN_GPS_EVENTs (Rx location msgs);
+
+   2. Parse these JSON ODIN_GPS_EVENTs to extract the (time, latitude,
+   longitude, altitude, attitude, …) “data object” collection
+   corresponding to the Rx; and
+
+   3. Determine the rotation_angle (the angle which the Tx should turn
+   to w.r.t the home_plate) and publish it (with a timestamp) to the
+   USB/BT serial monitor COM port of the microcontroller
+   (SerialUSB/SerialBT). Note that the timestamps might be
+   redundant–but, are necessary for post-operation analyses of system
+   delays/timing synchronization.
+
+DESIGN NOTE: The Tx is stationary (fixed at a mount-point) in this
+version of Odin (v21.01).
+
+Author: Bharath Keshavamurthy <bkeshava@purdue.edu>
+
+Organization: School of Electrical & Computer Engineering, Purdue
+University, West Lafayette, IN.
+
+Copyright (c) 2021. All Rights Reserved.
+
+class TxRealm.TxController
+
+   Bases: "Forge.Controller"
+
+   The Tx controller class (v21.01)
+
+   static data_type_associations() -> Dict[Raven.DataTypes, Raven.MOMRoutinePair]
+
+      The data type associations (these are global and cannot be
+      overwritten during registration)
+
+      Returns: The data_type-publish/subscribe routine associations
+
+   property kafka_client
+
+      The Kafka client getter method
+
+      Returns: KafkaClient
+
+   property realm
+
+      The realm-type getter method
+
+      Returns: RealmTypes.TRANSMISSION
+
+   property registration_key
+
+      The registration key getter method
+
+      Returns: The registration key of this TxRealm Python Controller
+      post-registration with the Centralized Realms
+         Python Controller
+
+      Raises:
+         **XXRealmPythonControllerNotRegisteredError** – This
+         exception is raised when accesses are made to core methods
+         in an unregistered XXRealm Python Controller.
+
+   property serial_comm
+
+      The serial communication interface getter method
+
+      Returns: SerialCommConfig
+
+   property setup_handler
+
+      The setup handler getter method
+
+      Returns: SetupHandler
+
+   start() -> None
+
+      Start the control operations: Rotation angle estimation, and
+      post the angle to serial for uC-based servo control
+
+   property uid
+
+      The UID getter method
+
+      Returns: The unique identifier (UID) of this TxRealm Python
+      Controller
+
+class TxRealm.TxSetupHandler(mobility: Raven.Mobility, serial_comm: Raven.SerialCommConfig, kafka_config: Raven.KafkaConfig)
+
+   Bases: "Forge.SetupHandler"
+
+   The configuration details and configuration setup tasks of the Tx
+   rotating platform
+
+   setup(mandates) -> None
+
+      Start the TxRealm Python Controller’s setup tasks
+
+      Parameters:
+         **mandates** – A collection of ControllerMandates for the
+         Kafka MOM API calls
+
+      Raises:
+         **NotImplementedError** – Method or function hasn’t been
+         implemented yet.

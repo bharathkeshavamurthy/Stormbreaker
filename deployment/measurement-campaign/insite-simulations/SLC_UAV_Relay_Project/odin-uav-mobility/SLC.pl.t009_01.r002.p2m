@@ -1,0 +1,4 @@
+# <Transmitter Set: Tx: 1 Ground Nodes - Point 9> 
+# <Receiver Set: Rx: 2 Base Station> 
+# <X(m)> <Y(m)> <Z(m)> <Distance(m)> <PathLoss(dB)>
+1 -843.989 -116.511 116.605 383.482 250

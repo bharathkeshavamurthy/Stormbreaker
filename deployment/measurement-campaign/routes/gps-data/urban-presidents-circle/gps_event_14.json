@@ -1,0 +1,211 @@
+{
+    "altitude_ellipsoid": {
+        "component": 1403.5555,
+        "high_precision_component": -4.0,
+        "is_high_precision": true,
+        "main_component": 1403556.0,
+        "precision": 0.0001,
+        "units": "Units.METERS"
+    },
+    "altitude_msl": {
+        "component": 1422.3203,
+        "high_precision_component": 3.0,
+        "is_high_precision": true,
+        "main_component": 1422320.0,
+        "precision": 0.0001,
+        "units": "Units.METERS"
+    },
+    "carrier_solution_type": "CarrierSolutionType.NO_SOLUTION",
+    "core_length": 37,
+    "easting_dop": {
+        "component": 0.0,
+        "high_precision_component": 0.0,
+        "is_high_precision": false,
+        "main_component": 0.0,
+        "precision": 0.0,
+        "units": "Units.DIMENSIONLESS"
+    },
+    "fix_type": "FixType.THREE_DIMENSIONAL",
+    "geometric_dop": {
+        "component": 0.0,
+        "high_precision_component": 0.0,
+        "is_high_precision": false,
+        "main_component": 0.0,
+        "precision": 0.0,
+        "units": "Units.DIMENSIONLESS"
+    },
+    "heading": {
+        "component": 0.0,
+        "high_precision_component": 0.0,
+        "is_high_precision": false,
+        "main_component": 0.0,
+        "precision": 0.0,
+        "units": "Units.DIMENSIONLESS"
+    },
+    "heading_acc": {
+        "component": 0.0,
+        "high_precision_component": 0.0,
+        "is_high_precision": false,
+        "main_component": 0.0,
+        "precision": 0.0,
+        "units": "Units.DIMENSIONLESS"
+    },
+    "horizontal_acc": {
+        "component": 0.0,
+        "high_precision_component": 0.0,
+        "is_high_precision": false,
+        "main_component": 0.0,
+        "precision": 0.0,
+        "units": "Units.DIMENSIONLESS"
+    },
+    "horizontal_accuracy": {
+        "component": 0.0,
+        "high_precision_component": 0.0,
+        "is_high_precision": false,
+        "main_component": 0.0,
+        "precision": 0.0,
+        "units": "Units.DIMENSIONLESS"
+    },
+    "horizontal_dop": {
+        "component": 0.0,
+        "high_precision_component": 0.0,
+        "is_high_precision": false,
+        "main_component": 0.0,
+        "precision": 0.0,
+        "units": "Units.DIMENSIONLESS"
+    },
+    "is_gnss_fix_ok": true,
+    "latitude": {
+        "component": 40.764328002,
+        "high_precision_component": 1.0,
+        "is_high_precision": true,
+        "main_component": 407643301.0,
+        "precision": 1e-09,
+        "units": "Units.DEGREES"
+    },
+    "longitude": {
+        "component": -111.850563049,
+        "high_precision_component": 28.0,
+        "is_high_precision": true,
+        "main_component": -1118505580.0,
+        "precision": 1e-09,
+        "units": "Units.DEGREES"
+    },
+    "mag_acc": {
+        "component": 0.0,
+        "high_precision_component": 0.0,
+        "is_high_precision": false,
+        "main_component": 0.0,
+        "precision": 0.0,
+        "units": "Units.DIMENSIONLESS"
+    },
+    "mag_dec": {
+        "component": 0.0,
+        "high_precision_component": 0.0,
+        "is_high_precision": false,
+        "main_component": 0.0,
+        "precision": 0.0,
+        "units": "Units.DIMENSIONLESS"
+    },
+    "ned_down_vel": {
+        "component": 0.0,
+        "high_precision_component": 0.0,
+        "is_high_precision": false,
+        "main_component": 0.0,
+        "precision": 0.0,
+        "units": "Units.DIMENSIONLESS"
+    },
+    "ned_east_vel": {
+        "component": 0.0,
+        "high_precision_component": 0.0,
+        "is_high_precision": false,
+        "main_component": 0.0,
+        "precision": 0.0,
+        "units": "Units.DIMENSIONLESS"
+    },
+    "ned_north_vel": {
+        "component": 0.0,
+        "high_precision_component": 0.0,
+        "is_high_precision": false,
+        "main_component": 0.0,
+        "precision": 0.0,
+        "units": "Units.DIMENSIONLESS"
+    },
+    "northing_dop": {
+        "component": 0.0,
+        "high_precision_component": 0.0,
+        "is_high_precision": false,
+        "main_component": 0.0,
+        "precision": 0.0,
+        "units": "Units.DIMENSIONLESS"
+    },
+    "pdop": {
+        "component": 0.0,
+        "high_precision_component": 0.0,
+        "is_high_precision": false,
+        "main_component": 0.0,
+        "precision": 0.0,
+        "units": "Units.DIMENSIONLESS"
+    },
+    "position_dop": {
+        "component": 0.0,
+        "high_precision_component": 0.0,
+        "is_high_precision": false,
+        "main_component": 0.0,
+        "precision": 0.0,
+        "units": "Units.DIMENSIONLESS"
+    },
+    "seq_number": 14,
+    "siv": 27,
+    "speed": {
+        "component": 0.0,
+        "high_precision_component": 0.0,
+        "is_high_precision": false,
+        "main_component": 0.0,
+        "precision": 0.0,
+        "units": "Units.DIMENSIONLESS"
+    },
+    "speed_acc": {
+        "component": 0.0,
+        "high_precision_component": 0.0,
+        "is_high_precision": false,
+        "main_component": 0.0,
+        "precision": 0.0,
+        "units": "Units.DIMENSIONLESS"
+    },
+    "time_dop": {
+        "component": 0.0,
+        "high_precision_component": 0.0,
+        "is_high_precision": false,
+        "main_component": 0.0,
+        "precision": 0.0,
+        "units": "Units.DIMENSIONLESS"
+    },
+    "timestamp": "2021-06-30 22:00:27.294738",
+    "total_length": 39,
+    "ultra_core_length": 16,
+    "vertical_acc": {
+        "component": 0.0,
+        "high_precision_component": 0.0,
+        "is_high_precision": false,
+        "main_component": 0.0,
+        "precision": 0.0,
+        "units": "Units.DIMENSIONLESS"
+    },
+    "vertical_accuracy": {
+        "component": 0.0,
+        "high_precision_component": 0.0,
+        "is_high_precision": false,
+        "main_component": 0.0,
+        "precision": 0.0,
+        "units": "Units.DIMENSIONLESS"
+    },
+    "vertical_dop": {
+        "component": 0.0,
+        "high_precision_component": 0.0,
+        "is_high_precision": false,
+        "main_component": 0.0,
+        "precision": 0.0,
+        "units": "Units.DIMENSIONLESS"
+    }
+}

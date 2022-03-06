@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+. /shared/env.RelWithDebInfo.UHD-3.9.LTS.sgl.next++
+
+for ii in $(seq 1 5); do 
+  uhd_find_devices --args=addr=172.23.$((200+ii)).2
+done

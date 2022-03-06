@@ -1,0 +1,93 @@
+// Rotator Records
+
+// Recording activities.
+Table record_series {
+  id INT_UNSIGNED [pk, increment] // PK,NN,UQ,UN,AI
+  label VARCHAR(100) // Default to 'Unkown'.
+
+  // RX starts before the TX and it will create new record_series entries.
+  starting_up_time_in_ms_rx INT_UNSIGNED // uint32_t; UN,default to NULL.
+  starting_controller_unix_time_in_ms_rx BIGINT_UNSIGNED // Python uint32; UN,default to NULL.
+
+  // TX will wait for the new record_series entry and update it with its timestamps.
+  starting_up_time_in_ms_tx INT_UNSIGNED // uint32_t
+  starting_controller_unix_time_in_ms_tx BIGINT_UNSIGNED // Python uint32
+
+  lat_in_deg_xe7_tx INT // int32_t; default to NULL.
+  lon_in_deg_xe7_tx INT // int32_t; default to NULL.
+  alt_in_mm_mean_sea_level_tx INT // int32_t; default to NULL.
+
+  starting_lat_in_deg_xe7_rx INT // int32_t; default to NULL.
+  starting_lon_in_deg_xe7_rx INT // int32_t; default to NULL.
+  starting_alt_in_mm_mean_sea_level_rx INT // int32_t; default to NULL.
+}
+
+// IMU data from the RX.
+Table rx_imu {
+  id INT_UNSIGNED [pk, increment] // PK,NN,UQ,UN,AI
+  record_series_id INT_UNSIGNED [ref: > record_series.id] // NN,UN
+
+  controller_unix_time_in_ms BIGINT_UNSIGNED // Python uint32; UN,default to NULL.
+
+  // 10 values.
+  up_time_in_ms INT_UNSIGNED // uint32_t; default to NULL.
+  quat_real FLOAT // 4 bytes; default to NULL.
+  quat_i FLOAT // 4 bytes
+  quat_j FLOAT // 4 bytes
+  quat_k FLOAT // 4 bytes
+  quat_radian_accuracy FLOAT // 4 bytes
+  mag_x FLOAT // 4 bytes
+  mag_y FLOAT // 4 bytes
+  mag_z FLOAT // 4 bytes
+  mag_accuracy CHAR(1) // 1 byte
+}
+
+// GPS data from the RX.
+Table rx_gps {
+  id INT_UNSIGNED [pk, increment] // PK,NN,UQ,UN,AI
+  record_series_id INT_UNSIGNED [ref: > record_series.id] // NN,UN
+
+  controller_unix_time_in_ms BIGINT_UNSIGNED // Python uint32; UN,default to NULL.
+
+  // 21 values.
+  up_time_in_ms INT_UNSIGNED // uint32_t; default to NULL.
+  time_of_week_in_ms INT_UNSIGNED // uint32_t; default to NULL.
+  lat_in_deg_x_e7 INT // int32_t; default to NULL.
+  lon_in_deg_x_e7 INT // int32_t; default to NULL.
+  alt_in_mm_mean_sea_level INT // int32_t; default to NULL.
+  alt_in_mm_ellipsoid INT // int32_t; default to NULL.
+  hor_accuracy_in_m_xe4 INT_UNSIGNED // uint32_t; default to NULL.
+  ver_accuracy_in_m_xe4 INT_UNSIGNED // uint32_t; default to NULL.
+  sats_in_view TINYINT_UNSIGNED // uint8_t; default to NULL.
+  fix_type TINYINT_UNSIGNED // uint8_t; default to NULL.
+  year  SMALLINT_UNSIGNED // uint16_t; default to NULL.
+  month  TINYINT_UNSIGNED // uint8_t; default to NULL.
+  day    TINYINT_UNSIGNED // uint8_t; default to NULL.
+  hour   TINYINT_UNSIGNED // uint8_t; default to NULL.
+  minute TINYINT_UNSIGNED // uint8_t; default to NULL.
+  second TINYINT_UNSIGNED // uint8_t; default to NULL.
+  millisecond SMALLINT_UNSIGNED // uint16_t; default to NULL.
+  nanosecond INT // int32_t; default to NULL.
+  speed_in_m_per_sx3 INT // int32_t; default to NULL.
+  heading_in_deg_xe5 INT // int32_t; default to NULL.
+  pdod_xe2 SMALLINT_UNSIGNED // uint16_t; default to NULL.
+}
+
+Table tx_imu {
+  id INT_UNSIGNED [pk, increment]
+  record_series_id INT_UNSIGNED [ref: > record_series.id]
+
+  controller_unix_time_in_ms BIGINT_UNSIGNED // Python uint32; UN,default to NULL.
+
+  // 10 values.
+  up_time_in_ms INT_UNSIGNED // uint32_t
+  quat_real FLOAT // 4 bytes
+  quat_i FLOAT // 4 bytes
+  quat_j FLOAT // 4 bytes
+  quat_k FLOAT // 4 bytes
+  quat_radian_accuracy FLOAT // 4 bytes
+  mag_x FLOAT // 4 bytes
+  mag_y FLOAT // 4 bytes
+  mag_z FLOAT // 4 bytes
+  mag_accuracy CHAR // 1 byte
+}

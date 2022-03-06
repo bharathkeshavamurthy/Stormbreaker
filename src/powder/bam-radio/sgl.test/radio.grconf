@@ -1,0 +1,3 @@
+[LOG]
+log_level = debug
+log_file = stdout

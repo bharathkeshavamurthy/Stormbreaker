@@ -1,0 +1,323 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Realms module &mdash; Odin v21.01 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="RxRealm module" href="RxRealm.html" />
+    <link rel="prev" title="Raven module" href="Raven.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Odin
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">e2e</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Forge.html">Forge module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Raven.html">Raven module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Realms module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RxRealm.html">RxRealm module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TxRealm.html">TxRealm module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Odin</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html">e2e</a> &raquo;</li>
+        
+      <li>Realms module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/Realms.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-Realms">
+<span id="realms-module"></span><h1>Realms module<a class="headerlink" href="#module-Realms" title="Permalink to this headline">¶</a></h1>
+<p>This script details the operations at the Centralized Python Controller that handles:</p>
+<blockquote>
+<div><p>a. The registration and de-registration of XXRealm Python Controllers–along with their operational access rights
+authentication and subscription filtration tasks;</p>
+<p>b. The control operations related to the global frameworks employed in Project Odin, i.e., Zookeeper startup,
+Kafka server startup, Kafka topics creation, Zookeeper status check, Kafka server status check, etc.</p>
+</div></blockquote>
+<p>DESIGN NOTE: For optimal deployment, this Centralized Realms Python Controller is restricted to run only on Linux.</p>
+<p>Author: Bharath Keshavamurthy &lt;<a class="reference external" href="mailto:bkeshava&#37;&#52;&#48;purdue&#46;edu">bkeshava<span>&#64;</span>purdue<span>&#46;</span>edu</a>&gt;</p>
+<p>Organization: School of Electrical &amp; Computer Engineering, Purdue University, West Lafayette, IN.</p>
+<p>Copyright (c) 2021. All Rights Reserved.</p>
+<dl class="py class">
+<dt id="Realms.Realms">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Realms.</span></code><code class="sig-name descname"><span class="pre">Realms</span></code><a class="headerlink" href="#Realms.Realms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A Singleton class encapsulating the centralized control operations for Project Odin</p>
+<dl class="py method">
+<dt id="Realms.Realms.exposed_controllers_count">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">exposed_controllers_count</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">int</span><a class="headerlink" href="#Realms.Realms.exposed_controllers_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of registered XXRealm Python Controllers in this deployment of Project Odin</p>
+<p>Returns: the number of registered XXRealm Python Controllers in this deployment of Project Odin</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="Realms.Realms.exposed_get_allowed_publishers">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">exposed_get_allowed_publishers</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">controller_uid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#Realms.Realms.exposed_get_allowed_publishers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the allowed publishers for an XXRealm Python Controller referenced by its UID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>controller_uid</strong> – The unique identifier of the XXRealm Python Controller</p>
+</dd>
+</dl>
+<p>Returns: The allowed publishers for an XXRealm Python Controller referenced by its UID</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="Realms.Realms.exposed_get_association">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">exposed_get_association</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="Raven.html#Raven.DataTypes" title="Raven.DataTypes"><span class="pre">Raven.DataTypes</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Any</span><a class="headerlink" href="#Realms.Realms.exposed_get_association" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the Kafka API routine association for the specified data_type</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data_type</strong> – The DataType enumeration member corresponding to which a Kafka API routine in Project Odin is
+to be returned</p>
+</dd>
+</dl>
+<p>Returns: The Kafka API routine in Project Odin corresponding to the provided DataType enumeration member</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="Realms.Realms.exposed_get_topic">
+<em class="property"><span class="pre">async</span> <span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">exposed_get_topic</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">controller</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="Forge.html#Forge.Controller" title="Forge.Controller"><span class="pre">Forge.Controller</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="Raven.html#Raven.DataTypes" title="Raven.DataTypes"><span class="pre">Raven.DataTypes</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="Raven.html#Raven.KafkaTopics" title="Raven.KafkaTopics"><span class="pre">Raven.KafkaTopics</span></a><a class="headerlink" href="#Realms.Realms.exposed_get_topic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the Kafka topic for the XXRealm Python Controller associated with the provided registration_key</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>controller</strong> – The registered controller implementation requesting a Kafka topic for its publishes</p></li>
+<li><p><strong>data_type</strong> – The type of data being published by this registered referenced XXRealm Python Controller</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Returns: The Kafka topic for the registered referenced XXRealm Python Controller’s publishes of the specified</dt><dd><p>data_type</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>XXRealmPythonControllerNotRegisteredError</strong> – This exception is raised when accesses are made to core methods
+    in an unregistered XXRealm Python Controller.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="Realms.Realms.exposed_register">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">exposed_register</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">controller</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="Forge.html#Forge.Controller" title="Forge.Controller"><span class="pre">Forge.Controller</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_type_associations</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#Realms.Realms.exposed_register" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register a controller implementation instance with this Centralized Realms Python Controller</p>
+<dl class="simple">
+<dt>DESIGN NOTE: The scalability of this code is unlimited horizontally within each realm, while there is no need</dt><dd><p>for vertical scalability because the number of realms will be a very small number (max 5).</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>controller</strong> – The controller implementation instance to be registered</p></li>
+<li><p><strong>data_type_associations</strong> – The data type associations in Project Odin (these are global and cannot be
+overwritten during registration)</p></li>
+<li><p><strong>callback</strong> – The callback routine in the XXRealm Python Controller which will be triggered post-registration</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="Forge.html#Forge.InvalidControllerConfiguration" title="Forge.InvalidControllerConfiguration"><strong>InvalidControllerConfiguration</strong></a> – This exception is raised when invalid configurations are received for the
+    XXRealm Python Controller that is to be registered.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="Realms.Realms.get_realms">
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">get_realms</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Realms.Realms.get_realms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instance access method for this Singleton</p>
+<p>Returns: The ONE and ONLY instance of this Realms Controller</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="RxRealm.html" class="btn btn-neutral float-right" title="RxRealm module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Raven.html" class="btn btn-neutral float-left" title="Raven module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Bharath Keshavamurthy.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

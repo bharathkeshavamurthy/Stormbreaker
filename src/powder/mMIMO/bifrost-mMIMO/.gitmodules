@@ -1,0 +1,3 @@
+[submodule "renew-software"]
+	path = renew-software
+	url = https://gitlab.renew-wireless.org/renew/renew-software.git

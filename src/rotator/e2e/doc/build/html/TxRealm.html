@@ -1,0 +1,325 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>TxRealm module &mdash; Odin v21.01 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="RxRealm module" href="RxRealm.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Odin
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">e2e</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Forge.html">Forge module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Raven.html">Raven module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Realms.html">Realms module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RxRealm.html">RxRealm module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">TxRealm module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Odin</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html">e2e</a> &raquo;</li>
+        
+      <li>TxRealm module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/TxRealm.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-TxRealm">
+<span id="txrealm-module"></span><h1>TxRealm module<a class="headerlink" href="#module-TxRealm" title="Permalink to this headline">¶</a></h1>
+<p>This script describes the operations of the controller at the Tx side of the Odin channel statistics measurement
+campaign. The operations performed by this controller include:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Subscribe to the ODIN_GPS_EVENTS Kafka topic to receive the JSON-based ODIN_GPS_EVENTs (Rx location msgs);</p></li>
+</ol>
+<p>2. Parse these JSON ODIN_GPS_EVENTs to extract the (time, latitude, longitude, altitude, attitude, …)
+“data object” collection corresponding to the Rx; and</p>
+<p>3. Determine the rotation_angle (the angle which the Tx should turn to w.r.t the home_plate) and publish it
+(with a timestamp) to the USB/BT serial monitor COM port of the microcontroller (SerialUSB/SerialBT). Note that
+the timestamps might be redundant–but, are necessary for post-operation analyses of system delays/timing
+synchronization.</p>
+</div></blockquote>
+<p>DESIGN NOTE: The Tx is stationary (fixed at a mount-point) in this version of Odin (v21.01).</p>
+<p>Author: Bharath Keshavamurthy &lt;<a class="reference external" href="mailto:bkeshava&#37;&#52;&#48;purdue&#46;edu">bkeshava<span>&#64;</span>purdue<span>&#46;</span>edu</a>&gt;</p>
+<p>Organization: School of Electrical &amp; Computer Engineering, Purdue University, West Lafayette, IN.</p>
+<p>Copyright (c) 2021. All Rights Reserved.</p>
+<dl class="py class">
+<dt id="TxRealm.TxController">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">TxRealm.</span></code><code class="sig-name descname"><span class="pre">TxController</span></code><a class="headerlink" href="#TxRealm.TxController" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="Forge.html#Forge.Controller" title="Forge.Controller"><code class="xref py py-class docutils literal notranslate"><span class="pre">Forge.Controller</span></code></a></p>
+<p>The Tx controller class (v21.01)</p>
+<dl class="py method">
+<dt id="TxRealm.TxController.data_type_associations">
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">data_type_associations</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="Raven.html#Raven.DataTypes" title="Raven.DataTypes"><span class="pre">Raven.DataTypes</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Raven.MOMRoutinePair</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#TxRealm.TxController.data_type_associations" title="Permalink to this definition">¶</a></dt>
+<dd><p>The data type associations (these are global and cannot be overwritten during registration)</p>
+<p>Returns: The data_type-publish/subscribe routine associations</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="TxRealm.TxController.kafka_client">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">kafka_client</span></code><a class="headerlink" href="#TxRealm.TxController.kafka_client" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Kafka client getter method</p>
+<p>Returns: KafkaClient</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="TxRealm.TxController.realm">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">realm</span></code><a class="headerlink" href="#TxRealm.TxController.realm" title="Permalink to this definition">¶</a></dt>
+<dd><p>The realm-type getter method</p>
+<p>Returns: RealmTypes.TRANSMISSION</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="TxRealm.TxController.registration_key">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">registration_key</span></code><a class="headerlink" href="#TxRealm.TxController.registration_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>The registration key getter method</p>
+<dl class="simple">
+<dt>Returns: The registration key of this TxRealm Python Controller post-registration with the Centralized Realms</dt><dd><p>Python Controller</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>XXRealmPythonControllerNotRegisteredError</strong> – This exception is raised when accesses are made to core methods
+    in an unregistered XXRealm Python Controller.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="TxRealm.TxController.serial_comm">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">serial_comm</span></code><a class="headerlink" href="#TxRealm.TxController.serial_comm" title="Permalink to this definition">¶</a></dt>
+<dd><p>The serial communication interface getter method</p>
+<p>Returns: SerialCommConfig</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="TxRealm.TxController.setup_handler">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">setup_handler</span></code><a class="headerlink" href="#TxRealm.TxController.setup_handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>The setup handler getter method</p>
+<p>Returns: SetupHandler</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="TxRealm.TxController.start">
+<code class="sig-name descname"><span class="pre">start</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#TxRealm.TxController.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the control operations: Rotation angle estimation, and post the angle to serial for uC-based servo control</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="TxRealm.TxController.uid">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">uid</span></code><a class="headerlink" href="#TxRealm.TxController.uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The UID getter method</p>
+<p>Returns: The unique identifier (UID) of this TxRealm Python Controller</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="TxRealm.TxSetupHandler">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">TxRealm.</span></code><code class="sig-name descname"><span class="pre">TxSetupHandler</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mobility</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="Raven.html#Raven.Mobility" title="Raven.Mobility"><span class="pre">Raven.Mobility</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">serial_comm</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="Raven.html#Raven.SerialCommConfig" title="Raven.SerialCommConfig"><span class="pre">Raven.SerialCommConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">kafka_config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="Raven.html#Raven.KafkaConfig" title="Raven.KafkaConfig"><span class="pre">Raven.KafkaConfig</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TxRealm.TxSetupHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="Forge.html#Forge.SetupHandler" title="Forge.SetupHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">Forge.SetupHandler</span></code></a></p>
+<p>The configuration details and configuration setup tasks of the Tx rotating platform</p>
+<dl class="py method">
+<dt id="TxRealm.TxSetupHandler.setup">
+<code class="sig-name descname"><span class="pre">setup</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mandates</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#TxRealm.TxSetupHandler.setup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the TxRealm Python Controller’s setup tasks</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mandates</strong> – A collection of ControllerMandates for the Kafka MOM API calls</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – Method or function hasn’t been implemented yet.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="RxRealm.html" class="btn btn-neutral float-left" title="RxRealm module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Bharath Keshavamurthy.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+[submodule "src/measurement-campaign/EarsMeasurementCampaignCode"]
+	path = src/measurement-campaign/EarsMeasurementCampaignCode
+	url = https://github.com/YaguangZhang/EarsMeasurementCampaignCode.git
+[submodule "src/measurement-campaign/YAM3S"]
+	path = src/measurement-campaign/YAM3S
+	url = https://github.com/YaguangZhang/YAM3S.git
+[submodule "src/measurement-campaign/Talos"]
+	path = src/measurement-campaign/Talos
+	url = git@github.com:bharathkeshavamurthy/Talos.git
+[submodule "src/main/org/purdue/ece/odin/powder/bam-radio"]
+	path = src/main/org/purdue/ece/odin/powder/bam-radio
+	url = ssh://git@cloudradio.ecn.purdue.edu/bam-wireless/bam-radio.git
+[submodule "src/powder/mMIMO/faros-simple"]
+	path = src/powder/mMIMO/faros-simple
+	url = https://gitlab.flux.utah.edu/kwebb/faros-simple.git
+[submodule "src/powder/mMIMO/bifrost-mMIMO"]
+	path = src/powder/mMIMO/bifrost-mMIMO
+	url = https://github.com/bharathkeshavamurthy/bifrost-mMIMO.git
+[submodule "src/measurement-campaign/PurdueMeasurementCampaignCode"]
+	path = src/measurement-campaign/PurdueMeasurementCampaignCode
+	url = https://github.com/YaguangZhang/PurdueMeasurementCampaignCode.git
+[submodule "src/measurement-campaign/UtahMeasurementCampaignCode"]
+	path = src/measurement-campaign/UtahMeasurementCampaignCode
+	url = https://github.com/YaguangZhang/UtahMeasurementCampaignCode.git
+[submodule "src/powder/mMIMO/faros-renew"]
+	path = src/powder/mMIMO/faros-renew
+	url = https://gitlab.flux.utah.edu/doost/faros-renew.git
+[submodule "src/powder/mMIMO/Agora"]
+	path = src/powder/mMIMO/Agora
+	url = https://github.com/renew-wireless/Agora.git
+[submodule "src/powder/mMIMO/RENEWLab"]
+	path = src/powder/mMIMO/RENEWLab
+	url = https://github.com/renew-wireless/RENEWLab.git

@@ -1,0 +1,919 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Raven module &mdash; Odin v21.01 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Odin
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Raven module</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Odin</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Raven module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/Raven.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-Raven">
+<span id="raven-module"></span><h1>Raven module<a class="headerlink" href="#module-Raven" title="Permalink to this headline">¶</a></h1>
+<dl class="simple">
+<dt>This script defines the following dataclasses used for inter-system OR inter-module communication in Project Odin:</dt><dd><ol class="loweralpha simple">
+<li><p>ODIN_GPS_EVENT (GPSEvent contract between the TxRealm and the RxRealm Python Controllers);</p></li>
+<li><p>BIFROST (SerialCommConfig for data transfer between the uC and the TxRealm/RxRealm Python Controllers); and</p></li>
+<li><p>HEIMDALL (KafkaConfig for publish/subscribe between the TxRealm and RxRealm Python Controllers).</p></li>
+</ol>
+</dd>
+</dl>
+<p>Author: Bharath Keshavamurthy &lt;<a class="reference external" href="mailto:bkeshava&#37;&#52;&#48;purdue&#46;edu">bkeshava<span>&#64;</span>purdue<span>&#46;</span>edu</a>&gt;</p>
+<p>Organization: School of Electrical &amp; Computer Engineering, Purdue University, West Lafayette, IN.</p>
+<p>Copyright (c) 2021. All Rights Reserved.</p>
+<dl class="py class">
+<dt id="Raven.CarrierSolutionType">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Raven.</span></code><code class="sig-name descname"><span class="pre">CarrierSolutionType</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Raven.CarrierSolutionType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration listing all possible carrier solution-types supported by the GPS receiver</p>
+<dl class="py attribute">
+<dt id="Raven.CarrierSolutionType.FIXED_SOLUTION">
+<code class="sig-name descname"><span class="pre">FIXED_SOLUTION</span></code><em class="property"> <span class="pre">=</span> <span class="pre">2</span></em><a class="headerlink" href="#Raven.CarrierSolutionType.FIXED_SOLUTION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.CarrierSolutionType.FLOAT_SOLUTION">
+<code class="sig-name descname"><span class="pre">FLOAT_SOLUTION</span></code><em class="property"> <span class="pre">=</span> <span class="pre">1</span></em><a class="headerlink" href="#Raven.CarrierSolutionType.FLOAT_SOLUTION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.CarrierSolutionType.NO_SOLUTION">
+<code class="sig-name descname"><span class="pre">NO_SOLUTION</span></code><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#Raven.CarrierSolutionType.NO_SOLUTION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="Raven.CommEvent">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Raven.</span></code><code class="sig-name descname"><span class="pre">CommEvent</span></code><a class="headerlink" href="#Raven.CommEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Primary information tier in CommEvent</p>
+<p>The CommEvent class: ODIN_COMM_EVENT communicated over the ODIN_COMM_EVENTS Kafka topic encapsulates this
+data object</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="Raven.ControlEvent">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Raven.</span></code><code class="sig-name descname"><span class="pre">ControlEvent</span></code><a class="headerlink" href="#Raven.ControlEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Primary information tier in ControlEvent</p>
+<p>The ControlEvent class: ODIN_CONTROL_EVENT communicated over the ODIN_CONTROL_EVENTS Kafka topic encapsulates this
+data object</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="Raven.ControllerMandate">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Raven.</span></code><code class="sig-name descname"><span class="pre">ControllerMandate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#Raven.DataTypes" title="Raven.DataTypes"><span class="pre">Raven.DataTypes</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">production_topic</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#Raven.KafkaTopics" title="Raven.KafkaTopics"><span class="pre">Raven.KafkaTopics</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">consumption_topic</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#Raven.KafkaTopics" title="Raven.KafkaTopics"><span class="pre">Raven.KafkaTopics</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">production_routine</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">consumption_routine</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_producers</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Raven.ControllerMandate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A Message Oriented Middleware (Kafka MOM) framework mandate for an XXRealm Python Controller in Project Odin</p>
+<dl class="py attribute">
+<dt id="Raven.ControllerMandate.allowed_producers">
+<code class="sig-name descname"><span class="pre">allowed_producers</span></code><em class="property"><span class="pre">:</span> <span class="pre">list</span></em><a class="headerlink" href="#Raven.ControllerMandate.allowed_producers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.ControllerMandate.consumption_routine">
+<code class="sig-name descname"><span class="pre">consumption_routine</span></code><em class="property"><span class="pre">:</span> <span class="pre">Any</span></em><a class="headerlink" href="#Raven.ControllerMandate.consumption_routine" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.ControllerMandate.consumption_topic">
+<code class="sig-name descname"><span class="pre">consumption_topic</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.KafkaTopics" title="Raven.KafkaTopics"><span class="pre">Raven.KafkaTopics</span></a></em><a class="headerlink" href="#Raven.ControllerMandate.consumption_topic" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.ControllerMandate.data_type">
+<code class="sig-name descname"><span class="pre">data_type</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.DataTypes" title="Raven.DataTypes"><span class="pre">Raven.DataTypes</span></a></em><a class="headerlink" href="#Raven.ControllerMandate.data_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.ControllerMandate.production_routine">
+<code class="sig-name descname"><span class="pre">production_routine</span></code><em class="property"><span class="pre">:</span> <span class="pre">Any</span></em><a class="headerlink" href="#Raven.ControllerMandate.production_routine" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.ControllerMandate.production_topic">
+<code class="sig-name descname"><span class="pre">production_topic</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.KafkaTopics" title="Raven.KafkaTopics"><span class="pre">Raven.KafkaTopics</span></a></em><a class="headerlink" href="#Raven.ControllerMandate.production_topic" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="Raven.DataTypes">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Raven.</span></code><code class="sig-name descname"><span class="pre">DataTypes</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Raven.DataTypes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration listing the various types of data exchanged among realms in Project Odin</p>
+<dl class="py attribute">
+<dt id="Raven.DataTypes.COMM">
+<code class="sig-name descname"><span class="pre">COMM</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'COMM'</span></em><a class="headerlink" href="#Raven.DataTypes.COMM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.DataTypes.CTRL">
+<code class="sig-name descname"><span class="pre">CTRL</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'CONTROL'</span></em><a class="headerlink" href="#Raven.DataTypes.CTRL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.DataTypes.GPS">
+<code class="sig-name descname"><span class="pre">GPS</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'GPS'</span></em><a class="headerlink" href="#Raven.DataTypes.GPS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="Raven.FixType">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Raven.</span></code><code class="sig-name descname"><span class="pre">FixType</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Raven.FixType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration listing all possible fix-types supported by the GPS receiver</p>
+<dl class="py attribute">
+<dt id="Raven.FixType.DEAD_RECKONING">
+<code class="sig-name descname"><span class="pre">DEAD_RECKONING</span></code><em class="property"> <span class="pre">=</span> <span class="pre">1</span></em><a class="headerlink" href="#Raven.FixType.DEAD_RECKONING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.FixType.GNSS">
+<code class="sig-name descname"><span class="pre">GNSS</span></code><em class="property"> <span class="pre">=</span> <span class="pre">4</span></em><a class="headerlink" href="#Raven.FixType.GNSS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.FixType.NO_FIX">
+<code class="sig-name descname"><span class="pre">NO_FIX</span></code><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#Raven.FixType.NO_FIX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.FixType.THREE_DIMENSIONAL">
+<code class="sig-name descname"><span class="pre">THREE_DIMENSIONAL</span></code><em class="property"> <span class="pre">=</span> <span class="pre">3</span></em><a class="headerlink" href="#Raven.FixType.THREE_DIMENSIONAL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.FixType.TIME_FIX">
+<code class="sig-name descname"><span class="pre">TIME_FIX</span></code><em class="property"> <span class="pre">=</span> <span class="pre">5</span></em><a class="headerlink" href="#Raven.FixType.TIME_FIX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.FixType.TWO_DIMENSIONAL">
+<code class="sig-name descname"><span class="pre">TWO_DIMENSIONAL</span></code><em class="property"> <span class="pre">=</span> <span class="pre">2</span></em><a class="headerlink" href="#Raven.FixType.TWO_DIMENSIONAL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="Raven.GPSEvent">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Raven.</span></code><code class="sig-name descname"><span class="pre">GPSEvent</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">seq_number:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">0</span></em>, <em class="sig-param"><span class="pre">timestamp:</span> <span class="pre">datetime.datetime</span> <span class="pre">=</span> <span class="pre">datetime.datetime(2021</span></em>, <em class="sig-param"><span class="pre">3</span></em>, <em class="sig-param"><span class="pre">5</span></em>, <em class="sig-param"><span class="pre">19</span></em>, <em class="sig-param"><span class="pre">20</span></em>, <em class="sig-param"><span class="pre">58</span></em>, <em class="sig-param"><span class="pre">131469)</span></em>, <em class="sig-param"><span class="pre">is_gnss_fix_ok:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></em>, <em class="sig-param"><span class="pre">siv:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">0</span></em>, <em class="sig-param"><span class="pre">fix_type:</span> <span class="pre">Raven.FixType</span> <span class="pre">=</span> <span class="pre">&lt;FixType.NO_FIX:</span> <span class="pre">0&gt;</span></em>, <em class="sig-param"><span class="pre">carrier_solution_type:</span> <span class="pre">Raven.CarrierSolutionType</span> <span class="pre">=</span> <span class="pre">&lt;CarrierSolutionType.NO_SOLUTION:</span> <span class="pre">0&gt;</span></em>, <em class="sig-param"><span class="pre">latitude:</span> <span class="pre">Raven.Member</span> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False</span></em>, <em class="sig-param"><span class="pre">component=0.0</span></em>, <em class="sig-param"><span class="pre">main_component=0.0</span></em>, <em class="sig-param"><span class="pre">high_precision_component=0.0</span></em>, <em class="sig-param"><span class="pre">precision=0.0</span></em>, <em class="sig-param"><span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em>, <em class="sig-param"><span class="pre">longitude:</span> <span class="pre">Raven.Member</span> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False</span></em>, <em class="sig-param"><span class="pre">component=0.0</span></em>, <em class="sig-param"><span class="pre">main_component=0.0</span></em>, <em class="sig-param"><span class="pre">high_precision_component=0.0</span></em>, <em class="sig-param"><span class="pre">precision=0.0</span></em>, <em class="sig-param"><span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em>, <em class="sig-param"><span class="pre">altitude_ellipsoid:</span> <span class="pre">Raven.Member</span> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False</span></em>, <em class="sig-param"><span class="pre">component=0.0</span></em>, <em class="sig-param"><span class="pre">main_component=0.0</span></em>, <em class="sig-param"><span class="pre">high_precision_component=0.0</span></em>, <em class="sig-param"><span class="pre">precision=0.0</span></em>, <em class="sig-param"><span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em>, <em class="sig-param"><span class="pre">altitude_msl:</span> <span class="pre">Raven.Member</span> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False</span></em>, <em class="sig-param"><span class="pre">component=0.0</span></em>, <em class="sig-param"><span class="pre">main_component=0.0</span></em>, <em class="sig-param"><span class="pre">high_precision_component=0.0</span></em>, <em class="sig-param"><span class="pre">precision=0.0</span></em>, <em class="sig-param"><span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em>, <em class="sig-param"><span class="pre">speed:</span> <span class="pre">Raven.Member</span> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False</span></em>, <em class="sig-param"><span class="pre">component=0.0</span></em>, <em class="sig-param"><span class="pre">main_component=0.0</span></em>, <em class="sig-param"><span class="pre">high_precision_component=0.0</span></em>, <em class="sig-param"><span class="pre">precision=0.0</span></em>, <em class="sig-param"><span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em>, <em class="sig-param"><span class="pre">heading:</span> <span class="pre">Raven.Member</span> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False</span></em>, <em class="sig-param"><span class="pre">component=0.0</span></em>, <em class="sig-param"><span class="pre">main_component=0.0</span></em>, <em class="sig-param"><span class="pre">high_precision_component=0.0</span></em>, <em class="sig-param"><span class="pre">precision=0.0</span></em>, <em class="sig-param"><span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em>, <em class="sig-param"><span class="pre">horizontal_acc:</span> <span class="pre">Raven.Member</span> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False</span></em>, <em class="sig-param"><span class="pre">component=0.0</span></em>, <em class="sig-param"><span class="pre">main_component=0.0</span></em>, <em class="sig-param"><span class="pre">high_precision_component=0.0</span></em>, <em class="sig-param"><span class="pre">precision=0.0</span></em>, <em class="sig-param"><span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em>, <em class="sig-param"><span class="pre">vertical_acc:</span> <span class="pre">Raven.Member</span> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False</span></em>, <em class="sig-param"><span class="pre">component=0.0</span></em>, <em class="sig-param"><span class="pre">main_component=0.0</span></em>, <em class="sig-param"><span class="pre">high_precision_component=0.0</span></em>, <em class="sig-param"><span class="pre">precision=0.0</span></em>, <em class="sig-param"><span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em>, <em class="sig-param"><span class="pre">speed_acc:</span> <span class="pre">Raven.Member</span> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False</span></em>, <em class="sig-param"><span class="pre">component=0.0</span></em>, <em class="sig-param"><span class="pre">main_component=0.0</span></em>, <em class="sig-param"><span class="pre">high_precision_component=0.0</span></em>, <em class="sig-param"><span class="pre">precision=0.0</span></em>, <em class="sig-param"><span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em>, <em class="sig-param"><span class="pre">heading_acc:</span> <span class="pre">Raven.Member</span> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False</span></em>, <em class="sig-param"><span class="pre">component=0.0</span></em>, <em class="sig-param"><span class="pre">main_component=0.0</span></em>, <em class="sig-param"><span class="pre">high_precision_component=0.0</span></em>, <em class="sig-param"><span class="pre">precision=0.0</span></em>, <em class="sig-param"><span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em>, <em class="sig-param"><span class="pre">ned_north_vel:</span> <span class="pre">Raven.Member</span> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False</span></em>, <em class="sig-param"><span class="pre">component=0.0</span></em>, <em class="sig-param"><span class="pre">main_component=0.0</span></em>, <em class="sig-param"><span class="pre">high_precision_component=0.0</span></em>, <em class="sig-param"><span class="pre">precision=0.0</span></em>, <em class="sig-param"><span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em>, <em class="sig-param"><span class="pre">ned_east_vel:</span> <span class="pre">Raven.Member</span> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False</span></em>, <em class="sig-param"><span class="pre">component=0.0</span></em>, <em class="sig-param"><span class="pre">main_component=0.0</span></em>, <em class="sig-param"><span class="pre">high_precision_component=0.0</span></em>, <em class="sig-param"><span class="pre">precision=0.0</span></em>, <em class="sig-param"><span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em>, <em class="sig-param"><span class="pre">ned_down_vel:</span> <span class="pre">Raven.Member</span> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False</span></em>, <em class="sig-param"><span class="pre">component=0.0</span></em>, <em class="sig-param"><span class="pre">main_component=0.0</span></em>, <em class="sig-param"><span class="pre">high_precision_component=0.0</span></em>, <em class="sig-param"><span class="pre">precision=0.0</span></em>, <em class="sig-param"><span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em>, <em class="sig-param"><span class="pre">pdop:</span> <span class="pre">Raven.Member</span> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False</span></em>, <em class="sig-param"><span class="pre">component=0.0</span></em>, <em class="sig-param"><span class="pre">main_component=0.0</span></em>, <em class="sig-param"><span class="pre">high_precision_component=0.0</span></em>, <em class="sig-param"><span class="pre">precision=0.0</span></em>, <em class="sig-param"><span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em>, <em class="sig-param"><span class="pre">mag_acc:</span> <span class="pre">Raven.Member</span> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False</span></em>, <em class="sig-param"><span class="pre">component=0.0</span></em>, <em class="sig-param"><span class="pre">main_component=0.0</span></em>, <em class="sig-param"><span class="pre">high_precision_component=0.0</span></em>, <em class="sig-param"><span class="pre">precision=0.0</span></em>, <em class="sig-param"><span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em>, <em class="sig-param"><span class="pre">mag_dec:</span> <span class="pre">Raven.Member</span> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False</span></em>, <em class="sig-param"><span class="pre">component=0.0</span></em>, <em class="sig-param"><span class="pre">main_component=0.0</span></em>, <em class="sig-param"><span class="pre">high_precision_component=0.0</span></em>, <em class="sig-param"><span class="pre">precision=0.0</span></em>, <em class="sig-param"><span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em>, <em class="sig-param"><span class="pre">geometric_dop:</span> <span class="pre">Raven.Member</span> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False</span></em>, <em class="sig-param"><span class="pre">component=0.0</span></em>, <em class="sig-param"><span class="pre">main_component=0.0</span></em>, <em class="sig-param"><span class="pre">high_precision_component=0.0</span></em>, <em class="sig-param"><span class="pre">precision=0.0</span></em>, <em class="sig-param"><span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em>, <em class="sig-param"><span class="pre">position_dop:</span> <span class="pre">Raven.Member</span> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False</span></em>, <em class="sig-param"><span class="pre">component=0.0</span></em>, <em class="sig-param"><span class="pre">main_component=0.0</span></em>, <em class="sig-param"><span class="pre">high_precision_component=0.0</span></em>, <em class="sig-param"><span class="pre">precision=0.0</span></em>, <em class="sig-param"><span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em>, <em class="sig-param"><span class="pre">time_dop:</span> <span class="pre">Raven.Member</span> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False</span></em>, <em class="sig-param"><span class="pre">component=0.0</span></em>, <em class="sig-param"><span class="pre">main_component=0.0</span></em>, <em class="sig-param"><span class="pre">high_precision_component=0.0</span></em>, <em class="sig-param"><span class="pre">precision=0.0</span></em>, <em class="sig-param"><span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em>, <em class="sig-param"><span class="pre">horizontal_dop:</span> <span class="pre">Raven.Member</span> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False</span></em>, <em class="sig-param"><span class="pre">component=0.0</span></em>, <em class="sig-param"><span class="pre">main_component=0.0</span></em>, <em class="sig-param"><span class="pre">high_precision_component=0.0</span></em>, <em class="sig-param"><span class="pre">precision=0.0</span></em>, <em class="sig-param"><span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em>, <em class="sig-param"><span class="pre">vertical_dop:</span> <span class="pre">Raven.Member</span> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False</span></em>, <em class="sig-param"><span class="pre">component=0.0</span></em>, <em class="sig-param"><span class="pre">main_component=0.0</span></em>, <em class="sig-param"><span class="pre">high_precision_component=0.0</span></em>, <em class="sig-param"><span class="pre">precision=0.0</span></em>, <em class="sig-param"><span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em>, <em class="sig-param"><span class="pre">northing_dop:</span> <span class="pre">Raven.Member</span> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False</span></em>, <em class="sig-param"><span class="pre">component=0.0</span></em>, <em class="sig-param"><span class="pre">main_component=0.0</span></em>, <em class="sig-param"><span class="pre">high_precision_component=0.0</span></em>, <em class="sig-param"><span class="pre">precision=0.0</span></em>, <em class="sig-param"><span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em>, <em class="sig-param"><span class="pre">easting_dop:</span> <span class="pre">Raven.Member</span> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False</span></em>, <em class="sig-param"><span class="pre">component=0.0</span></em>, <em class="sig-param"><span class="pre">main_component=0.0</span></em>, <em class="sig-param"><span class="pre">high_precision_component=0.0</span></em>, <em class="sig-param"><span class="pre">precision=0.0</span></em>, <em class="sig-param"><span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em>, <em class="sig-param"><span class="pre">horizontal_accuracy:</span> <span class="pre">Raven.Member</span> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False</span></em>, <em class="sig-param"><span class="pre">component=0.0</span></em>, <em class="sig-param"><span class="pre">main_component=0.0</span></em>, <em class="sig-param"><span class="pre">high_precision_component=0.0</span></em>, <em class="sig-param"><span class="pre">precision=0.0</span></em>, <em class="sig-param"><span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em>, <em class="sig-param"><span class="pre">vertical_accuracy:</span> <span class="pre">Raven.Member</span> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False</span></em>, <em class="sig-param"><span class="pre">component=0.0</span></em>, <em class="sig-param"><span class="pre">main_component=0.0</span></em>, <em class="sig-param"><span class="pre">high_precision_component=0.0</span></em>, <em class="sig-param"><span class="pre">precision=0.0</span></em>, <em class="sig-param"><span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Raven.GPSEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Primary information tier in GPSEvent</p>
+<p>The GPSEvent class: ODIN_GPS_EVENT communicated over the ODIN_GPS_EVENTS Kafka topic encapsulates this data object</p>
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.altitude_ellipsoid">
+<code class="sig-name descname"><span class="pre">altitude_ellipsoid</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.Member" title="Raven.Member"><span class="pre">Raven.Member</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False,</span> <span class="pre">component=0.0,</span> <span class="pre">main_component=0.0,</span> <span class="pre">high_precision_component=0.0,</span> <span class="pre">precision=0.0,</span> <span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em><a class="headerlink" href="#Raven.GPSEvent.altitude_ellipsoid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.altitude_msl">
+<code class="sig-name descname"><span class="pre">altitude_msl</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.Member" title="Raven.Member"><span class="pre">Raven.Member</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False,</span> <span class="pre">component=0.0,</span> <span class="pre">main_component=0.0,</span> <span class="pre">high_precision_component=0.0,</span> <span class="pre">precision=0.0,</span> <span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em><a class="headerlink" href="#Raven.GPSEvent.altitude_msl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.carrier_solution_type">
+<code class="sig-name descname"><span class="pre">carrier_solution_type</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.CarrierSolutionType" title="Raven.CarrierSolutionType"><span class="pre">Raven.CarrierSolutionType</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#Raven.GPSEvent.carrier_solution_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.easting_dop">
+<code class="sig-name descname"><span class="pre">easting_dop</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.Member" title="Raven.Member"><span class="pre">Raven.Member</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False,</span> <span class="pre">component=0.0,</span> <span class="pre">main_component=0.0,</span> <span class="pre">high_precision_component=0.0,</span> <span class="pre">precision=0.0,</span> <span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em><a class="headerlink" href="#Raven.GPSEvent.easting_dop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.fix_type">
+<code class="sig-name descname"><span class="pre">fix_type</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.FixType" title="Raven.FixType"><span class="pre">Raven.FixType</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#Raven.GPSEvent.fix_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.geometric_dop">
+<code class="sig-name descname"><span class="pre">geometric_dop</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.Member" title="Raven.Member"><span class="pre">Raven.Member</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False,</span> <span class="pre">component=0.0,</span> <span class="pre">main_component=0.0,</span> <span class="pre">high_precision_component=0.0,</span> <span class="pre">precision=0.0,</span> <span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em><a class="headerlink" href="#Raven.GPSEvent.geometric_dop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.heading">
+<code class="sig-name descname"><span class="pre">heading</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.Member" title="Raven.Member"><span class="pre">Raven.Member</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False,</span> <span class="pre">component=0.0,</span> <span class="pre">main_component=0.0,</span> <span class="pre">high_precision_component=0.0,</span> <span class="pre">precision=0.0,</span> <span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em><a class="headerlink" href="#Raven.GPSEvent.heading" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.heading_acc">
+<code class="sig-name descname"><span class="pre">heading_acc</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.Member" title="Raven.Member"><span class="pre">Raven.Member</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False,</span> <span class="pre">component=0.0,</span> <span class="pre">main_component=0.0,</span> <span class="pre">high_precision_component=0.0,</span> <span class="pre">precision=0.0,</span> <span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em><a class="headerlink" href="#Raven.GPSEvent.heading_acc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.horizontal_acc">
+<code class="sig-name descname"><span class="pre">horizontal_acc</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.Member" title="Raven.Member"><span class="pre">Raven.Member</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False,</span> <span class="pre">component=0.0,</span> <span class="pre">main_component=0.0,</span> <span class="pre">high_precision_component=0.0,</span> <span class="pre">precision=0.0,</span> <span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em><a class="headerlink" href="#Raven.GPSEvent.horizontal_acc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.horizontal_accuracy">
+<code class="sig-name descname"><span class="pre">horizontal_accuracy</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.Member" title="Raven.Member"><span class="pre">Raven.Member</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False,</span> <span class="pre">component=0.0,</span> <span class="pre">main_component=0.0,</span> <span class="pre">high_precision_component=0.0,</span> <span class="pre">precision=0.0,</span> <span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em><a class="headerlink" href="#Raven.GPSEvent.horizontal_accuracy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.horizontal_dop">
+<code class="sig-name descname"><span class="pre">horizontal_dop</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.Member" title="Raven.Member"><span class="pre">Raven.Member</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False,</span> <span class="pre">component=0.0,</span> <span class="pre">main_component=0.0,</span> <span class="pre">high_precision_component=0.0,</span> <span class="pre">precision=0.0,</span> <span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em><a class="headerlink" href="#Raven.GPSEvent.horizontal_dop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.is_gnss_fix_ok">
+<code class="sig-name descname"><span class="pre">is_gnss_fix_ok</span></code><em class="property"><span class="pre">:</span> <span class="pre">bool</span></em><em class="property"> <span class="pre">=</span> <span class="pre">False</span></em><a class="headerlink" href="#Raven.GPSEvent.is_gnss_fix_ok" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.latitude">
+<code class="sig-name descname"><span class="pre">latitude</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.Member" title="Raven.Member"><span class="pre">Raven.Member</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False,</span> <span class="pre">component=0.0,</span> <span class="pre">main_component=0.0,</span> <span class="pre">high_precision_component=0.0,</span> <span class="pre">precision=0.0,</span> <span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em><a class="headerlink" href="#Raven.GPSEvent.latitude" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.longitude">
+<code class="sig-name descname"><span class="pre">longitude</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.Member" title="Raven.Member"><span class="pre">Raven.Member</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False,</span> <span class="pre">component=0.0,</span> <span class="pre">main_component=0.0,</span> <span class="pre">high_precision_component=0.0,</span> <span class="pre">precision=0.0,</span> <span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em><a class="headerlink" href="#Raven.GPSEvent.longitude" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.mag_acc">
+<code class="sig-name descname"><span class="pre">mag_acc</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.Member" title="Raven.Member"><span class="pre">Raven.Member</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False,</span> <span class="pre">component=0.0,</span> <span class="pre">main_component=0.0,</span> <span class="pre">high_precision_component=0.0,</span> <span class="pre">precision=0.0,</span> <span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em><a class="headerlink" href="#Raven.GPSEvent.mag_acc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.mag_dec">
+<code class="sig-name descname"><span class="pre">mag_dec</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.Member" title="Raven.Member"><span class="pre">Raven.Member</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False,</span> <span class="pre">component=0.0,</span> <span class="pre">main_component=0.0,</span> <span class="pre">high_precision_component=0.0,</span> <span class="pre">precision=0.0,</span> <span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em><a class="headerlink" href="#Raven.GPSEvent.mag_dec" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.ned_down_vel">
+<code class="sig-name descname"><span class="pre">ned_down_vel</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.Member" title="Raven.Member"><span class="pre">Raven.Member</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False,</span> <span class="pre">component=0.0,</span> <span class="pre">main_component=0.0,</span> <span class="pre">high_precision_component=0.0,</span> <span class="pre">precision=0.0,</span> <span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em><a class="headerlink" href="#Raven.GPSEvent.ned_down_vel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.ned_east_vel">
+<code class="sig-name descname"><span class="pre">ned_east_vel</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.Member" title="Raven.Member"><span class="pre">Raven.Member</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False,</span> <span class="pre">component=0.0,</span> <span class="pre">main_component=0.0,</span> <span class="pre">high_precision_component=0.0,</span> <span class="pre">precision=0.0,</span> <span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em><a class="headerlink" href="#Raven.GPSEvent.ned_east_vel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.ned_north_vel">
+<code class="sig-name descname"><span class="pre">ned_north_vel</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.Member" title="Raven.Member"><span class="pre">Raven.Member</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False,</span> <span class="pre">component=0.0,</span> <span class="pre">main_component=0.0,</span> <span class="pre">high_precision_component=0.0,</span> <span class="pre">precision=0.0,</span> <span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em><a class="headerlink" href="#Raven.GPSEvent.ned_north_vel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.northing_dop">
+<code class="sig-name descname"><span class="pre">northing_dop</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.Member" title="Raven.Member"><span class="pre">Raven.Member</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False,</span> <span class="pre">component=0.0,</span> <span class="pre">main_component=0.0,</span> <span class="pre">high_precision_component=0.0,</span> <span class="pre">precision=0.0,</span> <span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em><a class="headerlink" href="#Raven.GPSEvent.northing_dop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.pdop">
+<code class="sig-name descname"><span class="pre">pdop</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.Member" title="Raven.Member"><span class="pre">Raven.Member</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False,</span> <span class="pre">component=0.0,</span> <span class="pre">main_component=0.0,</span> <span class="pre">high_precision_component=0.0,</span> <span class="pre">precision=0.0,</span> <span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em><a class="headerlink" href="#Raven.GPSEvent.pdop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.position_dop">
+<code class="sig-name descname"><span class="pre">position_dop</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.Member" title="Raven.Member"><span class="pre">Raven.Member</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False,</span> <span class="pre">component=0.0,</span> <span class="pre">main_component=0.0,</span> <span class="pre">high_precision_component=0.0,</span> <span class="pre">precision=0.0,</span> <span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em><a class="headerlink" href="#Raven.GPSEvent.position_dop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.seq_number">
+<code class="sig-name descname"><span class="pre">seq_number</span></code><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#Raven.GPSEvent.seq_number" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.siv">
+<code class="sig-name descname"><span class="pre">siv</span></code><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#Raven.GPSEvent.siv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.speed">
+<code class="sig-name descname"><span class="pre">speed</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.Member" title="Raven.Member"><span class="pre">Raven.Member</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False,</span> <span class="pre">component=0.0,</span> <span class="pre">main_component=0.0,</span> <span class="pre">high_precision_component=0.0,</span> <span class="pre">precision=0.0,</span> <span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em><a class="headerlink" href="#Raven.GPSEvent.speed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.speed_acc">
+<code class="sig-name descname"><span class="pre">speed_acc</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.Member" title="Raven.Member"><span class="pre">Raven.Member</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False,</span> <span class="pre">component=0.0,</span> <span class="pre">main_component=0.0,</span> <span class="pre">high_precision_component=0.0,</span> <span class="pre">precision=0.0,</span> <span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em><a class="headerlink" href="#Raven.GPSEvent.speed_acc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.time_dop">
+<code class="sig-name descname"><span class="pre">time_dop</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.Member" title="Raven.Member"><span class="pre">Raven.Member</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False,</span> <span class="pre">component=0.0,</span> <span class="pre">main_component=0.0,</span> <span class="pre">high_precision_component=0.0,</span> <span class="pre">precision=0.0,</span> <span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em><a class="headerlink" href="#Raven.GPSEvent.time_dop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.timestamp">
+<code class="sig-name descname"><span class="pre">timestamp</span></code><em class="property"><span class="pre">:</span> <span class="pre">datetime.datetime</span></em><em class="property"> <span class="pre">=</span> <span class="pre">datetime.datetime(2021,</span> <span class="pre">3,</span> <span class="pre">5,</span> <span class="pre">19,</span> <span class="pre">20,</span> <span class="pre">58,</span> <span class="pre">131469)</span></em><a class="headerlink" href="#Raven.GPSEvent.timestamp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.vertical_acc">
+<code class="sig-name descname"><span class="pre">vertical_acc</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.Member" title="Raven.Member"><span class="pre">Raven.Member</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False,</span> <span class="pre">component=0.0,</span> <span class="pre">main_component=0.0,</span> <span class="pre">high_precision_component=0.0,</span> <span class="pre">precision=0.0,</span> <span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em><a class="headerlink" href="#Raven.GPSEvent.vertical_acc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.vertical_accuracy">
+<code class="sig-name descname"><span class="pre">vertical_accuracy</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.Member" title="Raven.Member"><span class="pre">Raven.Member</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False,</span> <span class="pre">component=0.0,</span> <span class="pre">main_component=0.0,</span> <span class="pre">high_precision_component=0.0,</span> <span class="pre">precision=0.0,</span> <span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em><a class="headerlink" href="#Raven.GPSEvent.vertical_accuracy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.GPSEvent.vertical_dop">
+<code class="sig-name descname"><span class="pre">vertical_dop</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.Member" title="Raven.Member"><span class="pre">Raven.Member</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">Member(is_high_precision=False,</span> <span class="pre">component=0.0,</span> <span class="pre">main_component=0.0,</span> <span class="pre">high_precision_component=0.0,</span> <span class="pre">precision=0.0,</span> <span class="pre">units=&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;)</span></em><a class="headerlink" href="#Raven.GPSEvent.vertical_dop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="Raven.KafkaAPIImplPair">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Raven.</span></code><code class="sig-name descname"><span class="pre">KafkaAPIImplPair</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">producer</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">kafka.producer.kafka.KafkaProducer</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">consumer</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">kafka.consumer.group.KafkaConsumer</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Raven.KafkaAPIImplPair" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A dataclass encapsulating a standard Kafka API impl pair used in Project Odin</p>
+<dl class="py attribute">
+<dt id="Raven.KafkaAPIImplPair.consumer">
+<code class="sig-name descname"><span class="pre">consumer</span></code><em class="property"><span class="pre">:</span> <span class="pre">kafka.consumer.group.KafkaConsumer</span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#Raven.KafkaAPIImplPair.consumer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.KafkaAPIImplPair.producer">
+<code class="sig-name descname"><span class="pre">producer</span></code><em class="property"><span class="pre">:</span> <span class="pre">kafka.producer.kafka.KafkaProducer</span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#Raven.KafkaAPIImplPair.producer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="Raven.KafkaAPIs">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Raven.</span></code><code class="sig-name descname"><span class="pre">KafkaAPIs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Raven.KafkaAPIs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration outlining the APIs provided by the Kafka Message Oriented Middleware (MOM) framework</p>
+<dl class="py attribute">
+<dt id="Raven.KafkaAPIs.CONNECTOR">
+<code class="sig-name descname"><span class="pre">CONNECTOR</span></code><em class="property"> <span class="pre">=</span> <span class="pre">3</span></em><a class="headerlink" href="#Raven.KafkaAPIs.CONNECTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.KafkaAPIs.CONSUMER">
+<code class="sig-name descname"><span class="pre">CONSUMER</span></code><em class="property"> <span class="pre">=</span> <span class="pre">1</span></em><a class="headerlink" href="#Raven.KafkaAPIs.CONSUMER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.KafkaAPIs.PRODUCER">
+<code class="sig-name descname"><span class="pre">PRODUCER</span></code><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#Raven.KafkaAPIs.PRODUCER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.KafkaAPIs.STREAM">
+<code class="sig-name descname"><span class="pre">STREAM</span></code><em class="property"> <span class="pre">=</span> <span class="pre">2</span></em><a class="headerlink" href="#Raven.KafkaAPIs.STREAM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="Raven.KafkaConfig">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Raven.</span></code><code class="sig-name descname"><span class="pre">KafkaConfig</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'xxx'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'yyy'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">broker_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acks</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bootstrap_server_config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'localhost:9093'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zookeeper_config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'localhost:2181'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">retry_backoff</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">3.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">poll_interval</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">3.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">commit_each_poll</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_commit_interval</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_synch_mode</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_version</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">(0,</span> <span class="pre">10)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_offset_reset</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'earliest'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">consumer_timeout</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Raven.KafkaConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A dataclass defining the args associated with the Apache Kafka publish/subscribe framework between the TxRealm and
+RxRealm Python Controllers</p>
+<dl class="py attribute">
+<dt id="Raven.KafkaConfig.acks">
+<code class="sig-name descname"><span class="pre">acks</span></code><em class="property"><span class="pre">:</span> <span class="pre">bool</span></em><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="headerlink" href="#Raven.KafkaConfig.acks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.KafkaConfig.api_version">
+<code class="sig-name descname"><span class="pre">api_version</span></code><em class="property"><span class="pre">:</span> <span class="pre">Tuple</span></em><em class="property"> <span class="pre">=</span> <span class="pre">(0,</span> <span class="pre">10)</span></em><a class="headerlink" href="#Raven.KafkaConfig.api_version" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.KafkaConfig.auto_commit_interval">
+<code class="sig-name descname"><span class="pre">auto_commit_interval</span></code><em class="property"><span class="pre">:</span> <span class="pre">float</span></em><em class="property"> <span class="pre">=</span> <span class="pre">0.1</span></em><a class="headerlink" href="#Raven.KafkaConfig.auto_commit_interval" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.KafkaConfig.auto_offset_reset">
+<code class="sig-name descname"><span class="pre">auto_offset_reset</span></code><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><em class="property"> <span class="pre">=</span> <span class="pre">'earliest'</span></em><a class="headerlink" href="#Raven.KafkaConfig.auto_offset_reset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.KafkaConfig.bootstrap_server_config">
+<code class="sig-name descname"><span class="pre">bootstrap_server_config</span></code><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><em class="property"> <span class="pre">=</span> <span class="pre">'localhost:9093'</span></em><a class="headerlink" href="#Raven.KafkaConfig.bootstrap_server_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.KafkaConfig.broker_id">
+<code class="sig-name descname"><span class="pre">broker_id</span></code><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#Raven.KafkaConfig.broker_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.KafkaConfig.client_id">
+<code class="sig-name descname"><span class="pre">client_id</span></code><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><em class="property"> <span class="pre">=</span> <span class="pre">'xxx'</span></em><a class="headerlink" href="#Raven.KafkaConfig.client_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.KafkaConfig.commit_each_poll">
+<code class="sig-name descname"><span class="pre">commit_each_poll</span></code><em class="property"><span class="pre">:</span> <span class="pre">bool</span></em><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="headerlink" href="#Raven.KafkaConfig.commit_each_poll" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.KafkaConfig.consumer_timeout">
+<code class="sig-name descname"><span class="pre">consumer_timeout</span></code><em class="property"><span class="pre">:</span> <span class="pre">float</span></em><em class="property"> <span class="pre">=</span> <span class="pre">0.1</span></em><a class="headerlink" href="#Raven.KafkaConfig.consumer_timeout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.KafkaConfig.group_id">
+<code class="sig-name descname"><span class="pre">group_id</span></code><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><em class="property"> <span class="pre">=</span> <span class="pre">'yyy'</span></em><a class="headerlink" href="#Raven.KafkaConfig.group_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.KafkaConfig.poll_interval">
+<code class="sig-name descname"><span class="pre">poll_interval</span></code><em class="property"><span class="pre">:</span> <span class="pre">float</span></em><em class="property"> <span class="pre">=</span> <span class="pre">3.0</span></em><a class="headerlink" href="#Raven.KafkaConfig.poll_interval" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.KafkaConfig.retry_backoff">
+<code class="sig-name descname"><span class="pre">retry_backoff</span></code><em class="property"><span class="pre">:</span> <span class="pre">float</span></em><em class="property"> <span class="pre">=</span> <span class="pre">3.0</span></em><a class="headerlink" href="#Raven.KafkaConfig.retry_backoff" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.KafkaConfig.use_synch_mode">
+<code class="sig-name descname"><span class="pre">use_synch_mode</span></code><em class="property"><span class="pre">:</span> <span class="pre">bool</span></em><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="headerlink" href="#Raven.KafkaConfig.use_synch_mode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.KafkaConfig.zookeeper_config">
+<code class="sig-name descname"><span class="pre">zookeeper_config</span></code><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><em class="property"> <span class="pre">=</span> <span class="pre">'localhost:2181'</span></em><a class="headerlink" href="#Raven.KafkaConfig.zookeeper_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="Raven.KafkaTopicConfig">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Raven.</span></code><code class="sig-name descname"><span class="pre">KafkaTopicConfig</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'ODIN_XX_XXXX_EVENTS'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partitions</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replication_factor</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Raven.KafkaTopicConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A dataclass encapsulating all the configs needed to create a Kafka topic at the Centralized Realms Python Controller</p>
+<dl class="py attribute">
+<dt id="Raven.KafkaTopicConfig.name">
+<code class="sig-name descname"><span class="pre">name</span></code><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><em class="property"> <span class="pre">=</span> <span class="pre">'ODIN_XX_XXXX_EVENTS'</span></em><a class="headerlink" href="#Raven.KafkaTopicConfig.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.KafkaTopicConfig.partitions">
+<code class="sig-name descname"><span class="pre">partitions</span></code><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><em class="property"> <span class="pre">=</span> <span class="pre">1</span></em><a class="headerlink" href="#Raven.KafkaTopicConfig.partitions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.KafkaTopicConfig.replication_factor">
+<code class="sig-name descname"><span class="pre">replication_factor</span></code><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><em class="property"> <span class="pre">=</span> <span class="pre">1</span></em><a class="headerlink" href="#Raven.KafkaTopicConfig.replication_factor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="Raven.KafkaTopics">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Raven.</span></code><code class="sig-name descname"><span class="pre">KafkaTopics</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Raven.KafkaTopics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration listing the various topics employed in Project Odin within the Kafka publish/subscribe framework</p>
+<dl>
+<dt>DESIGN NOTES:</dt><dd><ol class="loweralpha simple">
+<li><p>Publishes to Kafka topics happen based on the Realm of the publisher and the type of data being communicated;</p></li>
+</ol>
+<p>b. Subscriptions also happen based on the realm of the subscriber and the type of data being communicated, but
+the key-based message filtering for actual message consumption from the subscribed topic will be done based on
+the allowed_publishers filter; and</p>
+<ol class="loweralpha simple" start="3">
+<li><p>Generally, the Kafka topic to which a XXRealm Python Controller subscribes to belongs to the opposite Realm.</p></li>
+</ol>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="Raven.KafkaTopics.ODIN_CONTROL_EVENTS">
+<code class="sig-name descname"><span class="pre">ODIN_CONTROL_EVENTS</span></code><em class="property"> <span class="pre">=</span> <span class="pre">KafkaTopicConfig(name='ODIN_CONTROL_EVENTS',</span> <span class="pre">partitions=3,</span> <span class="pre">replication_factor=3)</span></em><a class="headerlink" href="#Raven.KafkaTopics.ODIN_CONTROL_EVENTS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.KafkaTopics.ODIN_RX_COMM_EVENTS">
+<code class="sig-name descname"><span class="pre">ODIN_RX_COMM_EVENTS</span></code><em class="property"> <span class="pre">=</span> <span class="pre">KafkaTopicConfig(name='ODIN_RX_COMM_SAMPLES',</span> <span class="pre">partitions=3,</span> <span class="pre">replication_factor=3)</span></em><a class="headerlink" href="#Raven.KafkaTopics.ODIN_RX_COMM_EVENTS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.KafkaTopics.ODIN_RX_GPS_EVENTS">
+<code class="sig-name descname"><span class="pre">ODIN_RX_GPS_EVENTS</span></code><em class="property"> <span class="pre">=</span> <span class="pre">KafkaTopicConfig(name='ODIN_RX_GPS_EVENTS',</span> <span class="pre">partitions=3,</span> <span class="pre">replication_factor=3)</span></em><a class="headerlink" href="#Raven.KafkaTopics.ODIN_RX_GPS_EVENTS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.KafkaTopics.ODIN_TX_COMM_EVENTS">
+<code class="sig-name descname"><span class="pre">ODIN_TX_COMM_EVENTS</span></code><em class="property"> <span class="pre">=</span> <span class="pre">KafkaTopicConfig(name='ODIN_TX_COMM_SAMPLES',</span> <span class="pre">partitions=3,</span> <span class="pre">replication_factor=3)</span></em><a class="headerlink" href="#Raven.KafkaTopics.ODIN_TX_COMM_EVENTS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.KafkaTopics.ODIN_TX_GPS_EVENTS">
+<code class="sig-name descname"><span class="pre">ODIN_TX_GPS_EVENTS</span></code><em class="property"> <span class="pre">=</span> <span class="pre">KafkaTopicConfig(name='ODIN_TX_GPS_EVENTS',</span> <span class="pre">partitions=3,</span> <span class="pre">replication_factor=3)</span></em><a class="headerlink" href="#Raven.KafkaTopics.ODIN_TX_GPS_EVENTS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.MOM_PROPERTIES">
+<code class="sig-prename descclassname"><span class="pre">Raven.</span></code><code class="sig-name descname"><span class="pre">MOM_PROPERTIES</span></code><a class="headerlink" href="#Raven.MOM_PROPERTIES" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">Raven.MOMProperties</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.MOM_ROUTINE_PAIR">
+<code class="sig-prename descclassname"><span class="pre">Raven.</span></code><code class="sig-name descname"><span class="pre">MOM_ROUTINE_PAIR</span></code><a class="headerlink" href="#Raven.MOM_ROUTINE_PAIR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enumerations and Dataclasses relevant to the Kafka Message Oriented Middleware (MOM) framework’s API calls within
+XXRealm Python Controllers</p>
+<p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">Raven.MOMRoutinePair</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="Raven.Member">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Raven.</span></code><code class="sig-name descname"><span class="pre">Member</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">is_high_precision:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></em>, <em class="sig-param"><span class="pre">component:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></em>, <em class="sig-param"><span class="pre">main_component:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></em>, <em class="sig-param"><span class="pre">high_precision_component:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></em>, <em class="sig-param"><span class="pre">precision:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></em>, <em class="sig-param"><span class="pre">units:</span> <span class="pre">Raven.Units</span> <span class="pre">=</span> <span class="pre">&lt;Units.DIMENSIONLESS:</span> <span class="pre">9&gt;</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Raven.Member" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Secondary information tier in GPSEvent</p>
+<p>A core member which encapsulates highly specific details about latitude, longitude, altitude, speed, heading, and
+other components in the primary information tier of GPSEvent</p>
+<dl class="py attribute">
+<dt id="Raven.Member.component">
+<code class="sig-name descname"><span class="pre">component</span></code><em class="property"><span class="pre">:</span> <span class="pre">float</span></em><em class="property"> <span class="pre">=</span> <span class="pre">0.0</span></em><a class="headerlink" href="#Raven.Member.component" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.Member.high_precision_component">
+<code class="sig-name descname"><span class="pre">high_precision_component</span></code><em class="property"><span class="pre">:</span> <span class="pre">float</span></em><em class="property"> <span class="pre">=</span> <span class="pre">0.0</span></em><a class="headerlink" href="#Raven.Member.high_precision_component" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.Member.is_high_precision">
+<code class="sig-name descname"><span class="pre">is_high_precision</span></code><em class="property"><span class="pre">:</span> <span class="pre">bool</span></em><em class="property"> <span class="pre">=</span> <span class="pre">False</span></em><a class="headerlink" href="#Raven.Member.is_high_precision" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.Member.main_component">
+<code class="sig-name descname"><span class="pre">main_component</span></code><em class="property"><span class="pre">:</span> <span class="pre">float</span></em><em class="property"> <span class="pre">=</span> <span class="pre">0.0</span></em><a class="headerlink" href="#Raven.Member.main_component" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.Member.precision">
+<code class="sig-name descname"><span class="pre">precision</span></code><em class="property"><span class="pre">:</span> <span class="pre">float</span></em><em class="property"> <span class="pre">=</span> <span class="pre">0.0</span></em><a class="headerlink" href="#Raven.Member.precision" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.Member.units">
+<code class="sig-name descname"><span class="pre">units</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="#Raven.Units" title="Raven.Units"><span class="pre">Raven.Units</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">9</span></em><a class="headerlink" href="#Raven.Member.units" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="Raven.Mobility">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Raven.</span></code><code class="sig-name descname"><span class="pre">Mobility</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Raven.Mobility" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration listing the mobility configurations of the Tx in Project Odin</p>
+<dl class="py attribute">
+<dt id="Raven.Mobility.CONTINUOUS_DRONE">
+<code class="sig-name descname"><span class="pre">CONTINUOUS_DRONE</span></code><em class="property"> <span class="pre">=</span> <span class="pre">2</span></em><a class="headerlink" href="#Raven.Mobility.CONTINUOUS_DRONE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.Mobility.CONTINUOUS_ROVER">
+<code class="sig-name descname"><span class="pre">CONTINUOUS_ROVER</span></code><em class="property"> <span class="pre">=</span> <span class="pre">1</span></em><a class="headerlink" href="#Raven.Mobility.CONTINUOUS_ROVER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.Mobility.DISCONTINUOUS_DRONE">
+<code class="sig-name descname"><span class="pre">DISCONTINUOUS_DRONE</span></code><em class="property"> <span class="pre">=</span> <span class="pre">4</span></em><a class="headerlink" href="#Raven.Mobility.DISCONTINUOUS_DRONE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.Mobility.DISCONTINUOUS_ROVER">
+<code class="sig-name descname"><span class="pre">DISCONTINUOUS_ROVER</span></code><em class="property"> <span class="pre">=</span> <span class="pre">3</span></em><a class="headerlink" href="#Raven.Mobility.DISCONTINUOUS_ROVER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.Mobility.IMMOBILE">
+<code class="sig-name descname"><span class="pre">IMMOBILE</span></code><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#Raven.Mobility.IMMOBILE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.PIPELINE_INTERNAL_CAPSULE">
+<code class="sig-prename descclassname"><span class="pre">Raven.</span></code><code class="sig-name descname"><span class="pre">PIPELINE_INTERNAL_CAPSULE</span></code><a class="headerlink" href="#Raven.PIPELINE_INTERNAL_CAPSULE" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">Raven.PipelineInternalCapsule</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="Raven.RealmTypes">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Raven.</span></code><code class="sig-name descname"><span class="pre">RealmTypes</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Raven.RealmTypes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration listing the various supported Realm Types (Node Types) in Project Odin</p>
+<dl class="py attribute">
+<dt id="Raven.RealmTypes.AGGREGATOR">
+<code class="sig-name descname"><span class="pre">AGGREGATOR</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'Agg'</span></em><a class="headerlink" href="#Raven.RealmTypes.AGGREGATOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.RealmTypes.GATEWAY">
+<code class="sig-name descname"><span class="pre">GATEWAY</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'Gw'</span></em><a class="headerlink" href="#Raven.RealmTypes.GATEWAY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.RealmTypes.RECEPTION">
+<code class="sig-name descname"><span class="pre">RECEPTION</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'Rx'</span></em><a class="headerlink" href="#Raven.RealmTypes.RECEPTION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.RealmTypes.REPEATER">
+<code class="sig-name descname"><span class="pre">REPEATER</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'Rp'</span></em><a class="headerlink" href="#Raven.RealmTypes.REPEATER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.RealmTypes.TRANSMISSION">
+<code class="sig-name descname"><span class="pre">TRANSMISSION</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'Tx'</span></em><a class="headerlink" href="#Raven.RealmTypes.TRANSMISSION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="Raven.SerialCommConfig">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Raven.</span></code><code class="sig-name descname"><span class="pre">SerialCommConfig</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'xxx'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_wireless</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'COMx'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baud_rate</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">9600</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sleep_duration</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Raven.SerialCommConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A dataclass defining the args associated with the serial communication interface between the uC and TxRealm/RxRealm
+Python Controllers</p>
+<dl class="py attribute">
+<dt id="Raven.SerialCommConfig.baud_rate">
+<code class="sig-name descname"><span class="pre">baud_rate</span></code><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><em class="property"> <span class="pre">=</span> <span class="pre">9600</span></em><a class="headerlink" href="#Raven.SerialCommConfig.baud_rate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.SerialCommConfig.id">
+<code class="sig-name descname"><span class="pre">id</span></code><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><em class="property"> <span class="pre">=</span> <span class="pre">'xxx'</span></em><a class="headerlink" href="#Raven.SerialCommConfig.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.SerialCommConfig.is_wireless">
+<code class="sig-name descname"><span class="pre">is_wireless</span></code><em class="property"><span class="pre">:</span> <span class="pre">bool</span></em><em class="property"> <span class="pre">=</span> <span class="pre">False</span></em><a class="headerlink" href="#Raven.SerialCommConfig.is_wireless" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.SerialCommConfig.port">
+<code class="sig-name descname"><span class="pre">port</span></code><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><em class="property"> <span class="pre">=</span> <span class="pre">'COMx'</span></em><a class="headerlink" href="#Raven.SerialCommConfig.port" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.SerialCommConfig.sleep_duration">
+<code class="sig-name descname"><span class="pre">sleep_duration</span></code><em class="property"><span class="pre">:</span> <span class="pre">float</span></em><em class="property"> <span class="pre">=</span> <span class="pre">0.1</span></em><a class="headerlink" href="#Raven.SerialCommConfig.sleep_duration" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.SerialCommConfig.timeout">
+<code class="sig-name descname"><span class="pre">timeout</span></code><em class="property"><span class="pre">:</span> <span class="pre">float</span></em><em class="property"> <span class="pre">=</span> <span class="pre">0.1</span></em><a class="headerlink" href="#Raven.SerialCommConfig.timeout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="Raven.Units">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Raven.</span></code><code class="sig-name descname"><span class="pre">Units</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Raven.Units" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration listing all possible units for GPSEvent members</p>
+<dl class="py attribute">
+<dt id="Raven.Units.CENTIMETERS">
+<code class="sig-name descname"><span class="pre">CENTIMETERS</span></code><em class="property"> <span class="pre">=</span> <span class="pre">1</span></em><a class="headerlink" href="#Raven.Units.CENTIMETERS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.Units.DEGREES">
+<code class="sig-name descname"><span class="pre">DEGREES</span></code><em class="property"> <span class="pre">=</span> <span class="pre">3</span></em><a class="headerlink" href="#Raven.Units.DEGREES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.Units.DIMENSIONLESS">
+<code class="sig-name descname"><span class="pre">DIMENSIONLESS</span></code><em class="property"> <span class="pre">=</span> <span class="pre">9</span></em><a class="headerlink" href="#Raven.Units.DIMENSIONLESS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.Units.FEET">
+<code class="sig-name descname"><span class="pre">FEET</span></code><em class="property"> <span class="pre">=</span> <span class="pre">7</span></em><a class="headerlink" href="#Raven.Units.FEET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.Units.INCHES">
+<code class="sig-name descname"><span class="pre">INCHES</span></code><em class="property"> <span class="pre">=</span> <span class="pre">6</span></em><a class="headerlink" href="#Raven.Units.INCHES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.Units.METERS">
+<code class="sig-name descname"><span class="pre">METERS</span></code><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#Raven.Units.METERS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.Units.MILLIMETERS">
+<code class="sig-name descname"><span class="pre">MILLIMETERS</span></code><em class="property"> <span class="pre">=</span> <span class="pre">2</span></em><a class="headerlink" href="#Raven.Units.MILLIMETERS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.Units.MINUTES">
+<code class="sig-name descname"><span class="pre">MINUTES</span></code><em class="property"> <span class="pre">=</span> <span class="pre">4</span></em><a class="headerlink" href="#Raven.Units.MINUTES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.Units.SECONDS">
+<code class="sig-name descname"><span class="pre">SECONDS</span></code><em class="property"> <span class="pre">=</span> <span class="pre">5</span></em><a class="headerlink" href="#Raven.Units.SECONDS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="Raven.Units.YARDS">
+<code class="sig-name descname"><span class="pre">YARDS</span></code><em class="property"> <span class="pre">=</span> <span class="pre">8</span></em><a class="headerlink" href="#Raven.Units.YARDS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Bharath Keshavamurthy.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

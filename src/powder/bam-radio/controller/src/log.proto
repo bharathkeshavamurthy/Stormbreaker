@@ -1,0 +1,57 @@
+// BAM! Wireless logging proto definitions
+//
+// Copyright (c) 2018 Dennis Ogbe
+//
+// Use this file with caution. This is intended as a last resort when you need
+// to log some data, but it is awkward or impossible to express this data as
+// SQL-compatible types (i.e. variable-length arrays, more complicated
+// structs...)
+//
+// This will give you an alternative: define a protobuf message and
+// serialize/deserialize using protobuf.
+//
+// I repeat myself: Use this sparingly.
+
+syntax = "proto3";
+
+package BAMLogPb;
+
+// This is a generic log message for the happenings in the allocatechannels()
+// function which currently lies at the BBController.
+message ChannelAllocEventInfo {
+  /// a ref to the corresponding OFDMParamsUpdate (the call to
+  /// ccData->updateOFDMParams(...)). If this ID is zero, then this attempt at
+  /// allocating channels was unsuccessful! This field can be used to reference
+  /// the outcome of this attempt by looking up the corresponding id in the
+  /// ChannelAllocUpdateEvent table.
+  uint32 ofdm_params_update_id = 1;
+  /// the target bandwidths computed for each transmit node
+  message Target {
+    /// the actual computed target bandwidth
+    float bandwidth_needed = 1;
+    /// the corresponding waveform ID (FIXME FIXME see comment in log.cc...)
+    uint32 waveform_id = 2;
+  }
+  repeated Target target = 2;
+  /// the available whitespace computed either by whitespace.cc or using location data
+  message Whitespace {
+    /// the start of a slice of "whitespace"
+    float start = 1;
+    float stop = 2;
+  }
+  repeated Whitespace whitespace = 3;
+  /// the number of iterations of the greedy allocation algorithm. (This is
+  /// hopefully subject to change as we move away from the crude greedy
+  /// allocation)
+  uint32 ntries = 4;
+  /// the sample rate at which we tried all of this
+  float sample_rate = 5;
+  /// the guard band (minimum thisdante between channels)
+  float guard_band = 6;
+  /// the margin to the band edges
+  float safety_margin = 7;
+  /// the SRN IDs participating in this attempt
+  repeated uint32 node_ids = 8;
+  /// the slot number for each SRN (same order as node_ids;
+  repeated uint32 tx_slots = 9;
+}

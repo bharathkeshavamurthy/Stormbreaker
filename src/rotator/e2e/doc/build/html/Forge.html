@@ -1,0 +1,916 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Forge module &mdash; Odin v21.01 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Raven module" href="Raven.html" />
+    <link rel="prev" title="e2e" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Odin
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">e2e</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Forge module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Raven.html">Raven module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Realms.html">Realms module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RxRealm.html">RxRealm module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TxRealm.html">TxRealm module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Odin</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html">e2e</a> &raquo;</li>
+        
+      <li>Forge module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/Forge.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-Forge">
+<span id="forge-module"></span><h1>Forge module<a class="headerlink" href="#module-Forge" title="Permalink to this headline">¶</a></h1>
+<p>This script defines the necessary utilities for Project Odin–such as, logging parameters, decorator methods,
+representation callees, message validations, message parsers, etc.</p>
+<p>Author: Bharath Keshavamurthy &lt;<a class="reference external" href="mailto:bkeshava&#37;&#52;&#48;purdue&#46;edu">bkeshava<span>&#64;</span>purdue<span>&#46;</span>edu</a>&gt;</p>
+<p>Organization: School of Electrical &amp; Computer Engineering, Purdue University, West Lafayette, IN.</p>
+<p>Copyright (c) 2021. All Rights Reserved</p>
+<dl class="py class">
+<dt id="Forge.Controller">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">Controller</span></code><a class="headerlink" href="#Forge.Controller" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>An abstract class for XXRealm Python Controllers</p>
+<dl class="py method">
+<dt id="Forge.Controller.kafka_client">
+<em class="property"><span class="pre">abstract</span> <span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">kafka_client</span></code><a class="headerlink" href="#Forge.Controller.kafka_client" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Kafka client</p>
+<p>Returns: The KafkaClient associated with this XXRealm Python Controller</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="Forge.Controller.realm">
+<em class="property"><span class="pre">abstract</span> <span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">realm</span></code><a class="headerlink" href="#Forge.Controller.realm" title="Permalink to this definition">¶</a></dt>
+<dd><p>The realm-type of this controller implementation</p>
+<p>Returns: The realm-type (member of RealmTypes enumeration) of this controller implementation</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="Forge.Controller.registration_key">
+<em class="property"><span class="pre">abstract</span> <span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">registration_key</span></code><a class="headerlink" href="#Forge.Controller.registration_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>The registration key of this controller implementation obtained post-registration from the Centralized Realms
+Python Controller</p>
+<p>Returns: The registration key of this controller implementation: Set via a callback from an exposed method</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="Forge.Controller.serial_comm">
+<em class="property"><span class="pre">abstract</span> <span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">serial_comm</span></code><a class="headerlink" href="#Forge.Controller.serial_comm" title="Permalink to this definition">¶</a></dt>
+<dd><p>The serial communication interface</p>
+<p>Returns: The uC-XXRealm Python Controller serial communication interface configuration (SerialCommConfig)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="Forge.Controller.setup_handler">
+<em class="property"><span class="pre">abstract</span> <span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">setup_handler</span></code><a class="headerlink" href="#Forge.Controller.setup_handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>The setup handler</p>
+<p>Returns: The SetupHandler associated with this XXRealm Python Controller</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="Forge.Controller.start">
+<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">start</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#Forge.Controller.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the control operations at the XXRealm Python Controllers
+For example, At the TxRealm Python Controller (v21.01 ControllerImpl): uC-based servo control trigger via
+serial–post rotation angle estimation; and</p>
+<p>At the RxRealm Python Controller (v21.01 ControllerImpl): uC-based servo control trigger via serial–
+post rotation angle estimation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="Forge.Controller.uid">
+<em class="property"><span class="pre">abstract</span> <span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">uid</span></code><a class="headerlink" href="#Forge.Controller.uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The unique identifier of this controller implementation</p>
+<dl class="simple">
+<dt>Returns: The unique string identifier of this controller implementation (Picks up the UID during the initial</dt><dd><p>installation configuration of this XXRealm Python Controller by Docker)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="Forge.InvalidControllerConfiguration">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">InvalidControllerConfiguration</span></code><a class="headerlink" href="#Forge.InvalidControllerConfiguration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Invalid Controller Configuration Error</p>
+<p>This exception is raised when invalid configurations are received for the XXRealm Python Controller that is to be
+registered with the Centralized Realms Python Controller.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="Forge.InvalidDictError">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">InvalidDictError</span></code><a class="headerlink" href="#Forge.InvalidDictError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Invalid Dict Error</p>
+<p>This exception is raised when an invalid/unsupported Python dictionary is provided in order to pack it into a
+Python dataclass instance.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="Forge.KafkaClient">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">KafkaClient</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="Raven.html#Raven.KafkaConfig" title="Raven.KafkaConfig"><span class="pre">Raven.KafkaConfig</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Forge.KafkaClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A Kafka client encapsulation</p>
+<dl class="py method">
+<dt id="Forge.KafkaClient.get_consumer">
+<code class="sig-name descname"><span class="pre">get_consumer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topic</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="Raven.html#Raven.KafkaTopics" title="Raven.KafkaTopics"><span class="pre">Raven.KafkaTopics</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">kafka.consumer.group.KafkaConsumer</span><a class="headerlink" href="#Forge.KafkaClient.get_consumer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get Kafka consumer for the specified topic</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>topic</strong> – The KafkaTopics enumeration member–the consumer for which is to be returned</p>
+</dd>
+</dl>
+<p>Returns: The KafkaConsumer instance associated with the given topic</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="Forge.KafkaClient.get_kafka_api_impl_pair">
+<code class="sig-name descname"><span class="pre">get_kafka_api_impl_pair</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topic</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="Raven.html#Raven.KafkaTopics" title="Raven.KafkaTopics"><span class="pre">Raven.KafkaTopics</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="Raven.html#Raven.KafkaAPIImplPair" title="Raven.KafkaAPIImplPair"><span class="pre">Raven.KafkaAPIImplPair</span></a><a class="headerlink" href="#Forge.KafkaClient.get_kafka_api_impl_pair" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get Kafka producer/consumer API implementation pair for the specified topic</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>topic</strong> – The KafkaTopics enumeration member for which the producer-consumer pair is to be returned</p>
+</dd>
+</dl>
+<p>Returns: The producer-consumer pair associated with the specified topic</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="Forge.KafkaClient.get_producer">
+<code class="sig-name descname"><span class="pre">get_producer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topic</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="Raven.html#Raven.KafkaTopics" title="Raven.KafkaTopics"><span class="pre">Raven.KafkaTopics</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">kafka.producer.kafka.KafkaProducer</span><a class="headerlink" href="#Forge.KafkaClient.get_producer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get Kafka producer for the specified topic</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>topic</strong> – The KafkaTopics enumeration member–the producer for which is to be returned</p>
+</dd>
+</dl>
+<p>Returns: The KafkaProducer instance associated with the given topic</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="Forge.KafkaClient.set_consumer">
+<code class="sig-name descname"><span class="pre">set_consumer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topic</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="Raven.html#Raven.KafkaTopics" title="Raven.KafkaTopics"><span class="pre">Raven.KafkaTopics</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">consumer</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">kafka.consumer.group.KafkaConsumer</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#Forge.KafkaClient.set_consumer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set Kafka consumer for the specified topic</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>topic</strong> – The KafkaTopics enumeration member for which the consumer is to be set</p></li>
+<li><p><strong>consumer</strong> – The KafkaConsumer instance that is being registered with the given topic for this KafkaClient
+instance</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="Forge.KafkaClient.set_kafka_api_impl_pair">
+<code class="sig-name descname"><span class="pre">set_kafka_api_impl_pair</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topic</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="Raven.html#Raven.KafkaTopics" title="Raven.KafkaTopics"><span class="pre">Raven.KafkaTopics</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">producer</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">kafka.producer.kafka.KafkaProducer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">consumer</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">kafka.consumer.group.KafkaConsumer</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#Forge.KafkaClient.set_kafka_api_impl_pair" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set Kafka producer/consumer API implementation pair for the specified topic</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>topic</strong> – The KafkaTopics enumeration member for which the producer-consumer pair is to be set</p></li>
+<li><p><strong>producer</strong> – The KafkaProducer instance constituting one-half of the KafkaAPIImplPair</p></li>
+<li><p><strong>consumer</strong> – The KafkaConsumer instance constituting one-half of the KafkaAPIImplPair</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="Forge.KafkaClient.set_producer">
+<code class="sig-name descname"><span class="pre">set_producer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topic</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="Raven.html#Raven.KafkaTopics" title="Raven.KafkaTopics"><span class="pre">Raven.KafkaTopics</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">producer</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">kafka.producer.kafka.KafkaProducer</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#Forge.KafkaClient.set_producer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set Kafka producer for the specified topic</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>topic</strong> – The KafkaTopics enumeration member for which the producer is to be set</p></li>
+<li><p><strong>producer</strong> – The KafkaProducer instance that is being registered with the given topic for this KafkaClient
+instance</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="Forge.KafkaClientNotRegisteredError">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">KafkaClientNotRegisteredError</span></code><a class="headerlink" href="#Forge.KafkaClientNotRegisteredError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IndexError</span></code></p>
+<p>Kafka Client Not-Registered Error</p>
+<p>This exception is raised when a connection creation request is placed by an unregistered KafkaClient to the
+KafkaConnectionFactory.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="Forge.KafkaConnectionFactory">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">KafkaConnectionFactory</span></code><a class="headerlink" href="#Forge.KafkaConnectionFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A Singleton class to create connections (producers/consumers) for Kafka clients</p>
+<dl class="py method">
+<dt id="Forge.KafkaConnectionFactory.create_connection">
+<code class="sig-name descname"><span class="pre">create_connection</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">registration_number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="Raven.html#Raven.KafkaAPIs" title="Raven.KafkaAPIs"><span class="pre">Raven.KafkaAPIs</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">topics</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="Raven.html#Raven.KafkaTopics" title="Raven.KafkaTopics"><span class="pre">Raven.KafkaTopics</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#Forge.KafkaConnectionFactory.create_connection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create API-specific connections for registered Kafka clients–with respect to the given topics</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>registration_number</strong> – The KafkaClient’s registration number</p></li>
+<li><p><strong>api</strong> – The API implementation instance that is to be created for this client</p></li>
+<li><p><strong>topics</strong> – The tuple of KafkaTopics for which API implementations are to be associated w.r.t the KafkaClient
+indexed by the provided registration number</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>NotImplementedError</strong> – Method or function hasn’t been implemented yet</p></li>
+<li><p><a class="reference internal" href="#Forge.KafkaClientNotRegisteredError" title="Forge.KafkaClientNotRegisteredError"><strong>KafkaClientNotRegisteredError</strong></a> – This exception is raised when a connection creation request is placed by an
+    unregistered KafkaClient to the KafkaConnectionFactory.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="Forge.KafkaConnectionFactory.de_register">
+<code class="sig-name descname"><span class="pre">de_register</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">registration_number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#Forge.KafkaConnectionFactory.de_register" title="Permalink to this definition">¶</a></dt>
+<dd><p>De-register the Kafka client indexed by its registration number</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>registration_number</strong> – Unregister the KafkaClient using this argument</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="Forge.KafkaConnectionFactory.deregister">
+<code class="sig-name descname"><span class="pre">deregister</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#Forge.KafkaClient" title="Forge.KafkaClient"><span class="pre">Forge.KafkaClient</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#Forge.KafkaConnectionFactory.deregister" title="Permalink to this definition">¶</a></dt>
+<dd><p>De-register the given Kafka client</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>client</strong> – The KafkaClient that is to be unregistered from this connection factory</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="Forge.KafkaConnectionFactory.force_register">
+<code class="sig-name descname"><span class="pre">force_register</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#Forge.KafkaClient" title="Forge.KafkaClient"><span class="pre">Forge.KafkaClient</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">registration_number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">int</span><a class="headerlink" href="#Forge.KafkaConnectionFactory.force_register" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to force re-registration of your Kafka client</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client</strong> – The KafkaClient that is to be registered with this connection factory</p></li>
+<li><p><strong>registration_number</strong> – If this argument is specified, remove this indexed KafkaClient from the registry, and
+re-register it</p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns: The new registration number</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="Forge.KafkaConnectionFactory.get_factory">
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">get_factory</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Forge.KafkaConnectionFactory.get_factory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instance access method for this Singleton</p>
+<p>Returns: The ONE and ONLY instance of this Kafka connection factory</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="Forge.KafkaConnectionFactory.get_registration_number">
+<code class="sig-name descname"><span class="pre">get_registration_number</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#Forge.KafkaClient" title="Forge.KafkaClient"><span class="pre">Forge.KafkaClient</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">int</span><a class="headerlink" href="#Forge.KafkaConnectionFactory.get_registration_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the registration number for the given KafkaClient</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>client</strong> – The KafkaClient whose registration number is to be returned</p>
+</dd>
+</dl>
+<p>Returns: The registration number of the specified Kafka client</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="Forge.KafkaConnectionFactory.register">
+<code class="sig-name descname"><span class="pre">register</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#Forge.KafkaClient" title="Forge.KafkaClient"><span class="pre">Forge.KafkaClient</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">int</span><a class="headerlink" href="#Forge.KafkaConnectionFactory.register" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register the Kafka client with this connection factory–and, return its registration number</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>client</strong> – The KafkaClient that is to be registered with this connection factory</p>
+</dd>
+</dl>
+<p>Returns: The client’s registration number post-registration</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="Forge.KafkaConnectionFactoryInstantiationError">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">KafkaConnectionFactoryInstantiationError</span></code><a class="headerlink" href="#Forge.KafkaConnectionFactoryInstantiationError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Kafka Connection Factory Instantiation Error</p>
+<p>This exception is raised when the instantiation of the Singleton KafkaConnectionFactory instance FAILS.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="Forge.KafkaConsumptionError">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">KafkaConsumptionError</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Forge.KafkaConsumptionError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Kafka Consumption Error</p>
+<p>This exception is raised when something went wrong while consuming from the specified Kafka topic.</p>
+<dl class="simple">
+<dt>DEPRECATION NOTE: This exception is no longer necessary due to a re-design which involves a better way to handle</dt><dd><p>consumption errors.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="Forge.KafkaProductionError">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">KafkaProductionError</span></code><a class="headerlink" href="#Forge.KafkaProductionError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Kafka Production Error</p>
+<p>This exception is raised when something went wrong while publishing the given message to the specified
+Kafka topic.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="Forge.KafkaUnknownConnectionError">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">KafkaUnknownConnectionError</span></code><a class="headerlink" href="#Forge.KafkaUnknownConnectionError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Kafka Unknown Connection Error</p>
+<p>This exception is raised when production/consumption is initiated for a KafkaTopic without creating its
+associated connections in the KafkaConnectionFactory.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt id="Forge.LOGGING_DATE_TIME_FORMAT">
+<code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">LOGGING_DATE_TIME_FORMAT</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'%Y-%m-%dT%H:%M:%S'</span></em><a class="headerlink" href="#Forge.LOGGING_DATE_TIME_FORMAT" title="Permalink to this definition">¶</a></dt>
+<dd><p>The rpyc.utils.server.ThreadedServer properties defined as a namedtuple utility</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="Forge.NMEAValidationError">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">NMEAValidationError</span></code><a class="headerlink" href="#Forge.NMEAValidationError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>NMEA Validation Error</p>
+<p>This exception is raised when the NMEA validation of the GPS data received over the serial communication
+interface between the uC and the XXRealm Python Controllers FAILS.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt id="Forge.REALMS_PORT_ENVIRONMENT_VARIABLE">
+<code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">REALMS_PORT_ENVIRONMENT_VARIABLE</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'REALMS_PORT'</span></em><a class="headerlink" href="#Forge.REALMS_PORT_ENVIRONMENT_VARIABLE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Logging</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="Forge.REALMS_THREADED_SERVER_DETAILS">
+<code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">REALMS_THREADED_SERVER_DETAILS</span></code><a class="headerlink" href="#Forge.REALMS_THREADED_SERVER_DETAILS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorators</p>
+<p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">Forge.RealmsThreadedServerDetails</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="Forge.RealmControllerNotRegisteredError">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">RealmControllerNotRegisteredError</span></code><a class="headerlink" href="#Forge.RealmControllerNotRegisteredError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Realm Controller Not Registered Error</p>
+<p>This exception is raised when accesses are made to core methods in an unregistered XXRealm Python Controller.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="Forge.RealmsInstantiationError">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">RealmsInstantiationError</span></code><a class="headerlink" href="#Forge.RealmsInstantiationError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Realms Instantiation Error</p>
+<p>This exception is raised when the instantiation of the Singleton Realms instance FAILS.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="Forge.RealmsStartupPipelineExecutionError">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">RealmsStartupPipelineExecutionError</span></code><a class="headerlink" href="#Forge.RealmsStartupPipelineExecutionError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Realms Startup Pipeline Execution Error</p>
+<p>This exception is raised when an error has occurred during the execution of the startup pipeline in the Centralized
+Realms Python Controller. The error could be due to the following sequenced reasons (note the persistence of error):
+a. Unsupported platform encountered: The Centralized Realms Python Controller can only be run on Linux,
+b. A valid, single properties file could not be found for either Zookeeper or the Kafka server,
+c. Zookeeper startup failed,
+d. Kafka server startup failed, or
+e. Kafka topic creation failed.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="Forge.SetupHandler">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">SetupHandler</span></code><a class="headerlink" href="#Forge.SetupHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>An abstract class definition for configuration &amp; setup handling w.r.t the XXRealm Python Controllers</p>
+<dl class="py method">
+<dt id="Forge.SetupHandler.setup">
+<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">setup</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mandates</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#Forge.SetupHandler.setup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the Python Controller’s setup tasks
+For example, At the TxRealm Python Controller’s setup handler (v21.01 SetupHandlerImpl): Parse the NMEA GPS
+data from the uC (received over serial) into a GPSEvent instance, publish the JSON represented GPSEvent
+as an ODIN_GPS_EVENT &lt;module.__name__ (TxRealm), GPSEvent.json_repr&gt; to the ODIN_TX_GPS_EVENTS Kafka
+topic, and  simultaneously subscribe to the ODIN_RX_GPS_EVENTS Kafka topic–parse the consumed JSON
+ODIN_GPS_EVENTs &lt;module.__name__ (RxRealm), GPSEvent.json_repr&gt; from the Rx into the GPSEvent dataclass
+for use in the TxRealm Python Controller (v21.01 ControllerImpl); and</p>
+<p>At the RxRealm Python Controller’s setup handler (v21.01 SetupHandlerImpl): Parse the NMEA GPS
+data from the uC (received over serial) into a GPSEvent instance, publish the JSON represented GPSEvent
+as an ODIN_GPS_EVENT &lt;module.__name__ (RxRealm), GPSEvent.json_repr&gt; to the ODIN_TX_GPS_EVENTS Kafka
+topic, and  simultaneously subscribe to the ODIN_RX_GPS_EVENTS Kafka topic–parse the consumed JSON
+ODIN_GPS_EVENTs &lt;module.__name__ (TxRealm), GPSEvent.json_repr&gt; from the Tx into the GPSEvent dataclass
+for use in the RxRealm Python Controller (v21.01 ControllerImpl).</p>
+<p>NOTE: The Tx in v21.01 is fixed (Mobility.IMMOBILE): So, hard-code the Tx position in the Tx uC control
+code, and post the positional data in the agreed-upon NMEA contract on the uC-TxRealm Python Controller
+serial interface.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mandates</strong> – The XXRealm Python Controller’s Kafka MOM mandates</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="Forge.TOPIC_NAME_SEPARATOR">
+<code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">TOPIC_NAME_SEPARATOR</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'_'</span></em><a class="headerlink" href="#Forge.TOPIC_NAME_SEPARATOR" title="Permalink to this definition">¶</a></dt>
+<dd><p>note here that these
+are set during installation via the Docker CLI</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>The environment variables (system properties) associated with the various modules in Project Odin</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="Forge.ThreadedServerNotConfiguredError">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">ThreadedServerNotConfiguredError</span></code><a class="headerlink" href="#Forge.ThreadedServerNotConfiguredError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Threaded Server Not Configured Error</p>
+<p>This exception is raised when either the hostname or the port is not configured as environment variables (or system
+properties) on the Centralized Realms Python Controller’s platform.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Forge.accepts">
+<code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">accepts</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">types</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Forge.accepts" title="Permalink to this definition">¶</a></dt>
+<dd><p>A decorator for function arg type checking</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>*types</strong> – The supported data types that are to be verified against the arguments provided to a method that is
+decorated with this routine.</p>
+</dd>
+</dl>
+<p>Returns: check_accepts assertion</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Forge.comm_fetch_publish">
+<code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">comm_fetch_publish</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#Forge.comm_fetch_publish" title="Permalink to this definition">¶</a></dt>
+<dd><p>A utility method to fetch Comm data and publish it to the associated Kafka topic</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>*args</strong> – Non-keyword arguments</p></li>
+<li><p><strong>**kwargs</strong> – Keyword arguments</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – Method or function hasn’t been implemented yet.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Forge.comm_subscribe">
+<code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">comm_subscribe</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#Forge.comm_subscribe" title="Permalink to this definition">¶</a></dt>
+<dd><p>A utility method to subscribe to the Kafka topic associated with Comm data in Project Odin</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>*args</strong> – Non-keyword arguments</p></li>
+<li><p><strong>**kwargs</strong> – Keyword arguments</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – Method or function hasn’t been implemented yet.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Forge.connect">
+<code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">connect</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">funcs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Forge.connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pipeline creation method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>funcs</strong> – The routines to be pipelined in the order in which they are provided</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Returns: A wrapper method that encapsulates the provided routines (in the order in which they are provided) in a</dt><dd><p>a data/functional pipeline</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Forge.ctrl_fetch_publish">
+<code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">ctrl_fetch_publish</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#Forge.ctrl_fetch_publish" title="Permalink to this definition">¶</a></dt>
+<dd><p>A utility method to fetch Control data and publish it to the associated Kafka topic</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>*args</strong> – Non-keyword arguments</p></li>
+<li><p><strong>**kwargs</strong> – Keyword arguments</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – Method or function hasn’t been implemented yet.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Forge.ctrl_subscribe">
+<code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">ctrl_subscribe</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#Forge.ctrl_subscribe" title="Permalink to this definition">¶</a></dt>
+<dd><p>A utility method to subscribe to the Kafka topic associated with Control data in Project Odin</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>*args</strong> – Non-keyword arguments</p></li>
+<li><p><strong>**kwargs</strong> – Keyword arguments</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – Method or function hasn’t been implemented yet.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Forge.deprecated">
+<code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">deprecated</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Forge.deprecated" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a decorator which can be used to mark functions as deprecated</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>func</strong> – The method (decorated with &#64;deprecated) against which this deprecation check is made</p>
+</dd>
+</dl>
+<p>Returns: Warnings for deprecation outlined in new_func</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Forge.get_basic_logging">
+<code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">get_basic_logging</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#Forge.get_basic_logging" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the basic logging configurations for all the components in Project Odin</p>
+<dl class="simple">
+<dt>Returns: A Python dictionary encapsulating the basic, common configurations employed for logging in almost every</dt><dd><p>major component in Project Odin</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Forge.get_file_name">
+<code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">get_file_name</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kafka_api</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="Raven.html#Raven.KafkaAPIs" title="Raven.KafkaAPIs"><span class="pre">Raven.KafkaAPIs</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#Forge.get_file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the event log file name in accordance with the Kafka API reference and the specified event sequence number</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>kafka_api</strong> – The KafkaAPIs enumeration member for which the event log file name is to be returned</p></li>
+<li><p><strong>seq_number</strong> – The event sequence number that is incorporated into the log file’s name</p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns: The event log file name w.r.t the Kafka API reference and the specified event sequence number</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Forge.gps_fetch_publish">
+<code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">gps_fetch_publish</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mobility</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="Raven.html#Raven.Mobility" title="Raven.Mobility"><span class="pre">Raven.Mobility</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">serial_comm</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="Raven.html#Raven.SerialCommConfig" title="Raven.SerialCommConfig"><span class="pre">Raven.SerialCommConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">kafka_client</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#Forge.KafkaClient" title="Forge.KafkaClient"><span class="pre">Forge.KafkaClient</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">kafka_topic</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="Raven.html#Raven.KafkaTopics" title="Raven.KafkaTopics"><span class="pre">Raven.KafkaTopics</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">gps_event</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="Raven.html#Raven.GPSEvent" title="Raven.GPSEvent"><span class="pre">Raven.GPSEvent</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">logging.Logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lock</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">_thread.allocate_lock</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#Forge.gps_fetch_publish" title="Permalink to this definition">¶</a></dt>
+<dd><p>A utility method to connect to the uC’s Serial port, extract the NMEA GPS data, process it into a GPSEvent, and
+publish it to the Apache Kafka Message Oriented Middleware (MOM) framework on the specified topic.</p>
+<p>DESIGN_NOTE: Although a lot of the checks in this method may seem gratuitous, they are necessary because this
+is a utility method and external calls to this method may be totally wild and non-conforming as Project
+Odin scales.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mobility</strong> – The Mobility enumeration member in order to determine if we need indefinite GPSEvent publishes</p></li>
+<li><p><strong>serial_comm</strong> – The uC-XXRealm Python Controller serial communication interface configuration</p></li>
+<li><p><strong>kafka_client</strong> – The KafkaClient instance whose KafkaProducer is used for the required publishes</p></li>
+<li><p><strong>kafka_topic</strong> – The KafkaTopics enumeration member to which the KafkaProducer publishes processed GPS data</p></li>
+<li><p><strong>gps_event</strong> – The GPSEvent dataclass instance of the caller that is to be populated in an indefinite thread</p></li>
+<li><p><strong>logger</strong> – The logger instance passed down by the caller for logging and module identification</p></li>
+<li><p><strong>lock</strong> – The threading.Lock object to avoid resource access problems/race conditions</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>SerialException</strong> – Base class for serial port related exceptions</p></li>
+<li><p><a class="reference internal" href="#Forge.KafkaClientNotRegisteredError" title="Forge.KafkaClientNotRegisteredError"><strong>KafkaClientNotRegisteredError</strong></a> – This exception is raised when a connection creation request is placed by an
+    unregistered KafkaClient to the KafkaConnectionFactory.</p></li>
+<li><p><a class="reference internal" href="#Forge.KafkaUnknownConnectionError" title="Forge.KafkaUnknownConnectionError"><strong>KafkaUnknownConnectionError</strong></a> – This exception is raised when production/consumption is initiated for a KafkaTopic
+    without creating its associated connections in the KafkaConnectionFactory.</p></li>
+<li><p><a class="reference internal" href="#Forge.NMEAValidationError" title="Forge.NMEAValidationError"><strong>NMEAValidationError</strong></a> – This exception is raised when the NMEA validation of the GPS data received over the serial
+    communication interface between the uC and the XXRealmPython Controllers FAILS.</p></li>
+<li><p><a class="reference internal" href="#Forge.KafkaProductionError" title="Forge.KafkaProductionError"><strong>KafkaProductionError</strong></a> – This exception is raised when something went wrong while publishing the given message to
+    the specified Kafka topic.</p></li>
+<li><p><strong>Exception</strong> – Common base class for all non-exit exceptions.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Forge.gps_subscribe">
+<code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">gps_subscribe</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kafka_client</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#Forge.KafkaClient" title="Forge.KafkaClient"><span class="pre">Forge.KafkaClient</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">kafka_topic</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="Raven.html#Raven.KafkaTopics" title="Raven.KafkaTopics"><span class="pre">Raven.KafkaTopics</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">gps_event</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="Raven.html#Raven.GPSEvent" title="Raven.GPSEvent"><span class="pre">Raven.GPSEvent</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_publishers</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">logging.Logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lock</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">_thread.allocate_lock</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#Forge.gps_subscribe" title="Permalink to this definition">¶</a></dt>
+<dd><p>A utility method to subscribe to the specified Kafka topic</p>
+<p>DESIGN_NOTE: Although a lot of the checks in this method may seem gratuitous, they are necessary because this
+is a utility method and external calls to this method may be totally wild and non-conforming as Project
+Odin scales.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>kafka_client</strong> – The KafkaClient instance whose KafkaConsumer is used for the required subscriptions</p></li>
+<li><p><strong>kafka_topic</strong> – The KafkaTopics enumeration member that is to be subscribed to by the KafkaClient’s KafkaConsumer</p></li>
+<li><p><strong>gps_event</strong> – The GPSEvent dataclass instance of the caller that is to be populated in an indefinite thread</p></li>
+<li><p><strong>allowed_publishers</strong> – The filter which allows the KafkaConsumer on the provided KafkaTopics enumeration member
+to process only those messages whose keys match the publisher identifiers registered with
+the centralized Scheduler</p></li>
+<li><p><strong>logger</strong> – The logger instance passed down by the caller for module identification</p></li>
+<li><p><strong>lock</strong> – The threading.Lock object to avoid resource access problems/race conditions</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="#Forge.KafkaClientNotRegisteredError" title="Forge.KafkaClientNotRegisteredError"><strong>KafkaClientNotRegisteredError</strong></a> – This exception is raised when a connection creation request is placed by an
+    unregistered KafkaClient to the KafkaConnectionFactory.</p></li>
+<li><p><a class="reference internal" href="#Forge.KafkaUnknownConnectionError" title="Forge.KafkaUnknownConnectionError"><strong>KafkaUnknownConnectionError</strong></a> – This exception is raised when production/consumption is initiated for a KafkaTopic
+    without creating its associated connections in the KafkaConnectionFactory.</p></li>
+<li><p><strong>Exception</strong> – Common base class for all non-exit exceptions</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Forge.json_repr">
+<code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">json_repr</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataclass_obj</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dataclasses.dataclass</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kafka_api</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="Raven.html#Raven.KafkaAPIs" title="Raven.KafkaAPIs"><span class="pre">Raven.KafkaAPIs</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#Forge.json_repr" title="Permalink to this definition">¶</a></dt>
+<dd><p>A utility method to save the JSON GPSEvent to a file (for logging) AND return the JSON-formatted string for the
+Kafka publish routine</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataclass_obj</strong> – The dataclass instance which is to be represented as a JSON string</p></li>
+<li><p><strong>kafka_api</strong> – The KafkaAPI reference for event-specific log file name determination</p></li>
+<li><p><strong>seq_number</strong> – The sequence number of event that is to be logged and represented as a JSON string</p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns: JSON representation of the provided dataclass instance</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Forge.nmea_parse">
+<code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">nmea_parse</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nmea_data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gps_event</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="Raven.html#Raven.GPSEvent" title="Raven.GPSEvent"><span class="pre">Raven.GPSEvent</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#Forge.nmea_parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>A utility method to parse NMEA data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nmea_data</strong> – The NMEA GPS string that is to be checked against the available GPSEvent dataclass instance</p></li>
+<li><p><strong>gps_event</strong> – The available GPSEvent dataclass instance that is to be modified with the updates from the NMEA GPS
+string from the GPS receiver over the uC-XXRealm Python Controller serial communication interface</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Forge.nmea_validate">
+<code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">nmea_validate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nmea_data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">bool</span><a class="headerlink" href="#Forge.nmea_validate" title="Permalink to this definition">¶</a></dt>
+<dd><p>A utility method to validate NMEA data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>nmea_data</strong> – The NMEA GPS data string from the uC that is to be validated</p>
+</dd>
+</dl>
+<p>Returns: True/False validation status</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Forge.pack_dict_into_dataclass">
+<code class="sig-prename descclassname"><span class="pre">Forge.</span></code><code class="sig-name descname"><span class="pre">pack_dict_into_dataclass</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataclass_</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dataclasses.dataclass</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dataclasses.dataclass</span><a class="headerlink" href="#Forge.pack_dict_into_dataclass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pack the data from a Python dictionary into a dataclass instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dict</strong> – The dictionary to be packed into a dataclass instance</p></li>
+<li><p><strong>dataclass</strong> – The dataclass whose instance is to be returned post-dictionary-packing</p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns: An instance of the provided dataclass reference packed with fields and values from the provided dictionary</p>
+<dl class="simple">
+<dt>Raises: InvalidDictError</dt><dd><p>This exception is raised when an invalid/unsupported Python dictionary is provided in order to pack it into
+a Python dataclass instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="Raven.html" class="btn btn-neutral float-right" title="Raven module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="modules.html" class="btn btn-neutral float-left" title="e2e" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Bharath Keshavamurthy.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

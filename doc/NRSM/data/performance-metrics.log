@@ -1,0 +1,43 @@
+A table of metrics for Project Odin:
+
+1. PT2645-S and uC-IMU rotational accuracy: Yaw rotation testing on the laser test-bed | Fine and Coarse Analyses with/without multiple trials
+   a. Single Trial:
+				Fine: \{3^𝑜:〖0.98〗^𝑜, 6^𝑜:〖1.035〗^𝑜, 9:〖2.885〗^𝑜, 12^𝑜:〖2.145〗^𝑜, 15^𝑜:〖2.075〗^𝑜, 18^𝑜:〖0.755〗^𝑜 \}
+				Coarse: \{15^𝑜:〖2.925〗^𝑜, 30^𝑜:〖1.27〗^𝑜, 45^𝑜:〖0.88〗^𝑜, 60^𝑜:〖0.605〗^𝑜, 75^𝑜:〖0.495〗^𝑜, 90^𝑜:〖0.66〗^𝑜 \}
+   b. Multiple Trials (x3 per angle):
+				Coarse: \{30^𝑜:〖2.41〗^𝑜, 60^𝑜:〖1.843〗^𝑜, 90^𝑜:〖2.46〗^𝑜 \}
+   c. Average Error across multiple rotational mandates (fine [in steps of 3 degrees] & coarse [in steps of 15 degrees]) -- averaged over several iterations per angle = 1.1153 degrees
+   
+2. GPS positional accuracy: During Tx installation (static) | Verified on uBlox u-Center and on the uC Serial Monitor over Qwiic I2C | UBX-NAV HPPOSLLH messages
+   a. RTCM3.0 messages over NTRIP from a UNAVCO NTRIP caster (rtgpsout.unavco.org | 
+   b. 2D Accuracy = 9 cm
+   c. 3D Accuracy = 17 cm
+   d. Satellites in View = 28 (GNSS: GPS | GLONASS | Galileo | BeiDou)
+   
+3. Inter-Realm Response Time over Apache Zookeeper-Kafka = 27.794 ms 
+   a. All Realms and the Realms Controller -- including Kafka, Zookeeper, and Logging -- were executed on 4-core x86-64 Intel i5-1035G7 CPU @1.20GHz with 8 GB of RAM, on both Ubuntu 20.04 Focal Fossa and Windows 10 b. Carried out over 12,870 messages that were exchanged between the TxRealm and RxRealm over Kafka.
+   c. This response time constitutes the time taken for the complete processing of one mandate:
+		Get recent Rx GPS event | Log & Send this event to the Tx over Kafka | Get this event at the Tx | Parse & Log the event at the Tx | Issue a rotation mandate to the servos
+   
+4. Rx GNURadio Configurations
+   a. UHD USRP Source Configurations:
+	   Sample Rate = 2 Msps
+	   Center Freq = 2.5 GHz
+	   Gain Value = 0 dB / 76 dB
+	   Antenna = Tx/Rx Ch0
+	   Output Type = I/Q Complex-64 (32-bit I + 32-bit Q)
+   
+   b. QT GUI Time Sink Configurations:
+	   Input Type: I/Q Complex-64 (32-bit I + 32-bit Q)
+	   Number of points = [manual-range = 1024, 2048, 4096]
+	   Sample Rate = 2 Msps
+	   Autoscale = Yes
+	   Update Period = 0.10 s
+	   Trigger Type = Auto
+	   Trigger Slope = Positive
+	   Trigger Level = [manual-dynamic]
+   
+   b. File Sink and File Meta Sink Configuration
+	   Input Type: I/Q Complex-64 (32-bit I + 32-bit Q)
+	   Max Seg Size = 1M
+	   Unbuffered = OFF

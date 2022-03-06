@@ -1,0 +1,19 @@
+# This is the Lefebure GPS Data Path Pointer file. You need to use the format "Key=Value" for all settings.
+# Any line that starts with a # symbol will be ignored.
+# The only setting in this file should be the Data Path Location.
+
+Last Checked for Updates=1/17/2021 17:14:29
+Serial Port Number=6
+Receiver Type=NoAutoConfig
+Serial Port Speed=9600
+Serial Port Data Bits=8
+Serial Port Stop Bits=1
+Serial Should be Connected=Yes
+NTRIP Should be Connected=Yes
+Display Center=
+Display Right=
+Audio Alert File=None
+NTRIP Use Manual GGA=No
+NTRIP Manual Latitude=41
+NTRIP Manual Longitude=-91
+Protocol=NTRIP

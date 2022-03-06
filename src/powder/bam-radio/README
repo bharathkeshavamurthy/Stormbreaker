@@ -1,0 +1,41 @@
+# Summary
+
+BAM! Radio is a Cognitive Intelligent Radio Network (CIRN) design and
+implementation for the DARPA Spectrum Collaboration Challenge (SC2).
+
+# Compilation
+
+The `util/container-build` directory contains build scripts to create a
+self-contained LXC container image.
+
+## Dependencies
+
+BAM! Radio depends on the following software components for compilation and at
+runtime. The specified versions are known to be compatible.
+
+* CMake 3.10
+* GCC 6.3
+  - CUDA doesn't support GCC 7 yet.
+* NVIDIA CUDA 9.1
+* Boost 1.66
+* UHD 3.9 LTS (UHD-3.9.LTS branch)
+* GNU Radio 3.8 (sgl/next++ branch)
+* Google Protobuf 3.3.2
+* ZeroMQ 4.2.1
+* FFTW 3.3.6
+
+```
+build-essential gcc-6 g++-6 cuda-9-1
+```
+
+The remaining dependencies may be installed from source. Helper scripts exist
+in `util/dependencies`.
+
+## Phase 1
+
+The Phase 1 radio code primarily exists in the `controller` directory.  The
+code may be built with CMake.
+
+# Execution
+
+TODO

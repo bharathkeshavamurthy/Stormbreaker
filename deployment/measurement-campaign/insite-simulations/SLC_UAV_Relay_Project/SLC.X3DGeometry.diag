@@ -1,0 +1,33 @@
+
+
+wibatch version 3.3.5.6 - r70036
+  Built with Microsoft Visual Studio 1900
+  Built with Qt 4.8.7
+  Using Qt 4.8.7
+
+2021.12.08 17:30:47.347 Hostname: ArkAngel-V
+2021.12.08 17:30:47.347 Set working directory: C:/Users/kesha/Downloads/slc-data
+2021.12.08 17:30:47.351 Wed Dec 8 17:30:47 2021
+
+2021.12.08 17:30:47.351 Creating geolocated X3D geometry cache (8 threads): ./SLC.X3DGeometry.cache
+2021.12.08 17:30:47.432 Loaded geometry: ./SLC_Terrain.ter
+2021.12.08 17:30:48.020 Loaded geometry: ./SLC_Buildings.city
+2021.12.08 17:30:48.181   Lowering structures to terrain
+2021.12.08 17:30:48.313     Done lowering structures to terrain
+2021.12.08 17:30:49.631   Creating candidate facets for edge creation
+2021.12.08 17:30:51.234     Done creating candidate facets for edge creation
+2021.12.08 17:30:51.294   Creating scene edges
+2021.12.08 17:30:51.520     Done creating scene edges
+2021.12.08 17:30:51.784   Finishing scene edges
+2021.12.08 17:30:52.069     Done finishing scene edges
+2021.12.08 17:30:52.705 Writing 137068 triangles to cache file
+2021.12.08 17:30:52.813 Writing edgeset (126791 edges) to cache
+2021.12.08 17:30:53.014 Writing property list (1 properties) to cache
+2021.12.08 17:30:53.014   Property: 0, name=po_object_type, 137068 entries
+2021.12.08 17:30:53.102 Successfully generated geometry cache; exiting.
+
+2021.12.08 17:30:53.102 Wed Dec 8 17:30:53 2021
+
+
+
+2021.12.08 17:30:53.102 Total Runtime: : 00:00:05.751

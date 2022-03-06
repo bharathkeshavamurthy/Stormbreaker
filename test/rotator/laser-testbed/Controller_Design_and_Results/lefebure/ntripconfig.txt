@@ -1,0 +1,5 @@
+﻿NTRIP Caster=108.59.49.226
+NTRIP Caster Port=10000
+NTRIP Username=purdue25
+NTRIP Password=purdue25
+NTRIP MountPoint=RTCM3_NEAR

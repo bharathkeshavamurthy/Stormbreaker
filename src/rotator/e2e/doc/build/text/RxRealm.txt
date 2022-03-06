@@ -1,0 +1,39 @@
+RxRealm module
+**************
+
+This script describes the operations performed by the controller at Rx
+side of the Odin channel statistics measurement campaign. The
+operations performed by this controller include:
+
+   a. Receive the custom NMEA-formatted location messages from the
+   microcontroller over the USB/BT serial COM port
+   (SerialUSB/SerialBT): (The Rx uC-based (RxController.ino)
+   operations are detailed below)
+
+      1. Use the uC-GPS parser library to parse the standard NMEA GPS
+      messages and obtain the time, latitude, longitude, altitude,
+      heading, velocity, and other metadata metrics from the getter-
+      setter methods within this library; and
+
+      2. Using these extracted data values construct a custom NMEA-
+      formatted message (start with $ and the ordered data values are
+      comma-separated) and publish it to the USB/BT serial COM port
+      within the Rx uC-based code (SerialUSB/SerialBT)
+
+   b. Parse the received custom NMEA-formatted location messages to
+   populate a JSON data object which would next be encapsulated in an
+   ODIN_GPS_EVENT; and
+
+   3. Publish the created ODIN_GPS_EVENT to the Kafka topic
+      ODIN_GPS_EVENTS.
+
+DESIGN NOTE: The RTCM correction stream is sent to the GPS module from
+an NTRIP client (Lefebure Windows Client) over another Bluetooth link
+with the same BT module.
+
+Author: Bharath Keshavamurthy <bkeshava@purdue.edu>
+
+Organization: School of Electrical & Computer Engineering, Purdue
+University, West Lafayette, IN.
+
+Copyright (c) 2021. All Rights Reserved.

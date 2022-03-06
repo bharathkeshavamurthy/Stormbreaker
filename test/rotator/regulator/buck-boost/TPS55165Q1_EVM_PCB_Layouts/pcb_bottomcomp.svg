@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="360px" height="239.9px" viewbox="0 0 360 239.9" version="1.1">
+  <title>TPS55165_Q1_BUCKBOOST_PWP_A_bottom: null</title>
+  <desc>TPS55165_Q1_BUCKBOOST_PWP_A WebTHERM&amp;reg; Board Layout file</desc>
+<defs>
+<g id="0603">
+  <g id="Mask" style="display:none;">
+  	<rect style="display:inline;" width="6.4" height="3.2"/>
+  	<rect x="1.6" style="display:inline;" width="3.2" height="3.2"/>
+  </g>
+  <g id="Outline" style="display:none;">
+  	<g style="display:inline;">
+  		<path d="M6.15,0.25v2.7h-5.9v-2.7H6.15 M6.4,0H0v3.2h6.4V0L6.4,0z"/>
+  	</g>
+  	<g style="display:inline;">
+  		<path d="M4.55,0.25v2.7h-2.7v-2.7H4.55 M4.8,0H1.6v3.2h3.2V0L4.8,0z"/>
+  	</g>
+  </g>
+  <g id="Color">
+  	<rect style="fill:#B3B3B3;" width="6.4" height="3.2"/>
+  	<rect x="1.6" style="fill:#1A1A1A;" width="3.2" height="3.2"/>
+  </g>
+</g>
+<g id="1210_270">
+  <g id="MASK" style="display:none;">
+  	<rect style="display:inline;" width="9.071" height="7.087"/>
+  	<rect x="1.701" style="display:inline;" width="5.669" height="7.087"/>
+  </g>
+  <g id="OUTLINE" style="display:none;">
+  	<g style="display:inline;">
+  		<path d="M8.571,0.5v6.087H0.5V0.5H8.571 M9.071,0H0v7.087h9.071V0L9.071,0z"/>
+  	</g>
+  	<g style="display:inline;">
+  		<path d="M6.87,0.5v6.087H2.201V0.5H6.87 M7.37,0H1.701v7.087H7.37V0L7.37,0z"/>
+  	</g>
+  </g>
+  <g id="COLOR">
+  	<rect style="fill:#CBCBCB;" width="9.071" height="7.087"/>
+  	<rect x="1.701" style="fill:#363636;" width="5.669" height="7.087"/>
+  </g>
+</g>
+<g id="0805">
+  <g id="MASK" style="display:none;">
+  	<g style="display:inline;">
+  		<rect x="0.279" y="0.279" width="7.442" height="4.442"/>
+  		<path d="M7.442,0.558v3.884H0.558V0.558H7.442 M8,0H0v5h8V0L8,0z"/>
+  	</g>
+  </g>
+  <g id="COLOR">
+  	<rect style="fill:#CBCBCB;" width="8" height="5"/>
+  	<rect x="1.75" style="fill:#363636;" width="4.5" height="5"/>
+  </g>
+  <g id="OUTLINE" style="display:none;">
+  	<g style="display:inline;">
+  		<path d="M7.442,0.558v3.884H0.558V0.558H7.442 M8,0H0v5h8V0L8,0z"/>
+  	</g>
+  	<g style="display:inline;">
+  		<path d="M5.656,0.594v3.812H2.344V0.594H5.656 M6.25,0h-4.5v5h4.5V0L6.25,0z"/>
+  	</g>
+  </g>
+</g>
+<g id="1206_180">
+  <g id="Mask" style="display:none;">
+  	<g style="display:inline;">
+  		<g>
+  			<rect x="0.25" y="0.25" width="12.3" height="5.899"/>
+  			<path d="M12.3,0.5v5.399H0.5V0.5H12.3 M12.8,0H0v6.399h12.8V0L12.8,0z"/>
+  		</g>
+  		<g>
+  			<rect x="0.25" y="0.25" width="2.453" height="5.899"/>
+  			<path d="M2.454,0.5v5.399H0.5V0.5H2.454 M2.954,0H0v6.399h2.954V0L2.954,0z"/>
+  		</g>
+  		<g>
+  			<rect x="10.096" y="0.252" width="2.454" height="5.899"/>
+  			<path d="M12.3,0.501V5.9h-1.954V0.501H12.3 M12.8,0.001H9.846V6.4H12.8V0.001L12.8,0.001z"/>
+  		</g>
+  	</g>
+  </g>
+  <g id="Outline" style="display:none;">
+  	<g style="display:inline;">
+  		<g>
+  			<path d="M12.55,0.25v5.899H0.25V0.25H12.55 M12.8,0H0v6.399h12.8V0L12.8,0z"/>
+  		</g>
+  		<g>
+  			<path d="M2.704,0.25v5.899H0.25V0.25H2.704 M2.954,0H0v6.399h2.954V0L2.954,0z"/>
+  		</g>
+  		<g>
+  			<path d="M12.55,0.251V6.15h-2.454V0.251H12.55 M12.8,0.001H9.846V6.4H12.8V0.001L12.8,0.001z"/>
+  		</g>
+  	</g>
+  </g>
+  <g id="Color">
+  	<g>
+  		<g>
+  			<rect x="0.25" y="0.25" style="fill:#5B5B5B;" width="12.3" height="5.899"/>
+  			<path d="M12.3,0.5v5.399H0.5V0.5H12.3 M12.8,0H0v6.399h12.8V0L12.8,0z"/>
+  		</g>
+  		<g>
+  			<rect x="0.25" y="0.25" style="fill:#C6C6C6;" width="2.453" height="5.899"/>
+  			<path d="M2.454,0.5v5.399H0.5V0.5H2.454 M2.954,0H0v6.399h2.954V0L2.954,0z"/>
+  		</g>
+  		<g>
+  			<rect x="10.096" y="0.252" style="fill:#C6C6C6;" width="2.454" height="5.899"/>
+  			<path d="M12.3,0.501V5.9h-1.954V0.501H12.3 M12.8,0.001H9.846V6.4H12.8V0.001L12.8,0.001z"/>
+  		</g>
+  	</g>
+  </g>
+</g>
+<g id="IND_NPI31W">
+  <g id="MASK" display="none">
+  	<path display="inline" stroke="#000000" d="M52.5,26.519l-16.003,9.275c-2.921,1.718-6.34,2.706-9.996,2.706
+  		c-3.612,0-6.994-0.965-9.891-2.645L0.5,26.519V12.527l15.14-8.783C18.741,1.696,22.479,0.5,26.502,0.5
+  		c3.829,0,7.399,1.084,10.408,2.955L52.5,12.527V26.519z"/>
+  </g>
+  <g id="COLOR">
+  	<path fill="#999999" stroke="#000000" d="M52.5,26.519l-16.003,9.275c-2.921,1.718-6.34,2.706-9.996,2.706
+  		c-3.612,0-6.994-0.965-9.891-2.645L0.5,26.519V12.527l15.14-8.783C18.741,1.696,22.479,0.5,26.502,0.5
+  		c3.829,0,7.399,1.084,10.408,2.955L52.5,12.527V26.519z"/>
+  	<path fill="none" stroke="#000000" d="M40.001,19.502c0,1.41,2.941,1.398,2.941,1.398C42.233,29.358,35.142,36,26.502,36
+  		c-8.642,0-15.731-6.642-16.442-15.099c0,0,2.941,0.011,2.941-1.399c0-1.28-2.952-1.268-2.952-1.268C10.697,9.711,17.816,3,26.502,3
+  		c8.684,0,15.804,6.711,16.451,15.234C42.953,18.234,40.001,18.112,40.001,19.502z"/>
+  	<rect x="0.5" y="14.4" fill="#4D4D4D" stroke="#000000" width="8.643" height="10.834"/>
+  	<rect x="43.857" y="14.4" fill="#4D4D4D" stroke="#000000" width="8.645" height="10.834"/>
+  </g>
+  <g id="OUTLINE" display="none">
+  	<path display="inline" fill="none" stroke="#000000" d="M52.5,26.519l-16.003,9.275c-2.921,1.718-6.34,2.706-9.996,2.706
+  		c-3.612,0-6.994-0.965-9.891-2.645L0.5,26.519V12.527l15.14-8.783C18.741,1.696,22.479,0.5,26.502,0.5
+  		c3.829,0,7.399,1.084,10.408,2.955L52.5,12.527V26.519z"/>
+  	<path display="inline" fill="none" stroke="#000000" d="M40.001,19.502c0,1.41,2.941,1.398,2.941,1.398
+  		C42.233,29.358,35.142,36,26.502,36c-8.642,0-15.731-6.642-16.442-15.099c0,0,2.941,0.011,2.941-1.399
+  		c0-1.28-2.952-1.268-2.952-1.268C10.697,9.711,17.816,3,26.502,3c8.684,0,15.804,6.711,16.451,15.234
+  		C42.953,18.234,40.001,18.112,40.001,19.502z"/>
+  </g>
+</g>
+<g id="0402">
+  <g id="MASK" display="none">
+  	<g display="inline">
+  		<rect x="0.125" y="0.125" width="3.752" height="1.757"/>
+  		<path d="M3.752,0.25v1.507H0.25V0.25H3.752 M4.002,0H0v2.007h4.002V0L4.002,0z"/>
+  	</g>
+  </g>
+  <g id="COLOR">
+  	<rect fill="#CBCBCB" width="4.002" height="2.007"/>
+  	<rect x="1.008" fill="#363636" width="1.986" height="2.007"/>
+  </g>
+  <g id="OUTLINE">
+  	<g>
+  		<path d="M3.752,0.25v1.507H0.25V0.25H3.752 M4.002,0H0v2.007h4.002V0L4.002,0z"/>
+  	</g>
+  	<g>
+  		<path d="M2.744,0.25v1.507H1.258V0.25H2.744 M2.994,0H1.008v2.007h1.986V0L2.994,0z"/>
+  	</g>
+  </g>
+</g>
+</defs>
+<g id="boardComps">
+  <g id="topview_images">
+    <use x="162.0" y="130.0" width="8.0" height="5.0" transform="rotate(-270.0 166.0 133.0)" xlink:href="#0805" />
+    <use x="152.0" y="125.0" width="8.0" height="5.0" transform="rotate(-90.0 156.0 127.0)" xlink:href="#0805" />
+    <use x="142.0" y="118.0" width="8.0" height="5.0" transform="rotate(-90.0 146.0 120.0)" xlink:href="#0805" />
+  </g>
+</g>
+</svg>

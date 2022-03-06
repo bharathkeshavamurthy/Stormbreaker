@@ -1,0 +1,61 @@
+ This file contains diagnostic information on the items listed below.
+ Search for each keyword to go to the relevant sections of the file.
+ Some categories may appear in more than one place in the file.
+
+
+ 1. Version
+ 2. Warning
+ 3. Error
+ 4. Files
+ 5. Receiver Sets
+ 6. Transmitter Sets
+ 7. Antennas
+ 8. Waveforms
+ 9. Materials
+ 10. Geometry
+ 11. Propagation Model
+ 12. Calculation Progress
+ 13. Study Areas
+ 14. Allocation
+ 15. Timings
+ 16. Output Filter
+
+ ==================== VERSION ====================
+
+ calcprop version 3.3.5.6                         
+
+ ===================== FILES =====================
+
+  setup path =  C:\Users\kesha\Downloads\slc-data\
+  project path =  C:\Users\kesha\Downloads\slc-data\SLC
+  project name =  SLC
+  project file =  C:\Users\kesha\Downloads\slc-data\SLC.setup
+  diag path =  diag\
+  diag+project path =  C:\Users\kesha\Downloads\slc-data\diag\SLC
+  param rank suffix =   
+  param rank chars =   
+
+ ================== ALLOCATION ==================
+
+   Allocating Antenna Data
+   Allocation Successful (10)
+
+ ================== ALLOCATION ==================
+
+   Allocating Waveform Data
+   Allocation Successful (21)
+
+ ================== ANTENNAS ====================
+ 
+ Antenna Number =           1
+ Status = In use    
+ Name = half-wave dipole                                                        
+ Type = Half Wave Dipole                                                        
+ Polarization = Vertical  
+ Waveform = N/A                                                                     
+ Frequency (MHz): N/A
+ Gain (dBi) =    2.151
+ Autogain Setting: On
+ Loss (dB) =    0.000
+ VSWR =    1.00
+ Receiver Threshold (dBm) =   -250.0000    

@@ -1,0 +1,3 @@
+# Receiver Set: Base Station
+# Receiver Point (#) : X(m) : Y(m) : Z(m) : Distance (m) : Throughput (MBit/sec) : Capacity (MBit/sec) : Encoding Scheme
+     1  -8.439890e+02  -1.165110e+02  1.166050e+02  1.646130e+01  1.833600e+01  1.042798e+02  LTE_MCS_64QAM_9_10  

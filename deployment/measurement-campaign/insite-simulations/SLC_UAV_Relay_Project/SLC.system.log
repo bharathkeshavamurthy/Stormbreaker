@@ -1,0 +1,16 @@
+cd  
+C:\Users\kesha\Downloads\slc-data
+dir /AD  
+ Volume in drive C is Local Disk
+ Volume Serial Number is 08E8-E981
+
+ Directory of C:\Users\kesha\Downloads\slc-data
+
+12/09/2021  01:47    <DIR>          .
+12/09/2021  01:47    <DIR>          ..
+12/09/2021  01:26    <DIR>          odin-uav-mobility
+12/08/2021  17:30    <DIR>          X3DGeometry
+               0 File(s)              0 bytes
+               4 Dir(s)  34,990,583,808 bytes free
+del "C:\Users\kesha\Downloads\slc-data\SLC.antenna_pattern.diag"  
+del "C:\Users\kesha\Downloads\slc-data\SLC.request"  
