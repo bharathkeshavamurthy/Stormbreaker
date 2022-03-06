@@ -1,3 +1,0 @@
-[submodule "CC/Sounder/mufft"]
-	path = CC/Sounder/mufft
-	url = https://github.com/themaister/mufft

@@ -1,3 +1,0 @@
-- uso una thread per comunicare col robot
-- re-design interfaccia
-- opengl

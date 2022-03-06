@@ -1,9 +1,0 @@
-Ok, for the antenna files -- even though it looks complicated -- it's really pretty simple.  Basically this is the data from a Vector Network Analyzer S21 parameter measurement.
-
-The first column is the angle at which the measurement was made (azimuth angle or elevation angle depending on the file).
-
-The next series of columns are the discrete frequencies where each measurement was made.  I swept 1601 points from 2-3 GHz (27.5-28.5 GHz), so there's 1601 discrete frequencies.
-
-Each frequency has a specific S21 measurement associated with it -- you can think of it as the channel transfer function, or the loss between the transmitter and receiver.  In this case, that loss is the free-space loss plus the effects of the transmitter and receiver antenna gains.  Because its a vector measurement, there's two columns for each frequency -- the first column is the magnitude and the second is the phase.  For our purposes, we can ignore the phase measurement.
-
-All you really need is the 2.5 GHz column, magnitude data to go with the first column (angle of measurement).  I believe it's reported in linear units, so you'll have to do either 10log or 20log.

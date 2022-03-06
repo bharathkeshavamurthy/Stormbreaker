@@ -1,3 +1,0 @@
-Also, I think it would be a good idea to generate a "summary" report, or basically a "data dump" from our measurement results.  What I think would be nice would be an overview map of all our measurement locations.  Following that would be the photos from each measurement site alongside a representative power delay profile (pick out any one from the measurement set is fine).  That can be an uncalibrated PDP at this point -- it's just there so we can see the structure of the channel.
-
-Other good things to include would be the euclidian distance between transmitter and receiver (calculated from the Lat/Long, use  38.983899бу, -76.486682бу for the Transmitter), as well as Receiver Gain, and any other interesting notes about the measurement site.  
