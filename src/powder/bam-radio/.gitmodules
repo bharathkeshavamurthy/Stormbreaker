@@ -1,9 +1,0 @@
-[submodule "util/container-build"]
-	path = util/container-build
-	url = ssh://git@cloudradio.ecn.purdue.edu/bam-wireless/container-build.git
-[submodule "cil"]
-	path = cil
-	url = ssh://git@cloudradio.ecn.purdue.edu/bam-wireless/darpa-sc2-phase3-cil.git
-[submodule "controller/src/ai/lisp-deps"]
-	path = controller/src/ai/lisp-deps
-	url = ssh://git@cloudradio.ecn.purdue.edu/bam-wireless/lisp-deps.git

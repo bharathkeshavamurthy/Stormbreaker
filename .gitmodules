@@ -13,15 +13,3 @@
 [submodule "src/measurement-campaign/Talos"]
 	path = src/measurement-campaign/Talos
 	url = git@github.com:bharathkeshavamurthy/Talos.git
-[submodule "src/powder/mMIMO/faros-simple"]
-	path = src/powder/mMIMO/faros-simple
-	url = https://gitlab.flux.utah.edu/kwebb/faros-simple.git
-[submodule "src/powder/mMIMO/bifrost-mMIMO"]
-	path = src/powder/mMIMO/bifrost-mMIMO
-	url = https://github.com/bharathkeshavamurthy/bifrost-mMIMO.git
-[submodule "src/powder/mMIMO/faros-renew"]
-	path = src/powder/mMIMO/faros-renew
-	url = https://gitlab.flux.utah.edu/doost/faros-renew.git
-[submodule "src/powder/mMIMO/RENEWLab"]
-	path = src/powder/mMIMO/RENEWLab
-	url = https://github.com/renew-wireless/RENEWLab.git
